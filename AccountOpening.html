@@ -1,16 +1,45 @@
 <html>
 <style type="text/css">
-	footer{
+	footer,header{
 		border:1px;
+		border-color: black;
+		text-align: center;
+		background-color: skyblue;
+	}
+	body
+	{
+		background-color: lightblue;
 	}
 
 </style>
 <title>Create account</title>
 <body>
-
 <header>
    <h1>Friendly bank of CET</h1>
 </header>
+
+<fieldset>
+	<legend>Personal Details(Account holder)</legend>
+	<div data-row-span="4">
+				<div data-field-span="1" style="height: 55.2px;">
+					<label>Title</label>
+					<label><input name="customer-title[]" type="radio"> Mr.</label> 
+					<label><input name="customer-title[]" type="radio"> Mrs.</label>
+					<label><input name="customer-title[]" type="radio"> Ms.</label>
+				</div>
+				<div data-field-span="3" style="height: 55.2px;" class="">
+					<label>Full Name</label>
+					<input type="text"></input>
+				</div>
+	</div>
+
+</fieldset>
+
+
+
+
+
+
 
 <footer>Bank of CET @2017</footer>
 </body>
