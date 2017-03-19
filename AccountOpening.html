@@ -1,22 +1,36 @@
 <html>
+
 <style type="text/css">
 	footer,header{
 		border:1px;
 		border-color: black;
 		text-align: center;
-		background-color: skyblue;
+		background-color: lightblue;
 	}
 	body
 	{
-		background-color: lightblue;
+		background-color: skyblue;
+	}
+	fieldset
+	{
+		background-color: skyblue;
+		border-spacing: 20px;
+		padding: 20px;
+	}
+	legend
+	{
+		font-size: 25px;
+		color: darkblue;
 	}
 
 </style>
 <title>Create account</title>
 <body>
 <header>
-   <h1>Friendly bank of CET</h1>
+   <h1>Bank of CET</h1>
 </header>
+
+<form class="grid-form AVAST_PAM_nonloginform">
 
 <fieldset>
 	<legend>Personal Details(Account holder)</legend>
@@ -40,78 +54,44 @@
 				<div data-field-span="1" style="height: 57.2px;" class="">
 					<label>State</label>
 					<select>
-					<option value="" selected="selected">--Select--</option>
-                     
-						<option value="35">ANDAMAN AND NICOBAR</option>
-					
-						<option value="28">ANDHRA PRADESH</option>
-					
-						<option value="12">ARUNACHAL PRADESH</option>
-					
-						<option value="18">ASSAM</option>
-					
-						<option value="10">BIHAR</option>
-					
-						<option value="04">CHANDIGARH</option>
-					
-						<option value="22">CHATTISGARH</option>
-					
-						<option value="26">DADRA AND NAGAR HAVELI</option>
-					
-						<option value="25">DAMAN AND DIU</option>
-					
-						<option value="07">DELHI</option>
-					
-						<option value="30">GOA</option>
-					
-						<option value="24">GUJARAT</option>
-					
-						<option value="06">HARYANA</option>
-					
-						<option value="02">HIMACHAL PRADESH</option>
-					
-						<option value="01">JAMMU AND KASHMIR</option>
-					
-						<option value="20">JHARKHAND</option>
-					
-						<option value="29">KARNATAKA</option>
-					
-						<option value="32">KERALA</option>
-					
-						<option value="31">LAKSHADWEEP</option>
-					
-						<option value="23">MADHYA PRADESH</option>
-					
-						<option value="27">MAHARASHTRA</option>
-					
-						<option value="14">MANIPUR</option>
-					
-						<option value="17">MEGHALAYA</option>
-					
-						<option value="15">MIZORAM</option>
-					
-						<option value="13">NAGALAND</option>
-					
-						<option value="21">ORISSA</option>
-					
-						<option value="34">PONDICHERRY</option>
-					
-						<option value="03">PUNJAB</option>
-					
-						<option value="08">RAJASTHAN</option>
-					
-						<option value="11">SIKKIM</option>
-					
-						<option value="33">TAMILNADU</option>
-					
-						<option value="16">TRIPURA</option>
-					
-						<option value="09">UTTAR PRADESH</option>
-					
-						<option value="05">UTTARANCHAL</option>
-					
+
+					<option value="" selected="selected">--Select--</option>                     
+						<option value="35">ANDAMAN AND NICOBAR</option>					
+						<option value="28">ANDHRA PRADESH</option>					
+						<option value="12">ARUNACHAL PRADESH</option>					
+						<option value="18">ASSAM</option>					
+						<option value="10">BIHAR</option>					
+						<option value="04">CHANDIGARH</option>					
+						<option value="22">CHATTISGARH</option>					
+						<option value="26">DADRA AND NAGAR HAVELI</option>					
+						<option value="25">DAMAN AND DIU</option>					
+						<option value="07">DELHI</option>					
+						<option value="30">GOA</option>					
+						<option value="24">GUJARAT</option>					
+						<option value="06">HARYANA</option>					
+						<option value="02">HIMACHAL PRADESH</option>					
+						<option value="01">JAMMU AND KASHMIR</option>					
+						<option value="20">JHARKHAND</option>					
+						<option value="29">KARNATAKA</option>					
+						<option value="32">KERALA</option>					
+						<option value="31">LAKSHADWEEP</option>					
+						<option value="23">MADHYA PRADESH</option>					
+						<option value="27">MAHARASHTRA</option>					
+						<option value="14">MANIPUR</option>					
+						<option value="17">MEGHALAYA</option>					
+						<option value="15">MIZORAM</option>					
+						<option value="13">NAGALAND</option>					
+						<option value="21">ORISSA</option>					
+						<option value="34">PONDICHERRY</option>					
+						<option value="03">PUNJAB</option>					
+						<option value="08">RAJASTHAN</option>					
+						<option value="11">SIKKIM</option>					
+						<option value="33">TAMILNADU</option>					
+						<option value="16">TRIPURA</option>					
+						<option value="09">UTTAR PRADESH</option>					
+						<option value="05">UTTARANCHAL</option>					
 						<option value="19">WEST BENGAL</option>
-				
+
 					</select>
 				</div>
 			</div>
@@ -125,8 +105,8 @@
 					<input type="text">
 				</div>
 				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>Existing Bank Account No. (if any)</label>
-					<input type="text">
+					<label>Existing Bank Account No. (if any)<input type="text"></label>
+					
 				</div>
 			</div>
 			<div data-row-span="2">
@@ -139,14 +119,69 @@
 					<input type="text">
 				</div>
 			</div>
+</fieldset>
 
+
+	<fieldset>
+				<legend>Residential address</legend>
+				<div data-row-span="2">
+					<div data-field-span="1" style="height: 55.2px;" class="">
+						<label>Flat no. and bldg. name</label>
+						<input type="text">
+					</div>
+					<div data-field-span="1" style="height: 55.2px;" class="">
+						<label>Road no./name</label>
+						<input type="text">
+					</div>
+				</div>
+				<div data-row-span="4">
+					<div data-field-span="3" style="height: 55.2px;" class="">
+						<label>Area and landmark</label>
+						<input type="text">
+					</div>
+					<div data-field-span="1" style="height: 55.2px;">
+						<label>City</label>
+						<input type="text">
+					</div>
+				</div>
+				<div data-row-span="4">
+					<div data-field-span="1" style="height: 55.2px;">
+						<label>Telephone Residence</label>
+						<input type="text">
+					</div>
+					<div data-field-span="1" style="height: 55.2px;" class="">
+						<label>Office</label>
+						<input type="text">
+					</div>
+					<div data-field-span="1" style="height: 55.2px;">
+						<label>Fax</label>
+						<input type="text">
+					</div>
+					<div data-field-span="1" style="height: 55.2px;">
+						<label>Pin code</label>
+						<input type="text">
+					</div>
+				</div>
+			</fieldset>
+	</fieldset>
+
+
+<fieldset>
+			<legend>Terms And Conditions</legend>
+			<div data-row-span="1">
+				<div data-field-span="1" style="height: 60.2px;">
+					<label></label>
+					<label><input type="checkbox"> I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.</label>
+				</div>
+			</div>
+			<div data-row-span="1" align="center">
+			<label><input type="submit" name="Submit form"></label>
+			</div>
 </fieldset>
 
 
 
-
-
-
+</form>
 
 <footer>Bank of CET @2017</footer>
 </body>
