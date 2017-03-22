@@ -10,35 +10,74 @@
   <link rel="stylesheet" type="text/css" href="AccountOpening/accountopening*.css"> 
   <script type="text/javascript" src="AccountOpening/gridforms.js"></script>
 </head>
+<style type="text/css">
+	div
+	{
+
+	}
+	header
+	{
+		text-align: center;
+		
+	}
+	label
+	{
+		font-weight: bold;
+	}
+	input[type='text']
+	{
+		
+	}
+	.radio-toolbar input[type="radio"]
+	{
+		
+	}
+	.radio-toolbar label
+	{
+		
+  		
+  		font-size: 17px;
+  		cursor: pointer;
+	}
+
+	
+	
+
+</style>
 
 <script>
 $(document).ready(function() {
     $("input:text").focus(function() { $(this).select(); } );
 });
 </script>
-<body>
+<body width="90%">
 <form>
-<header>
-   <h1>Bank of CET</h1>
+<header style="font-weight:bold;">
+   <h1><b>Bank of CET</b></h1>
 </header>
-  <div class="panel panel-default">
-  <div class="panel-heading">Personal Details</div>
+<div class="row">
+ <div class="col-md-1"></div>
+
+ <div class="col-md-9">
+ <div class="panel panel-primary" width=90%>
+ <div class="panel-heading">Personal Details</div>
+ <div class="panel-body">
   			<div class="row">
-  				<div class="col-sm-2">	
-					<div class="radio">
-						<label>Title</label>
+  				<div class="col-sm-2">
+  					<label><b>Title</b></label>	
+					<div class="radio-toolbar">						
 						<label><input name="customer-title[]" type="radio"> Mr.</label> 
 						<label><input name="customer-title[]" type="radio"> Mrs.</label>
 						<label><input name="customer-title[]" type="radio"> Ms.</label>
 					</div>
 				</div>
 				<div class="col-sm-2"><label>Full Name <input type="text" class="form-control"></input></label></div>	
-				<div class="col-sm-1"><label>Date of birth <input type="text" class="form-control"></label></div>
+				<div class="col-sm-2"><label>Date of birth <input type="date" class="form-control"></label></div>
 				<div class="col-sm-2">					
 					<div class="form-group">
-					<label for="sel1">State:</label>
- 					<select class="form-control" id="sel1" title="Select" >							
-					<option >Select</option>
+					<label>State
+ 					<select class="form-control">							
+					<option>Select</option>
 					<option>ANDAMAN AND NICOBAR</option>					
 					<option>ANDHRA PRADESH</option>					
 					<option>ARUNACHAL PRADESH</option>					
@@ -74,27 +113,28 @@ $(document).ready(function() {
 					<option>UTTAR PRADESH</option>					
 					<option>UTTARANCHAL</option>					
 					<option>WEST BENGAL</option>
-					</select>					
+					</select>
+					</label>					
 					</div>  
 				</div>
 			</div>			
 			<div class="row">
-				<div class="col-sm-2"><label>E-mail <input type="text" class="form-control"></label></div>
+				<div class="col-sm-2"><label>E-mail <input type="email" class="form-control"></label></div>
 				<div class="col-sm-2"><label>Mobile No.<input type="text" class="form-control"></label></div>
-				<div class="col-sm-2"><label>Existing Bank Account No. (if any) <input type="text" class="form-control"></label></div>
+				<div class="col-sm-4"><label>Name of father/spouse <input type="text" class="form-control"></label></div>
 			</div>
 			<div class="row">
 				<div class="col-sm-4"><label>In case of a minor please provide details (Name of parent and natural guardian) <input type="text" class="form-control"></label></div>
-				<div class="col-sm-4"><label>Name of father/spouse <input type="text" class="form-control"></label></div>
-			</div>
-
-		
+				<div class="col-sm-2"><label>Existing Bank Account No. (if any) <input type="text" class="form-control"></label></div>				
+			</div>		
+</div>
 </div>
 
 <?-Resident ->
 
-<div class="panel panel-default">
+<div class="panel panel-primary">
 <div class="panel-heading">Residential Address</div>
+<div class="panel-body">
 		<div class="row">
 			<div class="col-sm-2"><label>Flat no. and building name <input type="text" class="form-control"></label></div>
 			<div class="col-sm-2"><label>Road no./name <input type="text" class="form-control"></label></div>
@@ -106,24 +146,27 @@ $(document).ready(function() {
 			<div class="col-sm-2"><label>Telephone Residence <input type="text" class="form-control"></label></div>
 			<div class="col-sm-2"><label>Office <input type="text" class="form-control"></label></div>
 			<div class="col-sm-2"><label>Mobile <input type="text" class="form-control"></label></div>
-		</div>			
+		</div>	
+</div>		
 </div>
 
 <?-Terms/conditions ->
 
-<div class="panel panel-default">
-<div class="panel-heading">Terms And Conditions</div>
+	<div class="panel panel-primary">
+	<div class="panel-heading">Terms And Conditions</div>
+	<div class="panel-body">
 			<div class="checkbox">
 			<label><input type="checkbox"> I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.</label>
 			</div>
 
 			<div >
-			<button type="submit" class="btn">Submit</button>
-			<button type="reset" class="btn">Reset</button>
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
+	</div>
+	</div>
+
 </div>
-
-
-
+</div>
 </form>
 </body>
