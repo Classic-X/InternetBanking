@@ -31,6 +31,10 @@ $(document).ready(function() {
 	{
 		background-color: #C6E0FF;
 	}
+	.nav {
+    max-height:300px;
+    overflow-y:auto;  
+	}
 	fieldset
 	{		
 		
@@ -80,48 +84,57 @@ $(document).ready(function() {
 					<label>Date of birth <input type="text"></label>
 					
 				</div>
-				<div data-field-span="1" style="height: 57.2px;" class="">
-					<label>State</label>
-					<select>
-
-					<option value="" selected="selected">--Select--</option>                     
-						<option value="35">ANDAMAN AND NICOBAR</option>					
-						<option value="28">ANDHRA PRADESH</option>					
-						<option value="12">ARUNACHAL PRADESH</option>					
-						<option value="18">ASSAM</option>					
-						<option value="10">BIHAR</option>					
-						<option value="04">CHANDIGARH</option>					
-						<option value="22">CHATTISGARH</option>					
-						<option value="26">DADRA AND NAGAR HAVELI</option>					
-						<option value="25">DAMAN AND DIU</option>					
-						<option value="07">DELHI</option>					
-						<option value="30">GOA</option>					
-						<option value="24">GUJARAT</option>					
-						<option value="06">HARYANA</option>					
-						<option value="02">HIMACHAL PRADESH</option>					
-						<option value="01">JAMMU AND KASHMIR</option>					
-						<option value="20">JHARKHAND</option>					
-						<option value="29">KARNATAKA</option>					
-						<option value="32">KERALA</option>					
-						<option value="31">LAKSHADWEEP</option>					
-						<option value="23">MADHYA PRADESH</option>					
-						<option value="27">MAHARASHTRA</option>					
-						<option value="14">MANIPUR</option>					
-						<option value="17">MEGHALAYA</option>					
-						<option value="15">MIZORAM</option>					
-						<option value="13">NAGALAND</option>					
-						<option value="21">ORISSA</option>					
-						<option value="34">PONDICHERRY</option>					
-						<option value="03">PUNJAB</option>					
-						<option value="08">RAJASTHAN</option>					
-						<option value="11">SIKKIM</option>					
-						<option value="33">TAMILNADU</option>					
-						<option value="16">TRIPURA</option>					
-						<option value="09">UTTAR PRADESH</option>					
-						<option value="05">UTTARANCHAL</option>					
-						<option value="19">WEST BENGAL</option>
+				<div data-field-span="1" style="height: 57.2px; width:235px;" class="">
+					
+					<div class="form-group">
+					<label for="sel1">State :</label>
+ 					<select class="form-control" id="sel1">							
+					<option>------Select-------</option>
+					<option>ANDAMAN AND NICOBAR</option>					
+					<option>ANDHRA PRADESH</option>					
+					<option>ARUNACHAL PRADESH</option>					
+					<option>ASSAM</option>					
+					<option>BIHAR</option>					
+					<option>CHANDIGARH</option>					
+					<option>CHATTISGARH</option>					
+					<option>DADRA AND NAGAR HAVELI</option>					
+					<option>DAMAN AND DIU</option>					
+					<option>DELHI</option>					
+					<option>GOA</option>					
+					<option>GUJARAT</option>					
+					<option>HARYANA</option>					
+					<option>HIMACHAL PRADESH</option>					
+					<option>JAMMU AND KASHMIR</option>					
+					<option>JHARKHAND</option>					
+					<option>KARNATAKA</option>					
+					<option>KERALA</option>					
+					<option>LAKSHADWEEP</option>					
+					<option>MADHYA PRADESH</option>					
+					<option>MAHARASHTRA</option>					
+					<option>MANIPUR</option>					
+					<option>MEGHALAYA</option>					
+					<option>MIZORAM</option>					
+					<option>NAGALAND</option>					
+					<option>ORISSA</option>					
+					<option>PONDICHERRY</option>					
+					<option>PUNJAB</option>					
+					<option>RAJASTHAN</option>					
+					<option>SIKKIM</option>					
+					<option>TAMILNADU</option>					
+					<option>TRIPURA</option>					
+					<option>UTTAR PRADESH</option>					
+					<option>UTTARANCHAL</option>					
+					<option>WEST BENGAL</option>
 
 					</select>
+					</ul>
+					</div>
+
+					
+
+					                   
+						
+					
 				</div>
 			</div>
 			<div data-row-span="4">
@@ -207,6 +220,7 @@ $(document).ready(function() {
 			</div>
 			<div data-row-span="1" align="center">
 			<button type="submit" class="btn">Submit</button>
+			<button type="reset" class="btn">Reset</button>
 			</div>
 </fieldset>
 
