@@ -40,6 +40,12 @@
   		font-size: 17px;
   		cursor: pointer;
 	}
+	.panel-primary
+	{
+		width: 85%;
+	}
+	
+
 
 	
 	
@@ -57,14 +63,15 @@ $(document).ready(function() {
    <h1><b>Bank of CET</b><small>Cetians Trust</small></h1>
 </header>
 <div class="row">
- <div class="col-md-1"></div>
+ <div class="col-lg-2"></div>
 
- <div class="col-md-9">
- <div class="panel panel-primary" width=90%>
+ <div class="col-lg-8">
+ <div class="panel panel-primary">
  <div class="panel-heading">Personal Details</div>
  <div class="panel-body">
   			<div class="row">
-  				<div class="col-sm-2">
+  				<div class="col-lg-1"></div>
+  				<div class="col-lg-3">
   					<label><b>Title</b></label>
   					<div class="form-group">	
 					<div class="radio-toolbar">						
@@ -76,17 +83,42 @@ $(document).ready(function() {
 					</div></div>
 				</div>
 
-				<div class="col-sm-2"><div class="form-group">
+				<div class="col-lg-3"><div class="form-group">
     					<label for="inputName" class="control-label">Name</label>
     					<input type="text" class="form-control" id="inputName" placeholder="China man" required>
   				</div></div>
 
-				<div class="col-sm-2"><div class="form-group">
+  				<div class="col-lg-4">
+				<div class="form-group">
+				<label for="father" class="control-label">Name of father/spouse </label>
+				<input type="text" id="father" class="form-control" required>				
+				</div></div>
+				
+				<div class="col-lg-1"></div>
+			</div>			
+			<div class="row">
+				<div class="col-lg-1"></div>
+
+				<div class="col-lg-4">
+				<div class="form-group">
+    				<label for="inputEmail" class="control-label">Email</label>
+   					<input type="email" class="form-control" id="inputEmail" placeholder="johhny@pizza.com" data-error="Email address is invalid" required>
+   					<div class="help-block with-errors"></div>
+				</div>
+					
+				</div>
+				<div class="col-lg-2">
+				<div class="form-group">
+				<label for="mobile" class="control-label">Mobile No.</label>
+				<input type="tel" id="mobile" class="form-control" data-minlength="10" data-error="10 digts required" placeholder="XXXXXXXXXX" required>
+				<div class="help-block with-errors">10 digits</div>
+				</div></div>
+
+				<div class="col-lg-2"><div class="form-group">
 				<label for="DOB" class="control-label">Date of birth </label>
 				<input type="date" class="form-control" id="DOB" required>
 				</div></div>
-
-				<div class="col-sm-2">					
+				<div class="col-lg-2">					
 					<div class="form-group">
 					<label for="stateind" class="control-label">State</label>
  					<select class="form-control" id="stateind" required>							
@@ -128,44 +160,22 @@ $(document).ready(function() {
 					<option>WEST BENGAL</option>
 					</select>					
 					</div>  
-				</div>
-			</div>			
-			<div class="row">
-				<div class="col-sm-2">
+				</div>				
 
-				<div class="form-group">
-    				<label for="inputEmail" class="control-label">Email</label>
-   					<input type="email" class="form-control" id="inputEmail" placeholder="johhny@pizza.com" data-error="Email address is invalid" required>
-   					<div class="help-block with-errors"></div>
-				</div>
-					
-				</div>
-				<div class="col-sm-2">
-				<div class="form-group">
-				<label for="mobile" class="control-label">Mobile No.</label>
-				<input type="tel" id="mobile" class="form-control" data-minlength="10" data-error="10 digts required" placeholder="XXXXXXXXXX" required>
-				<div class="help-block with-errors">10 digits</div>
-
-				</div></div>
-
-				<div class="col-sm-4">
-				<div class="form-group">
-				<label for="father" class="control-label">Name of father/spouse </label>
-				<input type="text" id="father" class="form-control" required>
-				
-				</div></div>
 			</div>
 
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-5">
 				<label for="guardian">Name of parent and natural guardian </label>
 				<input type="text" class="form-control" id="guardian">
 				<div class="help-block with-errors">In case of a minor please provide details</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-lg-5">
 				<label for="precustomers">Existing Bank Account No. (if any) </label>
 				<input type="text" class="form-control" id="precustomers">
-				</div>				
+				</div>
+				<div class="col-lg-1"></div>				
 			</div>		
 </div>
 </div>
@@ -176,16 +186,35 @@ $(document).ready(function() {
 <div class="panel-heading">Residential Address</div>
 <div class="panel-body">
 		<div class="row">
-			<div class="col-sm-2"><label>Flat no. and building name <input type="text" class="form-control"></label></div>
-			<div class="col-sm-2"><label>Road no./name <input type="text" class="form-control"></label></div>
-			<div class="col-sm-2"><label>Area and landmark <input type="text" class="form-control"></label></div>
-			<div class="col-sm-2"><label>City <input type="text" class="form-control"></label></div>
+			<div class="col-lg-1"></div>
+			<div class="col-lg-3">
+			<div class="form-group">
+			<label class="control-label">Flat no.& building name <input type="text" class="form-control" required=""></label>
+			</div></div>			
+			<div class="col-lg-3"><label>Area and landmark <input type="text" class="form-control"></label></div>
+			<div class="col-lg-2">
+			<div class="form-group">
+			<label class="control-label">City <input type="text" class="form-control" required></label>
+			</div></div>
+			<div class="col-lg-2">
+			<div class="form-group">
+			<label class="control-label">Pin code <input type="text" class="form-control" required></label>
+			</div></div>
+			<div class="col-lg-1"></div>
 		</div>
-		<div class="row">			
-			<div class="col-sm-2"><label>Pin code <input type="text" class="form-control"></label></div>
-			<div class="col-sm-2"><label>Telephone Residence <input type="text" class="form-control"></label></div>
-			<div class="col-sm-2"><label>Office <input type="text" class="form-control"></label></div>
-			<div class="col-sm-2"><label>Mobile <input type="text" class="form-control"></label></div>
+		<div class="row">	
+			<div class="col-lg-1"></div>
+			<div class="col-lg-3">
+			<div class="form-group">
+			<label class="control-label">Road no./name <input type="text" class="form-control" required=""></label>
+			</div></div>			
+			<div class="col-lg-3"><label>Telephone Residence <input type="text" class="form-control"></label></div>
+			<div class="col-lg-2"><label>Office <input type="text" class="form-control"></label></div>
+			<div class="col-lg-2">
+			<div class="form-group">
+			<label class="control-label">Mobile <input type="text" class="form-control" required=""></label>
+			</div></div>
+			<div class="col-lg-1"></div>
 		</div>	
 </div>		
 </div>
@@ -195,6 +224,9 @@ $(document).ready(function() {
 	<div class="panel panel-primary">
 	<div class="panel-heading">Terms And Conditions</div>
 	<div class="panel-body">
+			<div class="row">
+  			<div class="col-lg-1"></div>
+  			<div class="col-lg-10">
 			<div class="form-group">
     		<div class="checkbox">
       			<label>
@@ -202,24 +234,28 @@ $(document).ready(function() {
         		I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.
       			</label>
       		<div class="help-block with-errors"></div>
+      		</div>
+			</div>
     		</div>
+			<div class="col-lg-1"></div>    		
   			</div>
 
 
   			<div class="row">
-  			<div class="col-sm-4"></div>
-  			<div class="col-sm-4">
+  			<div class="col-lg-5"></div>
+  			<div class="col-lg-4">
 			<div class="form-group">
 			<button type="submit" class="btn btn-primary">Submit</button>
 			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
-			<div class="col-sm-4"></div>
+			<div class="col-lg-1"></div>
 			</div>
 	</div>
 	</div>
 
 </div>
 </div>
+<div class="col-lg-3"></div>
 </form>
 </body>
