@@ -43,12 +43,14 @@
 	.panel-primary
 	{
 		width: 85%;
+
 	}
 	
-
-
-	
-	
+	.panel-heading
+	 {
+    background-color: #5321A3;
+	}
+	-
 
 </style>
 
@@ -57,13 +59,23 @@ $(document).ready(function() {
     $("input:text").focus(function() { $(this).select(); } );
 });
 </script>
+
+<!--Disable F5 script-->
+<!--script type = "text/javascript">
+    window.onload = function () {
+        document.onkeydown = function (e) {
+            return (e.which || e.keyCode) != 116;
+        };
+    }
+</script-->
+
 <body width="90%">
 <form data-toggle="validator" role="form">
 <header style="font-weight:bold;">
    <h1><b>Bank of CET</b><small>Cetians Trust</small></h1>
 </header>
 
-<?--Start of Big grid-->
+<!--Start of Big grid-->
 
 <div class="row">
  <div class="col-lg-2"></div>
@@ -183,7 +195,7 @@ $(document).ready(function() {
 </div>
 </div>
 
-<?-Resident ->
+<!--Resident -->
 
 <div class="panel panel-primary">
 <div class="panel-heading">Residential Address</div>
@@ -224,7 +236,7 @@ $(document).ready(function() {
 </div>		
 </div>
 
-<?-Terms/conditions ->
+<!--Terms/conditions-->
 
 	<div class="panel panel-primary">
 	<div class="panel-heading">Terms And Conditions</div>
