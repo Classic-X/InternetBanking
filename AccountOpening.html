@@ -1,7 +1,5 @@
 <html>
 
-pt>
-
 <head>
   <title>Create account</title>
   <meta charset="utf-8">
@@ -54,6 +52,8 @@ $(document).ready(function() {
 	div
 	{
 		align-content:  center;
+		padding-left: 50px;
+		padding-right: 50px;
 	}
 
 </style>
@@ -65,31 +65,32 @@ $(document).ready(function() {
 
 <form class="grid-form AVAST_PAM_nonloginform">
 
-<fieldset>
-	<legend>Personal Details(Account holder)</legend>
+<div class="panel panel-default">
+  <div class="panel-heading">Personal Details</div>
+  	
 	<div data-row-span="4">
-				<div data-field-span="1" style="height: 55.2px;">
+				<div class="radio">
 					<label>Title</label>
 					<label><input name="customer-title[]" type="radio"> Mr.</label> 
 					<label><input name="customer-title[]" type="radio"> Mrs.</label>
 					<label><input name="customer-title[]" type="radio"> Ms.</label>
 				</div>
 				<div data-field-span="3" style="height: 55.2px;" class="">
-					<label>Full Name <input type="text"></input></label>
+					<label>Full Name <input type="text" class="form-control"></input></label>
 					
 				</div>
 	</div>
 	<div data-row-span="2">
 				<div data-field-span="1" style="height: 57.2px;" class="">
-					<label>Date of birth <input type="text"></label>
+					<label>Date of birth <input type="text" class="form-control"></label>
 					
 				</div>
-				<div data-field-span="1" style="height: 57.2px; width:235px;" class="">
+				<div data-field-span="1"  class="">
 					
 					<div class="form-group">
-					<label for="sel1">State :</label>
- 					<select class="form-control" id="sel1">							
-					<option>------Select-------</option>
+					<label for="sel1">State:</label>
+ 					<select class="form-control" id="sel1" title="Select" >							
+					<option >Select</option>
 					<option>ANDAMAN AND NICOBAR</option>					
 					<option>ANDHRA PRADESH</option>					
 					<option>ARUNACHAL PRADESH</option>					
@@ -128,90 +129,87 @@ $(document).ready(function() {
 
 					</select>
 					</ul>
-					</div>
-
-					
-
-					                   
+					</div>			                   
 						
 					
 				</div>
 			</div>
 			<div data-row-span="4">
 				<div data-field-span="2" data-field-error="Please enter a valid email address" style="height: 55.2px;" class="">
-					<label>E-mail <input type="text"></label>
+					<label>E-mail <input type="text" class="form-control"></label>
 					
 				</div>
 				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>Mobile No.<input type="text"></label>
+					<label>Mobile No.<input type="text" class="form-control"></label>
 					
 				</div>
 				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>Existing Bank Account No. (if any) <input type="text"></label>
+					<label>Existing Bank Account No. (if any) <input type="text" class="form-control"></label>
 					
 				</div>
 			</div>
 			<div data-row-span="2">
 				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>In case of a minor please provide details (Name of parent and natural guardian) <input type="text"></label>
+					<label>In case of a minor please provide details (Name of parent and natural guardian) <input type="text" class="form-control"></label>
 					
 				</div>
 				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>Name of father/spouse <input type="text"></label>
+					<label>Name of father/spouse <input type="text" class="form-control"></label>
 					
 				</div>
-			</div>
-</fieldset>
+		</div>
+</div>
 <br>
 
 
-	<fieldset>
-				<legend>Residential address </legend>
+	<div class="panel panel-default">
+	<div class="panel-heading">Residential Address</div>
+				
 				<div data-row-span="2">
 					<div data-field-span="1" style="height: 55.2px;" class="">
-						<label>Flat no. and building name <input type="text"></label>
+						<label>Flat no. and building name <input type="text" class="form-control"></label>
 						
 					</div>
 					<div data-field-span="1" style="height: 55.2px;" class="">
-						<label>Road no./name <input type="text"></label>
+						<label>Road no./name <input type="text" class="form-control"></label>
 						
 					</div>
 				</div>
 				<div data-row-span="4">
 					<div data-field-span="3" style="height: 55.2px;" class="">
-						<label>Area and landmark <input type="text"></label>
+						<label>Area and landmark <input type="text" class="form-control"></label>
 						
 					</div>
 					<div data-field-span="1" style="height: 55.2px;">
-						<label>City <input type="text"></label>
+						<label>City <input type="text" class="form-control"></label>
 						
 					</div>
 				</div>
 				<div data-row-span="4">
 					<div data-field-span="1" style="height: 55.2px;">
-						<label>Telephone Residence <input type="text"></label>
+						<label>Telephone Residence <input type="text" class="form-control"></label>
 						
 					</div>
 					<div data-field-span="1" style="height: 55.2px;" class="">
-						<label>Office <input type="text"></label>
+						<label>Office <input type="text" class="form-control"></label>
 						
 					</div>
 					<div data-field-span="1" style="height: 55.2px;">
-						<label>Mobile <input type="text"></label>
+						<label>Mobile <input type="text" class="form-control"></label>
 						
 					</div>
 					<div data-field-span="1" style="height: 55.2px;">
-						<label>Pin code <input type="text"></label>
+						<label>Pin code <input type="text" class="form-control"></label>
 						
 					</div>
 				</div>
 			</fieldset>
-	</fieldset>
+	</div>
 	<br>
 
 
-<fieldset>
-			<legend>Terms And Conditions</legend>
+<div class="panel panel-default">
+	<div class="panel-heading">Terms And Conditions</div>
 			<div data-row-span="1">
 				<div data-field-span="1" style="height: 60.2px;">
 					<label></label>
@@ -222,8 +220,7 @@ $(document).ready(function() {
 			<button type="submit" class="btn">Submit</button>
 			<button type="reset" class="btn">Reset</button>
 			</div>
-</fieldset>
-
+</div>
 
 
 </form>
