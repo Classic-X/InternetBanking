@@ -62,6 +62,9 @@ $(document).ready(function() {
 <header style="font-weight:bold;">
    <h1><b>Bank of CET</b><small>Cetians Trust</small></h1>
 </header>
+
+<?--Start of Big grid-->
+
 <div class="row">
  <div class="col-lg-2"></div>
 
@@ -110,7 +113,7 @@ $(document).ready(function() {
 				<div class="col-lg-2">
 				<div class="form-group">
 				<label for="mobile" class="control-label">Mobile No.</label>
-				<input type="tel" id="mobile" class="form-control" data-minlength="10" data-error="10 digts required" placeholder="XXXXXXXXXX" required>
+				<input type="tel" id="mobile" class="form-control" data-minlength="10" data-error="10 digits required" placeholder="XXXXXXXXXX" required>
 				<div class="help-block with-errors">10 digits</div>
 				</div></div>
 
@@ -189,16 +192,16 @@ $(document).ready(function() {
 			<div class="col-lg-1"></div>
 			<div class="col-lg-3">
 			<div class="form-group">
-			<label class="control-label">Flat no.& building name <input type="text" class="form-control" required=""></label>
+			<label class="control-label" id="flat">Flat no.& building name </label><input type="text" name="flat" class="form-control" required="">
 			</div></div>			
-			<div class="col-lg-3"><label>Area and landmark <input type="text" class="form-control"></label></div>
+			<div class="col-lg-3" id="areala"><label>Area and landmark </label><input type="text" name="areala"class="form-control"></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-			<label class="control-label">City <input type="text" class="form-control" required></label>
+			<label class="control-label" id="citya">City </label><input type="text" name="citya"class="form-control" required>
 			</div></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-			<label class="control-label">Pin code <input type="text" class="form-control" required></label>
+			<label class="control-label" id="pina">Pin code </label><input type="text" name="pina"class="form-control" required>
 			</div></div>
 			<div class="col-lg-1"></div>
 		</div>
@@ -206,14 +209,16 @@ $(document).ready(function() {
 			<div class="col-lg-1"></div>
 			<div class="col-lg-3">
 			<div class="form-group">
-			<label class="control-label">Road no./name <input type="text" class="form-control" required=""></label>
+			<label class="control-label" for="roadeo">Road no./name </label><input type="text" name="roadeo" class="form-control" required="">
 			</div></div>			
-			<div class="col-lg-3"><label>Telephone Residence <input type="text" class="form-control"></label></div>
-			<div class="col-lg-2"><label>Office <input type="text" class="form-control"></label></div>
+			<div class="col-lg-3"><label for="teleresi">Telephone Residence </label><input type="text" name="teleresi" class="form-control"></div>
+			<div class="col-lg-2"><label for="office">Office </label><input type="text" name="office"class="form-control"></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-			<label class="control-label">Mobile <input type="text" class="form-control" required=""></label>
-			</div></div>
+				<label for="mobile" class="control-label">Mobile No.</label>
+				<input type="tel" id="mobile" class="form-control" data-minlength="10" data-error="10 digits required" placeholder="XXXXXXXXXX" required>
+				<div class="help-block with-errors">10 digits</div>
+				</div></div>
 			<div class="col-lg-1"></div>
 		</div>	
 </div>		
