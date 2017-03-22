@@ -18,39 +18,25 @@
 	}
 	header
 	{
-		text-align: center;
+		text-align: center ;
 		
-	}
-	label
-	{
-		font-weight: bold;
-	}
-	input[type='text']
-	{
-
-	}
-	.radio-toolbar input[type="radio"]
-	{
-		
-	}
+	}	
 	.radio-toolbar label
 	{
-		
   		
   		font-size: 17px;
+
   		cursor: pointer;
 	}
 	.panel-primary
 	{
 		width: 85%;
-
-	}
-	
+	}	
 	.panel-heading
 	 {
     background-color: #5321A3;
 	}
-	-
+	
 
 </style>
 
@@ -125,7 +111,7 @@ $(document).ready(function() {
 				<div class="col-lg-2">
 				<div class="form-group">
 				<label for="mobile" class="control-label">Mobile No.</label>
-				<input type="tel" id="mobile" class="form-control" data-minlength="10" data-error="10 digits required" placeholder="XXXXXXXXXX" required>
+				<input type="tel" id="mobile" class="form-control" pattern="[0-9]{10} data-minlength="10" data-error="Invalid Number." placeholder="XXXXXXXXXX" required>
 				<div class="help-block with-errors">10 digits</div>
 				</div></div>
 
@@ -137,7 +123,7 @@ $(document).ready(function() {
 					<div class="form-group">
 					<label for="stateind" class="control-label">State</label>
  					<select class="form-control" id="stateind" required>							
-					<option>Select</option>
+					<option selected hidden>Select</option>
 					<option>ANDAMAN AND NICOBAR</option>					
 					<option>ANDHRA PRADESH</option>					
 					<option>ARUNACHAL PRADESH</option>					
@@ -207,6 +193,7 @@ $(document).ready(function() {
 					<div class="form-group">
 					<label for="addt" class="control-label">Address Type</label>
  					<select class="form-control" id="addt" required>
+ 					<option selected hidden>Select</option>
  					<option>Residential</option>
  					<option>Bussiness</option>
  					<option>Registered Office</option>
@@ -235,14 +222,15 @@ $(document).ready(function() {
 			</div></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-			<label class="control-label" id="pina">Pin code </label><input type="text" name="pina"class="form-control" required>
+			<label class="control-label" id="pina">Pin code </label><input type="text" name="pina" pattern="[0-9]{6}" class="form-control" data-minlength="6" data-error="Invalid Pincode" placeholder="XXXXXX" required>
+			<div class="help-block with-errors">6 digits</div>
 			</div></div>			
 			<div class="col-lg-2"><label for="teleresi">Telephone Residence </label><input type="text" name="teleresi" class="form-control"></div>
 			<div class="col-lg-2"><label for="office">Office </label><input type="text" name="office"class="form-control"></div>
 			<div class="col-lg-2">
 			<div class="form-group">
 				<label for="mobile" class="control-label">Mobile No.</label>
-				<input type="tel" id="mobile" class="form-control" data-minlength="10" data-error="10 digits required" placeholder="XXXXXXXXXX" required>
+				<input type="tel" id="mobile" class="form-control" pattern="[0-9]{10} data-minlength="10" data-error="10 digits required" placeholder="XXXXXXXXXX" required>
 				<div class="help-block with-errors">10 digits</div>
 				</div></div>
 			<div class="col-lg-1"></div>
