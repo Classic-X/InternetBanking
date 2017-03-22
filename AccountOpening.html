@@ -9,6 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="AccountOpening/accountopening*.css"> 
   <script type="text/javascript" src="AccountOpening/gridforms.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
 </head>
 <style type="text/css">
 	div
@@ -26,7 +27,7 @@
 	}
 	input[type='text']
 	{
-		
+
 	}
 	.radio-toolbar input[type="radio"]
 	{
@@ -51,9 +52,9 @@ $(document).ready(function() {
 });
 </script>
 <body width="90%">
-<form>
+<form data-toggle="validator" role="form">
 <header style="font-weight:bold;">
-   <h1><b>Bank of CET</b></h1>
+   <h1><b>Bank of CET</b><small>Cetians Trust</small></h1>
 </header>
 <div class="row">
  <div class="col-md-1"></div>
@@ -64,19 +65,31 @@ $(document).ready(function() {
  <div class="panel-body">
   			<div class="row">
   				<div class="col-sm-2">
-  					<label><b>Title</b></label>	
+  					<label><b>Title</b></label>
+  					<div class="form-group">	
 					<div class="radio-toolbar">						
-						<label><input name="customer-title[]" type="radio"> Mr.</label> 
-						<label><input name="customer-title[]" type="radio"> Mrs.</label>
-						<label><input name="customer-title[]" type="radio"> Ms.</label>
-					</div>
+						<div class="radio">
+						<label><input name="customer-title[]" type="radio" required> Mr.</label>
+						<label><input name="customer-title[]" type="radio" required> Mrs.</label>
+						<label><input name="customer-title[]" type="radio" required> Ms.</label>
+						</div>
+					</div></div>
 				</div>
-				<div class="col-sm-2"><label>Full Name <input type="text" class="form-control"></input></label></div>	
-				<div class="col-sm-2"><label>Date of birth <input type="date" class="form-control"></label></div>
+
+				<div class="col-sm-2"><div class="form-group">
+    					<label for="inputName" class="control-label">Name</label>
+    					<input type="text" class="form-control" id="inputName" placeholder="China man" required>
+  				</div></div>
+
+				<div class="col-sm-2"><div class="form-group">
+				<label for="DOB" class="control-label">Date of birth </label>
+				<input type="date" class="form-control" id="DOB" required>
+				</div></div>
+
 				<div class="col-sm-2">					
 					<div class="form-group">
-					<label>State
- 					<select class="form-control">							
+					<label for="stateind" class="control-label">State</label>
+ 					<select class="form-control" id="stateind" required>							
 					<option>Select</option>
 					<option>ANDAMAN AND NICOBAR</option>					
 					<option>ANDHRA PRADESH</option>					
@@ -113,19 +126,46 @@ $(document).ready(function() {
 					<option>UTTAR PRADESH</option>					
 					<option>UTTARANCHAL</option>					
 					<option>WEST BENGAL</option>
-					</select>
-					</label>					
+					</select>					
 					</div>  
 				</div>
 			</div>			
 			<div class="row">
-				<div class="col-sm-2"><label>E-mail <input type="email" class="form-control"></label></div>
-				<div class="col-sm-2"><label>Mobile No.<input type="text" class="form-control"></label></div>
-				<div class="col-sm-4"><label>Name of father/spouse <input type="text" class="form-control"></label></div>
+				<div class="col-sm-2">
+
+				<div class="form-group">
+    				<label for="inputEmail" class="control-label">Email</label>
+   					<input type="email" class="form-control" id="inputEmail" placeholder="johhny@pizza.com" data-error="Email address is invalid" required>
+   					<div class="help-block with-errors"></div>
+				</div>
+					
+				</div>
+				<div class="col-sm-2">
+				<div class="form-group">
+				<label for="mobile" class="control-label">Mobile No.</label>
+				<input type="tel" id="mobile" class="form-control" data-minlength="10" data-error="10 digts required" placeholder="XXXXXXXXXX" required>
+				<div class="help-block with-errors">10 digits</div>
+
+				</div></div>
+
+				<div class="col-sm-4">
+				<div class="form-group">
+				<label for="father" class="control-label">Name of father/spouse </label>
+				<input type="text" id="father" class="form-control" required>
+				
+				</div></div>
 			</div>
+
 			<div class="row">
-				<div class="col-sm-4"><label>In case of a minor please provide details (Name of parent and natural guardian) <input type="text" class="form-control"></label></div>
-				<div class="col-sm-2"><label>Existing Bank Account No. (if any) <input type="text" class="form-control"></label></div>				
+				<div class="col-sm-4">
+				<label for="guardian">Name of parent and natural guardian </label>
+				<input type="text" class="form-control" id="guardian">
+				<div class="help-block with-errors">In case of a minor please provide details</div>
+				</div>
+				<div class="col-sm-4">
+				<label for="precustomers">Existing Bank Account No. (if any) </label>
+				<input type="text" class="form-control" id="precustomers">
+				</div>				
 			</div>		
 </div>
 </div>
@@ -155,13 +195,26 @@ $(document).ready(function() {
 	<div class="panel panel-primary">
 	<div class="panel-heading">Terms And Conditions</div>
 	<div class="panel-body">
-			<div class="checkbox">
-			<label><input type="checkbox"> I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.</label>
-			</div>
+			<div class="form-group">
+    		<div class="checkbox">
+      			<label>
+      			<input type="checkbox" id="terms" data-error="Please Accept the terms and conditions." required>
+        		I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.
+      			</label>
+      		<div class="help-block with-errors"></div>
+    		</div>
+  			</div>
 
-			<div >
+
+  			<div class="row">
+  			<div class="col-sm-4"></div>
+  			<div class="col-sm-4">
+			<div class="form-group">
 			<button type="submit" class="btn btn-primary">Submit</button>
 			<button type="reset" class="btn btn-primary">Reset</button>
+			</div>
+			</div>
+			<div class="col-sm-4"></div>
 			</div>
 	</div>
 	</div>
