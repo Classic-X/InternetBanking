@@ -22,16 +22,19 @@ $(document).ready(function() {
    <h1>Bank of CET</h1>
 </header>
   <div class="panel panel-default">
-  <div class="panel-heading">Personal Details</div>	
-				<div class="radio">
-					<label>Title</label>
-					<label><input name="customer-title[]" type="radio"> Mr.</label> 
-					<label><input name="customer-title[]" type="radio"> Mrs.</label>
-					<label><input name="customer-title[]" type="radio"> Ms.</label>
+  <div class="panel-heading">Personal Details</div>
+  			<div class="row">
+  				<div class="col-sm-2">	
+					<div class="radio">
+						<label>Title</label>
+						<label><input name="customer-title[]" type="radio"> Mr.</label> 
+						<label><input name="customer-title[]" type="radio"> Mrs.</label>
+						<label><input name="customer-title[]" type="radio"> Ms.</label>
+					</div>
 				</div>
-				<div ><label>Full Name <input type="text" class="form-control"></input></label></div>	
-				<div><label>Date of birth <input type="text" class="form-control"></label></div>
-				<div >					
+				<div class="col-sm-2"><label>Full Name <input type="text" class="form-control"></input></label></div>	
+				<div class="col-sm-1"><label>Date of birth <input type="text" class="form-control"></label></div>
+				<div class="col-sm-2">					
 					<div class="form-group">
 					<label for="sel1">State:</label>
  					<select class="form-control" id="sel1" title="Select" >							
@@ -74,30 +77,36 @@ $(document).ready(function() {
 					</select>					
 					</div>  
 				</div>
-			
-			<div >
-				<div ><label>E-mail <input type="text" class="form-control"></label></div>
-				<div><label>Mobile No.<input type="text" class="form-control"></label></div>
-				<div ><label>Existing Bank Account No. (if any) <input type="text" class="form-control"></label></div>
+			</div>			
+			<div class="row">
+				<div class="col-sm-2"><label>E-mail <input type="text" class="form-control"></label></div>
+				<div class="col-sm-2"><label>Mobile No.<input type="text" class="form-control"></label></div>
+				<div class="col-sm-2"><label>Existing Bank Account No. (if any) <input type="text" class="form-control"></label></div>
 			</div>
-			<div>
-				<div><label>In case of a minor please provide details (Name of parent and natural guardian) <input type="text" class="form-control"></label></div>
-				<div ><label>Name of father/spouse <input type="text" class="form-control"></label></div>
+			<div class="row">
+				<div class="col-sm-4"><label>In case of a minor please provide details (Name of parent and natural guardian) <input type="text" class="form-control"></label></div>
+				<div class="col-sm-4"><label>Name of father/spouse <input type="text" class="form-control"></label></div>
 			</div>
+
+		
 </div>
 
 <?-Resident ->
 
 <div class="panel panel-default">
 <div class="panel-heading">Residential Address</div>
-			<div><label>Flat no. and building name <input type="text" class="form-control"></label></div>
-			<div ><label>Road no./name <input type="text" class="form-control"></label></div>
-			<div ><label>Area and landmark <input type="text" class="form-control"></label></div>
-			<div ><label>City <input type="text" class="form-control"></label></div>
-			<div ><label>Telephone Residence <input type="text" class="form-control"></label></div>
-			<div ><label>Office <input type="text" class="form-control"></label></div>
-			<div ><label>Mobile <input type="text" class="form-control"></label></div>
-			<div ><label>Pin code <input type="text" class="form-control"></label></div>
+		<div class="row">
+			<div class="col-sm-2"><label>Flat no. and building name <input type="text" class="form-control"></label></div>
+			<div class="col-sm-2"><label>Road no./name <input type="text" class="form-control"></label></div>
+			<div class="col-sm-2"><label>Area and landmark <input type="text" class="form-control"></label></div>
+			<div class="col-sm-2"><label>City <input type="text" class="form-control"></label></div>
+		</div>
+		<div class="row">			
+			<div class="col-sm-2"><label>Pin code <input type="text" class="form-control"></label></div>
+			<div class="col-sm-2"><label>Telephone Residence <input type="text" class="form-control"></label></div>
+			<div class="col-sm-2"><label>Office <input type="text" class="form-control"></label></div>
+			<div class="col-sm-2"><label>Mobile <input type="text" class="form-control"></label></div>
+		</div>			
 </div>
 
 <?-Terms/conditions ->
