@@ -1,6 +1,26 @@
 <html>
-<link rel="stylesheet" type="text/css" href="AccountOpening/accountopening*.css"> 
-<script type="text/javascript" src="AccountOpening/gridforms.js"></script>
+
+pt>
+
+<head>
+  <title>Create account</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="AccountOpening/accountopening*.css"> 
+	<script type="text/javascript" src="AccountOpening/gridforms.js"></script>
+</head>
+
+<script>
+$(document).ready(function() {
+    $("input:text").focus(function() { $(this).select(); } );
+});
+</script>
+
+
 <style type="text/css">
 	footer,header{
 		padding: 3px;
@@ -17,10 +37,15 @@
 		
 		
 	}
+
 	legend
 	{
 		font-size: 25px;
 		color: darkblue;
+	}
+	input[type=text],label
+	{
+		float:middle;
 	}
 	div
 	{
@@ -28,7 +53,7 @@
 	}
 
 </style>
-<title>Create account</title>
+
 <body>
 <header>
    <h1>Bank of CET</h1>
@@ -181,7 +206,7 @@
 				</div>
 			</div>
 			<div data-row-span="1" align="center">
-			<label><input type="submit" name="Submit form"></label>
+			<button type="submit" class="btn">Submit</button>
 			</div>
 </fieldset>
 
