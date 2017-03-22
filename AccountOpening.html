@@ -195,13 +195,26 @@ $(document).ready(function() {
 </div>
 </div>
 
-<!--Resident -->
+<!--Address -->
 
 <div class="panel panel-primary">
-<div class="panel-heading">Residential Address</div>
+<div class="panel-heading">Permanent Address</div>
 <div class="panel-body">
 		<div class="row">
 			<div class="col-lg-1"></div>
+
+			<div class="col-lg-2">					
+					<div class="form-group">
+					<label for="addt" class="control-label">Address Type</label>
+ 					<select class="form-control" id="addt" required>
+ 					<option>Residential</option>
+ 					<option>Bussiness</option>
+ 					<option>Registered Office</option>
+ 					<option>Residential or Bussiness</option>
+ 					</select>
+ 					</div>
+ 					</div>
+
 			<div class="col-lg-3">
 			<div class="form-group">
 			<label class="control-label" id="flat">Flat no.& building name </label><input type="text" name="flat" class="form-control" required="">
@@ -211,19 +224,20 @@ $(document).ready(function() {
 			<div class="form-group">
 			<label class="control-label" id="citya">City </label><input type="text" name="citya"class="form-control" required>
 			</div></div>
-			<div class="col-lg-2">
-			<div class="form-group">
-			<label class="control-label" id="pina">Pin code </label><input type="text" name="pina"class="form-control" required>
-			</div></div>
+			
 			<div class="col-lg-1"></div>
 		</div>
 		<div class="row">	
 			<div class="col-lg-1"></div>
-			<div class="col-lg-3">
+			<div class="col-lg-2">
 			<div class="form-group">
 			<label class="control-label" for="roadeo">Road no./name </label><input type="text" name="roadeo" class="form-control" required="">
+			</div></div>
+			<div class="col-lg-2">
+			<div class="form-group">
+			<label class="control-label" id="pina">Pin code </label><input type="text" name="pina"class="form-control" required>
 			</div></div>			
-			<div class="col-lg-3"><label for="teleresi">Telephone Residence </label><input type="text" name="teleresi" class="form-control"></div>
+			<div class="col-lg-2"><label for="teleresi">Telephone Residence </label><input type="text" name="teleresi" class="form-control"></div>
 			<div class="col-lg-2"><label for="office">Office </label><input type="text" name="office"class="form-control"></div>
 			<div class="col-lg-2">
 			<div class="form-group">
