@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <link rel="stylesheet" type="text/css" href="AccountOpening/accountopening*.css"> 
-	<script type="text/javascript" src="AccountOpening/gridforms.js"></script>
+  <script type="text/javascript" src="AccountOpening/gridforms.js"></script>
 </head>
 
 <script>
@@ -17,76 +16,22 @@ $(document).ready(function() {
     $("input:text").focus(function() { $(this).select(); } );
 });
 </script>
-
-
-<style type="text/css">
-	footer,header{
-		padding: 3px;
-		text-align: center;
-		background-color: lightblue;
-	}
-	body
-	{
-		background-color: #C6E0FF;
-	}
-	.nav {
-    max-height:300px;
-    overflow-y:auto;  
-	}
-	fieldset
-	{		
-		
-		
-		
-	}
-
-	legend
-	{
-		font-size: 25px;
-		color: darkblue;
-	}
-	input[type=text],label
-	{
-		float:middle;
-	}
-	div
-	{
-		align-content:  center;
-		padding-left: 50px;
-		padding-right: 50px;
-	}
-
-</style>
-
 <body>
+<form>
 <header>
    <h1>Bank of CET</h1>
 </header>
-
-<form class="grid-form AVAST_PAM_nonloginform">
-
-<div class="panel panel-default">
-  <div class="panel-heading">Personal Details</div>
-  	
-	<div data-row-span="4">
+  <div class="panel panel-default">
+  <div class="panel-heading">Personal Details</div>	
 				<div class="radio">
 					<label>Title</label>
 					<label><input name="customer-title[]" type="radio"> Mr.</label> 
 					<label><input name="customer-title[]" type="radio"> Mrs.</label>
 					<label><input name="customer-title[]" type="radio"> Ms.</label>
 				</div>
-				<div data-field-span="3" style="height: 55.2px;" class="">
-					<label>Full Name <input type="text" class="form-control"></input></label>
-					
-				</div>
-	</div>
-	<div data-row-span="2">
-				<div data-field-span="1" style="height: 57.2px;" class="">
-					<label>Date of birth <input type="text" class="form-control"></label>
-					
-				</div>
-				<div data-field-span="1"  class="">
-					
+				<div ><label>Full Name <input type="text" class="form-control"></input></label></div>	
+				<div><label>Date of birth <input type="text" class="form-control"></label></div>
+				<div >					
 					<div class="form-group">
 					<label for="sel1">State:</label>
  					<select class="form-control" id="sel1" title="Select" >							
@@ -126,105 +71,50 @@ $(document).ready(function() {
 					<option>UTTAR PRADESH</option>					
 					<option>UTTARANCHAL</option>					
 					<option>WEST BENGAL</option>
-
-					</select>
-					</ul>
-					</div>			                   
-						
-					
+					</select>					
+					</div>  
 				</div>
+			
+			<div >
+				<div ><label>E-mail <input type="text" class="form-control"></label></div>
+				<div><label>Mobile No.<input type="text" class="form-control"></label></div>
+				<div ><label>Existing Bank Account No. (if any) <input type="text" class="form-control"></label></div>
 			</div>
-			<div data-row-span="4">
-				<div data-field-span="2" data-field-error="Please enter a valid email address" style="height: 55.2px;" class="">
-					<label>E-mail <input type="text" class="form-control"></label>
-					
-				</div>
-				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>Mobile No.<input type="text" class="form-control"></label>
-					
-				</div>
-				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>Existing Bank Account No. (if any) <input type="text" class="form-control"></label>
-					
-				</div>
+			<div>
+				<div><label>In case of a minor please provide details (Name of parent and natural guardian) <input type="text" class="form-control"></label></div>
+				<div ><label>Name of father/spouse <input type="text" class="form-control"></label></div>
 			</div>
-			<div data-row-span="2">
-				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>In case of a minor please provide details (Name of parent and natural guardian) <input type="text" class="form-control"></label>
-					
-				</div>
-				<div data-field-span="1" style="height: 55.2px;" class="">
-					<label>Name of father/spouse <input type="text" class="form-control"></label>
-					
-				</div>
-		</div>
 </div>
-<br>
 
-
-	<div class="panel panel-default">
-	<div class="panel-heading">Residential Address</div>
-				
-				<div data-row-span="2">
-					<div data-field-span="1" style="height: 55.2px;" class="">
-						<label>Flat no. and building name <input type="text" class="form-control"></label>
-						
-					</div>
-					<div data-field-span="1" style="height: 55.2px;" class="">
-						<label>Road no./name <input type="text" class="form-control"></label>
-						
-					</div>
-				</div>
-				<div data-row-span="4">
-					<div data-field-span="3" style="height: 55.2px;" class="">
-						<label>Area and landmark <input type="text" class="form-control"></label>
-						
-					</div>
-					<div data-field-span="1" style="height: 55.2px;">
-						<label>City <input type="text" class="form-control"></label>
-						
-					</div>
-				</div>
-				<div data-row-span="4">
-					<div data-field-span="1" style="height: 55.2px;">
-						<label>Telephone Residence <input type="text" class="form-control"></label>
-						
-					</div>
-					<div data-field-span="1" style="height: 55.2px;" class="">
-						<label>Office <input type="text" class="form-control"></label>
-						
-					</div>
-					<div data-field-span="1" style="height: 55.2px;">
-						<label>Mobile <input type="text" class="form-control"></label>
-						
-					</div>
-					<div data-field-span="1" style="height: 55.2px;">
-						<label>Pin code <input type="text" class="form-control"></label>
-						
-					</div>
-				</div>
-			</fieldset>
-	</div>
-	<br>
-
+<?-Resident ->
 
 <div class="panel panel-default">
-	<div class="panel-heading">Terms And Conditions</div>
-			<div data-row-span="1">
-				<div data-field-span="1" style="height: 60.2px;">
-					<label></label>
-					<label><input type="checkbox"> I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.</label>
-				</div>
+<div class="panel-heading">Residential Address</div>
+			<div><label>Flat no. and building name <input type="text" class="form-control"></label></div>
+			<div ><label>Road no./name <input type="text" class="form-control"></label></div>
+			<div ><label>Area and landmark <input type="text" class="form-control"></label></div>
+			<div ><label>City <input type="text" class="form-control"></label></div>
+			<div ><label>Telephone Residence <input type="text" class="form-control"></label></div>
+			<div ><label>Office <input type="text" class="form-control"></label></div>
+			<div ><label>Mobile <input type="text" class="form-control"></label></div>
+			<div ><label>Pin code <input type="text" class="form-control"></label></div>
+</div>
+
+<?-Terms/conditions ->
+
+<div class="panel panel-default">
+<div class="panel-heading">Terms And Conditions</div>
+			<div class="checkbox">
+			<label><input type="checkbox"> I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.</label>
 			</div>
-			<div data-row-span="1" align="center">
+
+			<div >
 			<button type="submit" class="btn">Submit</button>
 			<button type="reset" class="btn">Reset</button>
 			</div>
 </div>
 
 
-</form>
 
-<footer>Bank of CET @2017</footer>
+</form>
 </body>
-</html>
