@@ -30,7 +30,7 @@
 	}
 	.panel-primary
 	{
-		width: 85%;
+		width: 100%;
 	}	
 	.panel-heading
 	 {
@@ -61,13 +61,25 @@ $(document).ready(function() {
    <h1><b>Bank of CET</b><small>Cetians Trust</small></h1>
 </header>
 
+
+
 <!--Start of Big grid-->
+<div class="container">
 
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Details</a></li>
+  <li><a data-toggle="tab" href="#ident">Identification</a></li>
+  <li><a data-toggle="tab" href="#finaltab">Final</a></li>
+</ul>
+<div class="tab-content">
+
+
+<div id="home" class="tab-pane fade in active">
 <div class="row">
- <div class="col-lg-2"></div>
-
- <div class="col-lg-8">
+ <div align="center">
  <div class="panel panel-primary">
+ <div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong> The (*) marked fields are mandatory.</div>
+ <div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong> For opening account of minors, where proof of Identity / Address is not available, the same may be provided by father or mother and Natural Guardian</div>
  <div class="panel-heading">Personal Details</div>
  <div class="panel-body">
   			<div class="row">
@@ -85,13 +97,13 @@ $(document).ready(function() {
 				</div>
 
 				<div class="col-lg-3"><div class="form-group">
-    					<label for="inputName" class="control-label">Name</label>
-    					<input type="text" class="form-control" id="inputName" placeholder="China man" required>
+    					<label for="inputName" class="control-label">Name*</label>
+    					<input type="text" class="form-control" id="inputName" placeholder="China man" autofocus required>
   				</div></div>
 
   				<div class="col-lg-4">
 				<div class="form-group">
-				<label for="father" class="control-label">Name of father/spouse </label>
+				<label for="father" class="control-label">Name of father/spouse* </label>
 				<input type="text" id="father" class="form-control" required>				
 				</div></div>
 				
@@ -100,9 +112,9 @@ $(document).ready(function() {
 			<div class="row">
 				<div class="col-lg-1"></div>
 
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 				<div class="form-group">
-    				<label for="inputEmail" class="control-label">Email</label>
+    				<label for="inputEmail" class="control-label">Email*</label>
    					<input type="email" class="form-control" id="inputEmail" placeholder="johhny@pizza.com" data-error="Email address is invalid" required>
    					<div class="help-block with-errors"></div>
 				</div>
@@ -110,55 +122,55 @@ $(document).ready(function() {
 				</div>
 				<div class="col-lg-2">
 				<div class="form-group">
-				<label for="mobile" class="control-label">Mobile No.</label>
-				<input type="tel" id="mobile" class="form-control" pattern="[0-9]{10} data-minlength="10" data-error="Invalid Number." placeholder="XXXXXXXXXX" required>
+				<label for="mobile" class="control-label">Mobile No.*</label>
+				<input type="tel" id="mobile" class="form-control" pattern="[0-9]{10}"" data-minlength="10" data-error="Invalid Number." placeholder="XXXXXXXXXX" required>
 				<div class="help-block with-errors">10 digits</div>
 				</div></div>
 
-				<div class="col-lg-2"><div class="form-group">
-				<label for="DOB" class="control-label">Date of birth </label>
+				<div class="col-lg-3"><div class="form-group">
+				<label for="DOB" class="control-label">Date of birth* </label>
 				<input type="date" class="form-control" id="DOB" required>
 				</div></div>
 				<div class="col-lg-2">					
 					<div class="form-group">
-					<label for="stateind" class="control-label">State</label>
+					<label for="stateind" class="control-label">State*</label>
  					<select class="form-control" id="stateind" required>							
-					<option selected hidden>Select</option>
-					<option>ANDAMAN AND NICOBAR</option>					
-					<option>ANDHRA PRADESH</option>					
-					<option>ARUNACHAL PRADESH</option>					
-					<option>ASSAM</option>					
-					<option>BIHAR</option>					
-					<option>CHANDIGARH</option>					
-					<option>CHATTISGARH</option>					
-					<option>DADRA AND NAGAR HAVELI</option>					
-					<option>DAMAN AND DIU</option>					
-					<option>DELHI</option>					
-					<option>GOA</option>					
-					<option>GUJARAT</option>					
-					<option>HARYANA</option>					
-					<option>HIMACHAL PRADESH</option>					
-					<option>JAMMU AND KASHMIR</option>					
-					<option>JHARKHAND</option>					
-					<option>KARNATAKA</option>					
-					<option>KERALA</option>					
-					<option>LAKSHADWEEP</option>					
-					<option>MADHYA PRADESH</option>					
-					<option>MAHARASHTRA</option>					
-					<option>MANIPUR</option>					
-					<option>MEGHALAYA</option>					
-					<option>MIZORAM</option>					
-					<option>NAGALAND</option>					
-					<option>ORISSA</option>					
-					<option>PONDICHERRY</option>					
-					<option>PUNJAB</option>					
-					<option>RAJASTHAN</option>					
-					<option>SIKKIM</option>					
-					<option>TAMILNADU</option>					
-					<option>TRIPURA</option>					
-					<option>UTTAR PRADESH</option>					
-					<option>UTTARANCHAL</option>					
-					<option>WEST BENGAL</option>
+					<option value="">None</option>
+					<option value="ANDAMAN AND NICOBAR"		>ANDAMAN AND NICOBAR</option>					
+					<option value="ANDHRA PRADESH"			>ANDHRA PRADESH</option>					
+					<option value="ARUNACHAL PRADESH"		>ARUNACHAL PRADESH</option>					
+					<option value="ASSAM"					>ASSAM</option>					
+					<option value="BIHAR"					>BIHAR</option>					
+					<option value="CHANDIGARH"				>CHANDIGARH</option>					
+					<option value="CHATTISGARH"				>CHATTISGARH</option>					
+					<option value="DADRA AND NAGAR HAVELI"	>DADRA AND NAGAR HAVELI</option>					
+					<option value="DAMAN AND DIU"			>DAMAN AND DIU</option>					
+					<option value="DELHI"					>DELHI</option>					
+					<option value="GOA"						>GOA</option>					
+					<option value="GUJARAT"					>GUJARAT</option>					
+					<option value="HARYANA"					>HARYANA</option>					
+					<option value="HIMACHAL PRADESH"		>HIMACHAL PRADESH</option>					
+					<option value="JAMMU AND KASHMIR"		>JAMMU AND KASHMIR</option>					
+					<option value="JHARKHAND"				>JHARKHAND</option>					
+					<option value="KARNATAKA"				>KARNATAKA</option>					
+					<option value="KERALA"					>KERALA</option>					
+					<option value="LAKSHADWEEP"				>LAKSHADWEEP</option>					
+					<option value="MADHYA PRADESH"			>MADHYA PRADESH</option>					
+					<option value="MAHARASHTRA"				>MAHARASHTRA</option>					
+					<option value="MANIPUR"					>MANIPUR</option>					
+					<option value="MEGHALAYA"				>MEGHALAYA</option>					
+					<option value="MIZORAM"					>MIZORAM</option>					
+					<option value="NAGALAND"				>NAGALAND</option>					
+					<option value="ORISSA"					>ORISSA</option>					
+					<option value="PONDICHERRY"				>PONDICHERRY</option>					
+					<option value="PUNJAB"					>PUNJAB</option>					
+					<option value="RAJASTHAN"				>RAJASTHAN</option>					
+					<option value="SIKKIM"					>SIKKIM</option>					
+					<option value="TAMILNADU"				>TAMILNADU</option>					
+					<option value="TRIPURA"					>TRIPURA</option>					
+					<option value="UTTAR PRADESH"			>UTTAR PRADESH</option>					
+					<option value="UTTARANCHAL"				>UTTARANCHAL</option>					
+					<option value="WEST BENGAL">WEST BENGAL</option>
 					</select>					
 					</div>  
 				</div>				
@@ -191,9 +203,9 @@ $(document).ready(function() {
 
 			<div class="col-lg-2">					
 					<div class="form-group">
-					<label for="addt" class="control-label">Address Type</label>
+					<label for="addt" class="control-label">Address Type*</label>
  					<select class="form-control" id="addt" required>
- 					<option selected hidden>Select</option>
+ 					<option value="">Select</option>
  					<option>Residential</option>
  					<option>Bussiness</option>
  					<option>Registered Office</option>
@@ -204,12 +216,12 @@ $(document).ready(function() {
 
 			<div class="col-lg-3">
 			<div class="form-group">
-			<label class="control-label" id="flat">Flat no.& building name </label><input type="text" name="flat" class="form-control" required="">
+			<label class="control-label" id="flat">Flat no.& building name* </label><input type="text" name="flat" class="form-control" required="">
 			</div></div>			
 			<div class="col-lg-3" id="areala"><label>Area and landmark </label><input type="text" name="areala"class="form-control"></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-			<label class="control-label" id="citya">City </label><input type="text" name="citya"class="form-control" required>
+			<label class="control-label" id="citya">City* </label><input type="text" name="citya"class="form-control" required>
 			</div></div>
 			
 			<div class="col-lg-1"></div>
@@ -218,25 +230,27 @@ $(document).ready(function() {
 			<div class="col-lg-1"></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-			<label class="control-label" for="roadeo">Road no./name </label><input type="text" name="roadeo" class="form-control" required="">
+			<label class="control-label" for="roadeo">Road no./name* </label><input type="text" name="roadeo" class="form-control" required="">
 			</div></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-			<label class="control-label" id="pina">Pin code </label><input type="text" name="pina" pattern="[0-9]{6}" class="form-control" data-minlength="6" data-error="Invalid Pincode" placeholder="XXXXXX" required>
+			<label class="control-label" id="pina">Pin code* </label><input type="text" name="pina" pattern="[0-9]{6}" class="form-control" data-minlength="6" data-error="Invalid Pincode" placeholder="XXXXXX" required>
 			<div class="help-block with-errors">6 digits</div>
 			</div></div>			
-			<div class="col-lg-2"><label for="teleresi">Telephone Residence </label><input type="text" name="teleresi" class="form-control"></div>
+			<div class="col-lg-2"><label for="teleresi">Telephone </label><input type="text" name="teleresi" class="form-control"></div>
 			<div class="col-lg-2"><label for="office">Office </label><input type="text" name="office"class="form-control"></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-				<label for="mobile" class="control-label">Mobile No.</label>
-				<input type="tel" id="mobile" class="form-control" pattern="[0-9]{10} data-minlength="10" data-error="10 digits required" placeholder="XXXXXXXXXX" required>
+				<label for="mobile" class="control-label">Mobile No.*</label>
+				<input type="text" id="mobile" class="form-control" pattern="[0-9]{10}" data-minlength="10" data-error="Invalid number" placeholder="XXXXXXXXXX" required>
 				<div class="help-block with-errors">10 digits</div>
 				</div></div>
 			<div class="col-lg-1"></div>
 		</div>	
 </div>		
 </div>
+
+
 
 <!--Terms/conditions-->
 
@@ -261,20 +275,45 @@ $(document).ready(function() {
 
 
   			<div class="row">
-  			<div class="col-lg-5"></div>
-  			<div class="col-lg-4">
+  			
+  			<div  align="center">
 			<div class="form-group">
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">Next</button>
 			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
-			<div class="col-lg-1"></div>
+
+			
 			</div>
 	</div>
 	</div>
 
+
+</div>
+
+</div></div>
+
+
+<!--Start of tab2-->
+<div id="ident" class="tab-pane fade">
+	<div  align="center">
+	<div class="panel panel-primary">
+	<div class="panel-heading">Terms And Conditions</div>
+	<div class="panel-body">
+
+
+	</div></div></div>
+
+</div>
+<!--End of tab2-->
+
+<!--Start of tabfinal-->
+<div id="finaltab" class="tab-pane fade">
+
+</div>
+<!--End of tabfinal-->
+
 </div>
 </div>
-<div class="col-lg-3"></div>
 </form>
 </body>
