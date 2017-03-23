@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="AccountOpening/accountopening*.css"> 
-  <script type="text/javascript" src="AccountOpening/gridforms.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
-  <script src="http://www.jasny.net/bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+  <!--Jasny Bootstrap-->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 </head>
 <style type="text/css">
 	div
@@ -390,10 +390,7 @@ $(document).ready(function() {
 	<div class="panel-body">
 
 	<div class="fileinput fileinput-new" data-provides="fileinput">
-  	<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-    <img data-src="holder.js/100%x100%" alt="...">
-  	</div>
-  	<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+  	<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
   	<div>
     <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
     <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
@@ -404,11 +401,12 @@ $(document).ready(function() {
 
 	</div>
 
-</div>
+</div> 
 <!--End of tab2-->
 
 <!--Start of tabfinal-->
 <div id="finaltab" class="tab-pane fade">
+
 		
 </div>
 <!--End of tabfinal-->
