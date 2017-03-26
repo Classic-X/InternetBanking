@@ -67,8 +67,8 @@
     }
 </script-->
 
-<body>
-<form data-toggle="validator"  role="form">
+<body >
+<form data-toggle="validator"  role="form" name="accreate">
 <header style="font-weight:bold;">
    <h1 id="top"><b>Bank of CET</b><small>Cetians Trust</small></h1>
 </header>
@@ -76,7 +76,7 @@
 
 
 <!--Start of Big grid-->
-<div class="container">
+<div class="container" >
 
 <ul class="nav nav-tabs" id="createNotTab">
   <li class="active"><a data-toggle="tab" href="#home">Details</a></li>
@@ -340,7 +340,7 @@
   			<div class="row">
   			<div  align="center">  			
 			<div class="form-group">	
- 			<button class="btn btn-info prevtab" type="button" id="btn12" onclick="return showNext();">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
+ 			<button class="btn btn-info prevtab"  onclick="return showNext();">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
 			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
@@ -366,9 +366,7 @@
 		<span class="btn btn-info btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..." accept="image/*"  id="bean"></span>
     	<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
     	<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 140px; height: 180px;"></div>
-    	</div></div>
-
-    	<div class="fileinput-preview thumbnail" id="bean" data-trigger="fileinput" style="width: 140px; height: 180px;"></div>
+    	</div></div>    	
 
     	<div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong>Select a Signature with proper dimensions (200x60)    </div><br>
   		<div class="row" style="align-content:right">
@@ -506,6 +504,10 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Confirm Details</div>
             <div class="panel-body" style="padding-left: 10%;padding-right: 10%;">
+            <div id="messages" class="hide" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div id="messages_content"></div>
+            </div>
                 <table class="table">
                     <tr>
                         <h2>Personal Details</h2></tr>
@@ -806,12 +808,8 @@ function fetchdetails() {
 
 }
 </script>
-<script>
-	function bu
-	{
-		
-	}
-</script>)
+
+
 <!--Scripts-End-->
 
 </form>
