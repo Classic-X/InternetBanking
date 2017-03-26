@@ -69,10 +69,10 @@
 <!--Start of Big grid-->
 <div class="container">
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs" id="createNotTab">
   <li class="active"><a data-toggle="tab" href="#home">Details</a></li>
-  <li><a data-toggle="tab" href="#ident">Additional Details</a></li>
-  <li><a data-toggle="tab" href="#finaltab">Confirmation</a></li>
+  <li class="disabled"><a data-toggle="" href="#ident">Additional Details</a></li>
+  <li class="disabled"> <a data-toggle="" href="#finaltab">Confirmation</a></li>
 </ul>
 			
 <div class="tab-content">
@@ -320,8 +320,8 @@
   			<div class="row">
   			<div  align="center">
 			<div class="form-group">
-			<a class="btn btn-primary btnNext">Next</a>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span>Previous </button>
+ 			<button class="btn btn-info prevtab" type="button" onclick="return showNext()"><span class="glyphicon glyphicon-arrow-right"></span>Next </button>
 			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
@@ -468,8 +468,8 @@
   			<div class="row">
   			<div  align="center">
 			<div class="form-group">
-			<a class="btn btn-primary btnNext">Next</a>
-			<a class="btn btn-primary btnPrevious">Previous</a>
+			<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span>Previous </button>
+ 			<button class="btn btn-info prevtab" type="button" onclick="return showNext()"><span class="glyphicon glyphicon-arrow-right"></span>Next </button>
 			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
@@ -501,7 +501,37 @@
 			});
   			$('.btnPrevious').click(function(){
   			$('.nav-tabs > .active').prev('li').find('a').trigger('click');
-			});
+			});			
+			</script>
+			<!-- SCript for Disabling tabs and nav through prev next-->
+			<script>
+			var $tabs = $('#createNotTab li');
+
+			function showPrev() {
+				$tabs.filter('.active').prev('li').removeClass("disabled");
+				$tabs.filter('.active').prev('li').find('a[data-toggle]').each(function () {
+				$(this).attr("data-toggle", "tab");
+				});
+			
+				$tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
+			
+				$tabs.filter('.active').next('li').find('a[data-toggle="tab"]').each(function () {
+					$(this).attr("data-toggle", "").parent('li').addClass("disabled");        
+				})
+			}
+			
+			function showNext() {
+				$tabs.filter('.active').next('li').removeClass("disabled");
+				$tabs.filter('.active').next('li').find('a[data-toggle]').each(function () {
+					$(this).attr("data-toggle", "tab");
+				});
+			
+				$tabs.filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
+			
+				$tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').each(function () {
+					$(this).attr("data-toggle", "").parent('li').addClass("disabled");;        
+				})
+			}
 			</script>
 <!--Scripts-->
 </form>
