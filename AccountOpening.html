@@ -61,7 +61,7 @@
 <body>
 <form data-toggle="validator"  role="form">
 <header style="font-weight:bold;">
-   <h1><b>Bank of CET</b><small>Cetians Trust</small></h1>
+   <h1 id="top"><b>Bank of CET</b><small>Cetians Trust</small></h1>
 </header>
 
 
@@ -319,9 +319,8 @@
 
   			<div class="row">
   			<div  align="center">
-			<div class="form-group">
-			<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span>Previous </button>
- 			<button class="btn btn-info prevtab" type="button" onclick="return showNext()"><span class="glyphicon glyphicon-arrow-right"></span>Next </button>
+			<div class="form-group">		
+ 			<button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
 			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
@@ -468,8 +467,8 @@
   			<div class="row">
   			<div  align="center">
 			<div class="form-group">
-			<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span>Previous </button>
- 			<button class="btn btn-info prevtab" type="button" onclick="return showNext()"><span class="glyphicon glyphicon-arrow-right"></span>Next </button>
+			<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span> Previous </button>
+ 			<button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
 			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
@@ -532,6 +531,11 @@
 					$(this).attr("data-toggle", "").parent('li').addClass("disabled");;        
 				})
 			}
+			</script>
+			<script>
+				$(".prevtab").on("click", function() {
+			    $("body").scrollTop(0);
+				});
 			</script>
 <!--Scripts-->
 </form>
