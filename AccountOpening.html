@@ -43,6 +43,15 @@
 	{
 		padding-right: 30%;
 	}
+	th,td
+	{
+		text-align: center;
+		width: 20%;
+	}
+	#changebtn
+	{
+		background-color: #FF900C;
+	}
 
 
 </style>
@@ -79,7 +88,7 @@
 
 
 <div id="home" class="tab-pane fade in active">
-
+<div align="center">
 	<div class="panel panel-primary">
  	<div class="panel-heading">Instructions</div>
  	<div class="panel-body" >
@@ -90,7 +99,7 @@
 
 
 
-
+ 
  <div class="panel panel-primary">
  <div class="panel-heading">Personal Details</div>
  <div class="panel-body" >
@@ -309,29 +318,29 @@
 <!--Terms/conditions-->
 
 	<div class="panel panel-primary">
-	<div class="panel-heading">Terms And Conditions</div>
+	<div class="panel-heading">Confirm</div>
 	<div class="panel-body">
 			<div class="row">
   			<div class="col-lg-1"></div>
   			<div class="col-lg-10">
-			<div class="form-group">
-    		<div class="checkbox">
-      			<label>
-      			<input type="checkbox" id="terms" data-error="Please Accept the terms and conditions." required>
-        		I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.
-      			</label>
-      		<div class="help-block with-errors"></div>
-      		</div>
-			</div>
+			
     		</div>
 			<div class="col-lg-1"></div>
   			</div>
+  			<div style="padding-right: 10%;padding-left: 10%;">
+  			<div class="alert alert-warning" align="center" style="margin-bottom: 0px;"><strong>(*)</strong> Please check all the mandatory fields are filled and correct before proceeding to next page.</div>
+  			<br>
+  			</div>
 
   			<div class="row">
-  			<div  align="center">
-			<div class="form-group">
-			<button onclick="fetchdetails()">Try it</button>		
- 			<button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
+
+  				
+  			</div>
+
+  			<div class="row">
+  			<div  align="center">  			
+			<div class="form-group">	
+ 			<button class="btn btn-info prevtab" type="button" id="btn12" onclick="return showNext();">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
 			<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
@@ -340,6 +349,7 @@
 	</div>
 	</div>
 <!--End oF Terms/conditions-->
+</div>
 </div>
 
 
@@ -352,10 +362,13 @@
 
 		<div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong>Select a Passport size photo with proper dimensions (140x180)</div><br>
 		<div class="row" style="align-content:right">
-		<div class="fileinput fileinput-new" data-provides="fileinput">
-		<span class="btn btn-info btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..." accept="image/*"></span>
+		<div class="fileinput fileinput-new" data-provides="fileinput"  id="bean">
+		<span class="btn btn-info btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..." accept="image/*"  id="bean"></span>
     	<a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
-    	<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 140px; height: 180px;"></div></div></div>
+    	<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 140px; height: 180px;"></div>
+    	</div></div>
+
+    	<div class="fileinput-preview thumbnail" id="bean" data-trigger="fileinput" style="width: 140px; height: 180px;"></div>
 
     	<div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong>Select a Signature with proper dimensions (200x60)    </div><br>
   		<div class="row" style="align-content:right">
@@ -409,13 +422,13 @@
 	<div class="panel panel-primary">
 	<div class="panel-heading">Required Documents</div>
 	<div class="panel-body" style="padding-left: 10%;padding-right: 10%;">
-	<div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong>Only one of the following is needed.</div>
+	<div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong>Both of the documents are required.</div>
 	<br>
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="form-group">
-					<label for="addt" class="control-label">Identity Proof *</label>
- 					<select class="form-control" id="addt" required>
+					<label for="identtype" class="control-label">Identity Proof *</label>
+ 					<select class="form-control" id="identtype" required>
  					<option value="" hidden="">Select</option>
  					<option>PAN card</option>
 					<option>Passport</option>
@@ -437,8 +450,8 @@
  			<div class="row">
 				<div class="col-lg-3">
 					<div class="form-group">
-					<label for="addt" class="control-label">Address Proof *</label>
- 					<select class="form-control" id="addt" required>
+					<label for="aftype" class="control-label">Address Proof *</label>
+ 					<select class="form-control" id="aftype" required>
  					<option value="" hidden="">Select</option>
 					<option>Passport</option>
 					<option>Aadhar Card</option>
@@ -459,26 +472,20 @@
 	</div>
 
 	<div class="panel panel-primary">
-	<div class="panel-heading">Terms And Conditions</div>
+	<div class="panel-heading">Confirm</div>
 	<div class="panel-body" style="padding-left: 10%;padding-right: 10%">
-			<div class="row">  			
-  			<div class="col-lg-10">
-			<div class="form-group">
-    		<div class="checkbox">
-      			<label>
-      			<input type="checkbox" id="terms" data-error="Please Accept the terms and conditions." required>
-        		I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.
-      			</label>
-      		<div class="help-block with-errors"></div>
-      		</div>
-			</div>
-    		</div>			
+			<div class="row">
+  			
+			<div style="padding-right: 10%;padding-left: 10%;">
+  			<div class="alert alert-warning" align="center" style="margin-bottom: 0px;"><strong>(*)</strong> Please check all the mandatory fields are filled and correct before proceeding to next page.</div>
+  			<br>
   			</div>
+    		</div>			
+  			
 
   			<div class="row">
   				<div  align="center">
   					<div class="form-group">
-  					<button onclick="fetchdetails()">Try it</button>
   						<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span> Previous </button>
   						<button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
   						<button type="reset" class="btn btn-primary">Reset</button>
@@ -653,12 +660,47 @@
                         </td>
                     </tr>
                 </table>
+                <table class="table">
+                	<tr>
+                        <h2>Proof of Identity/Address</h2>
+                    </tr>
+                    <tr>
+                        <th>Identity Proof </th>
+                        <td>
+                        	<p id="g1"></p>
+                        </td>
+                        <td>
+                            <p id="g2"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Address Proof </th>
+                        <td>
+                            <p id="g3"></p>
+                        </td>
+                        <td>
+                            <p id="g4"></p>
+                        </td>
+                    </tr>
+                </table>
+                <div class="well well-lg">
+                <div class="form-group">
+    		<div class="checkbox">
+      			<label>
+      			<input type="checkbox" id="terms" data-error="Please Accept the terms and conditions." required>
+        		I/We confirm having read and understood the account rules of The Banking Corporation Limited ('the Bank'), and hereby agree to be bound by the terms and conditions and amendments governing the account(s) issued by the Bank from time-to-time.
+      			</label>
+      			<br>
+      		<div class="help-block with-errors"></div>
+      		</div>
+			</div>
+
+                </div>
                 <div class="row">
                     <div align="center">
                         <div class="form-group">
-                            <button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span> Previous </button>
-                            <button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
-                            <button type="reset" class="btn btn-primary">Reset</button>
+                            <button class="btn btn-warning prevtab"  type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-repeat"></span> Change Details </button>
+                            <button class="btn btn-success" id="" type="submit"></span> Confirm <span class="glyphicon glyphicon-ok"> </button>
                         </div>
                     </div>
                 </div>
@@ -673,14 +715,7 @@
 </div>
 
 <!--Scripts-->
-<script>
-$('.btnNext').click(function() {
-    $('.nav-tabs > .active').next('li').find('a').trigger('click');
-});
-$('.btnPrevious').click(function() {
-    $('.nav-tabs > .active').prev('li').find('a').trigger('click');
-});
-</script>
+
 <!-- SCript for Disabling tabs and nav through prev next-->
 <script>
 var $tabs = $('#createNotTab li');
@@ -695,7 +730,9 @@ function showPrev() {
 
     $tabs.filter('.active').next('li').find('a[data-toggle="tab"]').each(function() {
         $(this).attr("data-toggle", "").parent('li').addClass("disabled");
-    })
+    });
+    fetchdetails();
+
 }
 
 function showNext() {
@@ -708,7 +745,8 @@ function showNext() {
 
     $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').each(function() {
         $(this).attr("data-toggle", "").parent('li').addClass("disabled");;
-    })
+    });
+    fetchdetails();
 }
 </script>
 <!-- SCript for Scrolling to top through prev next-->
@@ -755,8 +793,25 @@ function fetchdetails() {
             document.getElementById("ec" + j).innerHTML = "-";
         }
     }
+    //Proof
+    var proof=["identtype","Identitytxt","aftype","addresstxt"];
+    for (i = 0; i < 11; i++) {
+        var vld = document.getElementById(proof[i]).value;
+        if (vld != "") {
+            document.getElementById("g" + (i + 1)).innerHTML = vld;
+        } else {
+            document.getElementById("g" + (i + 1)).innerHTML = "-";
+        }
+    }
+
 }
 </script>
+<script>
+	function bu
+	{
+		
+	}
+</script>)
 <!--Scripts-End-->
 
 </form>
