@@ -114,13 +114,13 @@
   				</div></div>
 
   				<div class="col-lg-2"><div class="form-group">
-    					<label for="inputName" class="control-label">Middle Name</label>
-    					<input type="text" class="form-control" id="inputName" placeholder="Prakash">
+    					<label for="midName" class="control-label">Middle Name</label>
+    					<input type="text" class="form-control" id="midName" placeholder="Prakash">
   				</div></div>
 
   				<div class="col-lg-2"><div class="form-group">
-    					<label for="inputName" class="control-label">Last Name *</label>
-    					<input type="text" class="form-control" id="inputName" placeholder="Makhija" required="">
+    					<label for="lName" class="control-label">Last Name *</label>
+    					<input type="text" class="form-control" id="lName" placeholder="Makhija" required="">
   				</div></div>
 
   				<div class="col-lg-2">
@@ -162,8 +162,8 @@
 
 				<div class="col-lg-3">
 				<div class="form-group">
-					<label for="addt" class="control-label">Education</label>
- 					<select class="form-control" id="addt">
+					<label for="educ" class="control-label">Education</label>
+ 					<select class="form-control" id="educ">
  					<option value="" hidden="">Select</option>
 					<option>Below SSC</option>
 					<option>SSC</option>
@@ -183,8 +183,8 @@
 				<div class="col-lg-1"></div>
   				<div class="col-lg-3">
 				<div class="form-group">
-				<label for="father" class="control-label">Name of Mother * </label>
-				<input type="text" id="father" class="form-control" required>
+				<label for="mother" class="control-label">Name of Mother * </label>
+				<input type="text" id="mother" class="form-control" required>
 				</div></div>
 
 				<div class="col-lg-3">
@@ -213,8 +213,8 @@
 
 			<div class="col-lg-3">
 					<div class="form-group">
-					<label for="addt" class="control-label">Address Type*</label>
- 					<select class="form-control" id="addt" required>
+					<label for="addtype" class="control-label">Address Type*</label>
+ 					<select class="form-control" id="addtype" required>
  					<option value="">Select</option>
  					<option>Residential</option>
  					<option>Bussiness</option>
@@ -226,27 +226,37 @@
 
 			<div class="col-lg-3">
 			<div class="form-group">
-			<label class="control-label" id="flat">Address* </label><input type="text" name="flat" class="form-control" required="">
+			<label class="control-label" for="flat">Address* </label>
+			<input type="text" id="flat" class="form-control" required="">
 			</div></div>
-			<div class="col-lg-3" id="areala"><label>Area and landmark </label><input type="text" name="areala"class="form-control"></div>
+			<div class="col-lg-3" >
+			<div class="form-group">
+			<label for="areala">Area and landmark </label>
+			<input type="text" id="areala" class="form-control">
+			</div></div>
 			<div class="col-lg-3">
 			<div class="form-group">
-			<label class="control-label" id="citya">City* </label><input type="text" name="citya"class="form-control" required>
+			<label class="control-label" for="citya">City* </label>
+			<input type="text" id="citya" class="form-control" required>
 			</div></div>			
 		</div>
 		<div class="row">
 			
 			<div class="col-lg-3">
 			<div class="form-group">
-			<label class="control-label" for="roadeo">District* </label><input type="text" name="roadeo" class="form-control" required="">
+			<label class="control-label" for="roadeo">District* </label><input type="text" id="roadeo" class="form-control" required="">
 			</div></div>
 			<div class="col-lg-2">
 			<div class="form-group">
-			<label class="control-label" id="pina">Pin code* </label><input type="text" name="pina" pattern="[0-9]{6}" class="form-control" data-minlength="6" data-error="Invalid Pincode" placeholder="XXXXXX" required>
+			<label class="control-label" for="pina">Pin code* </label><input type="text" id="pina" pattern="[0-9]{6}" class="form-control" data-minlength="6" data-error="Invalid Pincode" placeholder="XXXXXX" required>
 			<div class="help-block with-errors">6 digits</div>
 			</div></div>
-			<div class="col-lg-2"><label for="teleresi">Alt Mobile No. </label><input type="text" name="teleresi" class="form-control"></div>
-			<div class="col-lg-2"><label for="office">Office </label><input type="text" name="office"class="form-control"></div>
+			<div class="col-lg-2">
+			<label for="teleresi">Alt Mobile No. </label>
+			<input type="text" id="teleresi" class="form-control"></div>
+			<div class="col-lg-2">
+			<label for="office">Office </label>
+			<input type="text" id="office" class="form-control"></div>
 
 
 			<div class="col-lg-3">
@@ -362,8 +372,8 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="form-group">
-					<label for="addt" class="control-label">Account Type *</label>
- 					<select class="form-control" id="addt" required>
+					<label for="actype" class="control-label">Account Type *</label>
+ 					<select class="form-control" id="actype" required>
  					<option value="" hidden="">Select</option>
 					<option>Savings</option>
 					<option>Current</option>
@@ -384,11 +394,11 @@
  			<div  class="row" align="left" style="padding-left: 67px;padding-bottom: 3px;"><label >Facilities Required</label></div>
  			<div class="row ">
 				<div class="" align="left">
-  					<label class="checkbox-inline"><input type="checkbox" value="">Cheque Book</label>
-    				<label class="checkbox-inline"><input type="checkbox" value="">ATM-cum-Debit Card</label>
-    				<label class="checkbox-inline"><input type="checkbox" value="">Internet Banking</label>
-    				<label class="checkbox-inline"><input type="checkbox" value="">SMS Notifications</label>
-    				<label class="checkbox-inline"><input type="checkbox" value="">Mobile Banking</label>
+  					<label class="checkbox-inline"><input id="fr1" type="checkbox" value="Cheque Book">Cheque Book</label>
+    				<label class="checkbox-inline"><input id="fr2" type="checkbox" value="ATM-cum-Debit Card">ATM-cum-Debit Card</label>
+    				<label class="checkbox-inline"><input id="fr3" type="checkbox" value="Internet Banking">Internet Banking</label>
+    				<label class="checkbox-inline"><input id="fr4" type="checkbox" value="SMS Notifications">SMS Notifications</label>
+    				<label class="checkbox-inline"><input id="fr5" type="checkbox" value="Mobile Banking">Mobile Banking</label>
 				</div>
  			</div>
  			<br>
@@ -468,6 +478,7 @@
   			<div class="row">
   				<div  align="center">
   					<div class="form-group">
+  					<button onclick="fetchdetails()">Try it</button>
   						<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span> Previous </button>
   						<button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
   						<button type="reset" class="btn btn-primary">Reset</button>
@@ -484,133 +495,269 @@
 
 <!--Start of tabfinal-->
 <div id="finaltab" class="tab-pane">
-<div align="center">
-	<div class="panel panel-primary">
-	<div class="panel-heading">Confirm Details</div>
-	<div class="panel-body" style="padding-left: 10%;padding-right: 10%;">
-		<table class="table">
-			<tr>
-				<th>Details</th>
-				<th>Values</th>
-			</tr>
-			<tr>
-				<th>First Name</th>
-				<td><p id="d1"></p></td>
-			</tr>
-			<tr>
-				<th>Middle Name</th>
-				<td><p id="d2"></p></td>
-			</tr>
-			<tr>
-				<th>Last Name</th>				
-
-			</tr>
-			<tr>
-				<th>Gender</th>
-				
-			</tr>
-			<tr>
-				<th>Email</th>
-				
-			</tr>
-			<tr>
-				<th>Mobile Number</th>
-				
-			</tr>
-			<tr>
-				<th>Date of Birth</th>
-				
-			</tr>
-			<tr>
-				<th>Education</th>
-				
-			</tr>
-			<tr>
-				<th>Mother's Name</th>
-				
-			</tr>
-			<tr>
-				<th>Father's Name</th>
-				
-			</tr>
-			<tr>
-				<th>Natural Guardian</th>
-				
-			</tr>
-
-		</table>
-		<div class="row">
-  				<div  align="center">
-  					<div class="form-group">
-  						<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span> Previous </button>
-  						<button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
-  						<button type="reset" class="btn btn-primary">Reset</button>
-  					</div>
-  				</div>
-  			</div>
-
-	</div>
-	</div>
-</div>	
+    <div align="center">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Confirm Details</div>
+            <div class="panel-body" style="padding-left: 10%;padding-right: 10%;">
+                <table class="table">
+                    <tr>
+                        <h2>Personal Details</h2></tr>
+                    <tr>
+                        <th>First Name</th>
+                        <td>
+                            <p id="d1"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Middle Name</th>
+                        <td>
+                            <p id="d2"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th>
+                        <td>
+                            <p id="d3"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        <td>
+                            <p id="d4"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>
+                            <p id="d5"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mobile Number</th>
+                        <td>
+                            <p id="d6"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Date of Birth</th>
+                        <td>
+                            <p id="d7"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Education</th>
+                        <td>
+                            <p id="d8"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mother's Name</th>
+                        <td>
+                            <p id="d9"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Father's Name</th>
+                        <td>
+                            <p id="d10"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Natural Guardian</th>
+                        <td>
+                            <p id="d11"></p>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table">
+                    <tr>
+                        <h2>Permanent Address</h2></tr>
+                    <tr>
+                        <th>Address Type</th>
+                        <td>
+                            <p id="e1"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>
+                            <p id="e2"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Area and landmark</th>
+                        <td>
+                            <p id="e3"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>
+                            <p id="e4"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>District*</th>
+                        <td>
+                            <p id="e5"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Pin code</th>
+                        <td>
+                            <p id="e6"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Alt Mobile No.</th>
+                        <td>
+                            <p id="e7"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Office</th>
+                        <td>
+                            <p id="e8"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <td>
+                            <p id="e9"></p>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table">
+                    <tr>
+                        <h2>Account details</h2></tr>
+                    <tr>
+                        <th>Account Type</th>
+                        <td>
+                            <p id="f1"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Initial Balance </th>
+                        <td>
+                            <p id="f2"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Facilities Required</th>
+                        <td>
+                            <p id="ec1"></p>
+                            <p id="ec2"></p>
+                            <p id="ec3"></p>
+                            <p id="ec4"></p>
+                            <p id="ec5"></p>
+                        </td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <div align="center">
+                        <div class="form-group">
+                            <button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span> Previous </button>
+                            <button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 <!--End of tabfinal-->
 </div>
 <!--End of tab2-->
 </div>
 
 <!--Scripts-->
-			<script>
-  			$('.btnNext').click(function(){
-  			$('.nav-tabs > .active').next('li').find('a').trigger('click');
-			});
-  			$('.btnPrevious').click(function(){
-  			$('.nav-tabs > .active').prev('li').find('a').trigger('click');
-			});			
-			</script>
-			<!-- SCript for Disabling tabs and nav through prev next-->
-			<script>
-			var $tabs = $('#createNotTab li');
+<script>
+$('.btnNext').click(function() {
+    $('.nav-tabs > .active').next('li').find('a').trigger('click');
+});
+$('.btnPrevious').click(function() {
+    $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+});
+</script>
+<!-- SCript for Disabling tabs and nav through prev next-->
+<script>
+var $tabs = $('#createNotTab li');
 
-			function showPrev() {
-				$tabs.filter('.active').prev('li').removeClass("disabled");
-				$tabs.filter('.active').prev('li').find('a[data-toggle]').each(function () {
-				$(this).attr("data-toggle", "tab");
-				});
-			
-				$tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
-			
-				$tabs.filter('.active').next('li').find('a[data-toggle="tab"]').each(function () {
-					$(this).attr("data-toggle", "").parent('li').addClass("disabled");        
-				})
-			}
-			
-			function showNext() {
-				$tabs.filter('.active').next('li').removeClass("disabled");
-				$tabs.filter('.active').next('li').find('a[data-toggle]').each(function () {
-					$(this).attr("data-toggle", "tab");
-				});
-			
-				$tabs.filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
-			
-				$tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').each(function () {
-					$(this).attr("data-toggle", "").parent('li').addClass("disabled");;        
-				})
-			}
-			</script>
-			<!-- SCript for Scrolling to top through prev next-->
-			<script>
-				$(".prevtab").on("click", function() {
-			    $("body").scrollTop(0);
-				});
-			</script>
-			<!-- Fetch Details Script-->
-			<script>
-				function fetchdetails()
-				{
-    			var x = document.getElementById("inputName").value;
-    			document.getElementById("d1").innerHTML = x;
-				}
-			</script>
+function showPrev() {
+    $tabs.filter('.active').prev('li').removeClass("disabled");
+    $tabs.filter('.active').prev('li').find('a[data-toggle]').each(function() {
+        $(this).attr("data-toggle", "tab");
+    });
+
+    $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
+
+    $tabs.filter('.active').next('li').find('a[data-toggle="tab"]').each(function() {
+        $(this).attr("data-toggle", "").parent('li').addClass("disabled");
+    })
+}
+
+function showNext() {
+    $tabs.filter('.active').next('li').removeClass("disabled");
+    $tabs.filter('.active').next('li').find('a[data-toggle]').each(function() {
+        $(this).attr("data-toggle", "tab");
+    });
+
+    $tabs.filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
+
+    $tabs.filter('.active').prev('li').find('a[data-toggle="tab"]').each(function() {
+        $(this).attr("data-toggle", "").parent('li').addClass("disabled");;
+    })
+}
+</script>
+<!-- SCript for Scrolling to top through prev next-->
+<script>
+$(".prevtab").on("click", function() {
+    $("body").scrollTop(0);
+});
+</script>
+<!-- Fetch Details Script-->
+<script>
+function fetchdetails() {
+	//Personal Details
+    var zz = ["inputName", "midName", "lName", "addt", "inputEmail", "mobile", "DOB", "educ", "mother", "father", "guardian"];
+    for (i = 0; i < 11; i++) {
+        var vld = document.getElementById(zz[i]).value;
+        if (vld != "") {
+            document.getElementById("d" + (i + 1)).innerHTML = vld;
+        } else {
+            document.getElementById("d" + (i + 1)).innerHTML = "-";
+        }
+    }
+    //Address
+    var padr = ["addtype", "flat", "areala", "citya", "roadeo", "pina", "teleresi", "office", "stateind"];
+    for (i = 0; i < 9; i++) {
+        var vld = document.getElementById(padr[i]).value;
+        if (vld != "") {
+            document.getElementById("e" + (i + 1)).innerHTML = vld;
+        } else {
+            document.getElementById("e" + (i + 1)).innerHTML = "-";
+        }
+    }
+    // Account
+    var xd1 = document.getElementById("actype").value;
+    document.getElementById("f1").innerHTML = xd1;
+    var xd2 = document.getElementById("initbal").value;
+    document.getElementById("f2").innerHTML = xd2;
+    //Checkbox facilities
+    for (j = 1; j < 6; j++) {
+        var check = document.getElementById("fr" + j).checked;
+        var vlu = document.getElementById("fr" + j).value;
+        if (check) {
+            document.getElementById("ec" + j).innerHTML = vlu;
+        } else {
+            document.getElementById("ec" + j).innerHTML = "-";
+        }
+    }
+}
+</script>
 <!--Scripts-End-->
+
 </form>
 </body>
