@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>  
   <!--Jasny Bootstrap-->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
-
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
   
 </head>
 <style type="text/css">
@@ -109,17 +108,17 @@
 
 				<div class="col-lg-2"><div class="form-group">
     					<label for="inputName" class="control-label">First Name *</label>
-    					<input type="text" class="form-control" id="inputName" placeholder="Om" required>
+    					<input type="text" class="form-control" id="inputName" placeholder="Jane" pattern="[A-Za-z]+" required>
   				</div></div>
 
   				<div class="col-lg-2"><div class="form-group">
     					<label for="midName" class="control-label">Middle Name</label>
-    					<input type="text" class="form-control" id="midName" placeholder="Prakash">
+    					<input type="text" class="form-control" id="midName" pattern="[A-Za-z]+" placeholder="Johnny">
   				</div></div>
 
   				<div class="col-lg-2"><div class="form-group">
     					<label for="lName" class="control-label">Last Name *</label>
-    					<input type="text" class="form-control" id="lName" placeholder="Makhija" required="">
+    					<input type="text" class="form-control" id="lName" pattern="[A-Za-z]+" placeholder="Doe" required="">
   				</div></div>
 
   				<div class="col-lg-2">
