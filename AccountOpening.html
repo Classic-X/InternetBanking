@@ -100,9 +100,9 @@
   					<div class="form-group">
 					<div class="radio-toolbar">
 						<div class="radio">
-						<label><input name="customer-title[]" type="radio" required autofocus > Mr.</label>
-						<label><input name="customer-title[]" type="radio" required> Mrs.</label>
-						<label><input name="customer-title[]" type="radio" required> Ms.</label>
+						<label><input id="sl1" type="radio" value="Mr." required autofocus > Mr.</label>
+						<label><input id="sl2" type="radio" value="Mrs." required> Mrs.</label>
+						<label><input id="sl3" type="radio" value="Ms." required> Ms.</label>
 						</div>
 					</div></div>
 				</div>
@@ -251,8 +251,12 @@
 			<div class="help-block with-errors">6 digits</div>
 			</div></div>
 			<div class="col-lg-2">
-			<label for="teleresi">Alt Mobile No. </label>
-			<input type="text" id="teleresi" class="form-control"></div>
+			<div class="form-group">
+				<label for="teleresi" class="control-label">Alt Mobile No.</label>
+				<input type="text" id="teleresi" class="form-control" pattern="[0-9]{10}" data-minlength="10" data-error="Invalid Number." placeholder="XXXXXXXXXX">
+				<div class="help-block with-errors">10 digits</div>
+				</div>
+				</div>
 			<div class="col-lg-2">
 			<label for="office">Office </label>
 			<input type="text" id="office" class="form-control"></div>
@@ -502,7 +506,13 @@
                     <tr>
                         <h2>Personal Details</h2></tr>
                     <tr>
-                        <th>First Name</th>
+                        <th>Salutation *</th>
+                        <td>
+                            <p id="s"></p>
+                    	</td>
+                    </tr>
+                    <tr>
+                        <th>First Name *</th>
                         <td>
                             <p id="d1"></p>
                         </td>
@@ -761,6 +771,18 @@ $(".prevtab").on("click", function() {
 <script>
 function fetchdetails() {
 	//Personal Details
+	for(i=1;i<=3;i++)
+	{
+		var ss=document.getElementById("sl"+i).checked;
+		if(ss)
+		{
+			document.getElementById("s").innerHTML=document.getElementById("sl"+i).value;
+		}
+		else
+		{
+			document.getElementById("s").innerHTML="-";
+		}
+	}
     var zz = ["inputName", "midName", "lName", "addt", "inputEmail", "mobile", "DOB", "educ", "mother", "father", "guardian"];
     for (i = 0; i < 11; i++) {
         var vld = document.getElementById(zz[i]).value;
@@ -810,6 +832,10 @@ function fetchdetails() {
 //Reset function for tabs
 function resetpg1()
 {
+	for(i=1;i<=3;i++)
+	{
+		document.getElementById("sl"+i).checked=false;
+	}
 	var zz = ["inputName", "midName", "lName", "addt", "inputEmail", "mobile", "DOB", "educ", "mother", "father", "guardian"];
     for (i = 0; i < 11; i++)
     {
