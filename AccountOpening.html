@@ -57,18 +57,8 @@
 </style>
 
 
-
-<!--Disable F5 script-->
-<!--script type = "text/javascript">
-    window.onload = function () {
-        document.onkeydown = function (e) {
-            return (e.which || e.keyCode) != 116;
-        };
-    }
-</script-->
-
 <body >
-<form data-toggle="validator"  role="form" name="accreate">
+<form data-toggle="validator"  role="form" method="POST" name="accreate">
 <header style="font-weight:bold;">
    <h1 id="top"><b>Bank of CET</b><small>Cetians Trust</small></h1>
 </header>
@@ -341,7 +331,7 @@
   			<div  align="center">  			
 			<div class="form-group">	
  			<button class="btn btn-info prevtab"  onclick="return showNext();">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
-			<button type="reset" class="btn btn-primary">Reset</button>
+			<button type="button" onclick="resetpg1();" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
 			</div>
@@ -486,7 +476,7 @@
   					<div class="form-group">
   						<button class="btn btn-warning prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span> Previous </button>
   						<button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
-  						<button type="reset" class="btn btn-primary">Reset</button>
+  						<button type="button" onclick="resetpg2()" class="btn btn-primary">Reset</button>
   					</div>
   				</div>
   			</div>
@@ -718,6 +708,15 @@
 
 <!--Scripts-->
 
+<!--Disable F5 script-->
+<script type = "text/javascript">
+    window.onload = function () {
+        document.onkeydown = function (e) {
+            return (e.which || e.keyCode) != 116;
+        };
+    }
+</script>
+
 <!-- SCript for Disabling tabs and nav through prev next-->
 <script>
 var $tabs = $('#createNotTab li');
@@ -757,6 +756,7 @@ $(".prevtab").on("click", function() {
     $("body").scrollTop(0);
 });
 </script>
+
 <!-- Fetch Details Script-->
 <script>
 function fetchdetails() {
@@ -807,8 +807,36 @@ function fetchdetails() {
     }
 
 }
-</script>
+//Reset function for tabs
+function resetpg1()
+{
+	var zz = ["inputName", "midName", "lName", "addt", "inputEmail", "mobile", "DOB", "educ", "mother", "father", "guardian"];
+    for (i = 0; i < 11; i++)
+    {
+        document.getElementById(zz[i]).value = "";
+    }
+    var padr = ["addtype", "flat", "areala", "citya", "roadeo", "pina", "teleresi", "office", "stateind"];
+    for (i = 0; i < 9; i++)
+    {
+        document.getElementById(padr[i]).value = "";
+    }
+}
+function resetpg2()
+{
+document.getElementById("actype").value="";
+document.getElementById("initbal").value="";
+var proof=["identtype","Identitytxt","aftype","addresstxt"];
+    for (i = 0; i < 11; i++)
+    {
+        document.getElementById(proof[i]).value="";
+    }
+for (j = 1; j < 6; j++)
+	{
+        document.getElementById("fr" + j).checked=false;
+    }
 
+}
+</script>
 
 <!--Scripts-End-->
 
