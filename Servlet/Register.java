@@ -35,9 +35,19 @@ public class Register extends HttpServlet
 				pw.println(details[i]);
 			}
 			PreparedStatement ps=cn.prepareStatement(q);
-			for(int i=0;i<34;i++)
+		    for(int i=0;i<34;i++)
 			{   
+			if((i!=21)&&(i!=22))
+			{
 				ps.setString(i+1, details[i]);
+			}
+			else
+			{
+				File fin = new File(details[i]);
+		         FileInputStream inputStream = new FileInputStream(fin);
+		         ps.setBinaryStream(i+1, (InputStream) inputStream, (int)(fin.length()));
+		         pw.println(details[i]);
+			}
 			}
 			ps.executeUpdate();
 		}
