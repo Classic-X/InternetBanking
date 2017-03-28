@@ -1,0 +1,151 @@
+.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      margin-top: 0px;
+      padding-top: 0px;
+      background-color: #f1f1f1;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #337ab7;
+      color: white;
+      padding: 100px;
+      margin-bottom: 0px;
+	  z-index:100;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 0px;
+      }
+      .row.content {height:auto;} 
+    }
+    #mySidenav a {
+    position:fixed ;
+    right: -85px;
+    transition: 0.3s;
+    padding: 0px;
+    width: 115px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px 0px 0px 5px;
+	z-index:2000;
+}
+
+#mySidenav a:hover {
+    right: 0;
+}
+
+#fb {
+    top: 430px;
+    background-color:#;
+}
+
+#insta {
+    top: 460px;
+    background-color:  #3366cc;
+}
+
+#twitter {
+    top: 490px;
+    background-color: #2e5cb8;
+}
+
+
+#youtube {
+    top: 520px;
+    background-color: #2952a3;
+}
+#ldn {
+    top: 550px;
+    background-color:  #24478f;
+}
+#gplus {
+    top: 580px;
+    background-color: #1f3d7a;
+}
+  .col-sm-8{
+    padding-top: 20px;
+    background-color:white;
+  }
+  .col-sm-2{
+    padding-top: 20px;
+    height: 800px;
+    background-color:#5f5f5f;
+	z-index:100;
+  }
+  #h
+  {
+    width: 100%;
+    border: 1px solid black;
+  }
+  #m{
+    background-color: #337ab7;
+  }
+  #a,#b,#c,#d,#e,#f,#g,#o
+  {
+    color: white;
+  }
+  a{
+    color: white;
+  }
+#p
+{
+	 height:"30px";
+	padding-top: 30px;
+}
+  body {
+      position: relative;	  
+  }
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 1000 ;
+  }
+  .navbar {
+      margin-bottom: 0px;
+	  width:100%;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+  #ri
+  {
+	  background-color:white;
+	  color:black;
+	  height:100px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
