@@ -64,7 +64,7 @@ div.bhoechie-tab-container{
   background-clip: padding-box;
   opacity: 0.97;
   filter: alpha(opacity=97);
-  width: 80%;
+  width: 90%;
 }
 div.bhoechie-tab-menu{
   padding-right: 0;
@@ -188,7 +188,14 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
                 <!-- flight section -->
                 <div class="bhoechie-tab-content active">
                     <center>
+                    <div style="padding: 20px;">
                       <table class="table">
+                      <thead>
+                      <tr >
+                      	<th colspan="2">Customer ID</th>
+                      	<th colspan="2"><p id=""></p></th>
+                      </tr>
+                      </thead>
                       <tr>
                       	<th>Name</th>
                       	<td><p id=""></p></td>
@@ -196,30 +203,47 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
                       <tr>
                       	<th>E-Mail</th>
                       	<td><p id=""></p></td>
-                      </tr>
-                      <tr>
                       	<th>Mobile no.</th>
                       	<td><p id=""></p></td>
                       </tr>
                       <tr>
-                      	<th>Father's Name</th>
+                      	<th>Alt Mobile no.</th>
+                      	<td><p id=""></p></td>
+                      	<th>Office no.</th>
                       	<td><p id=""></p></td>
                       </tr>
                       <tr>
-                      	<th>Mother's Name</th>
-                      	<td><p id=""></p></td>
+                      	<th>Father's Name</th>
+                      	<td colspan="3"><p id=""></p></td>
                       </tr>
-					
+                      <tr>
+                      	<th>Mother's Name</th>
+                      	<td colspan="3"><p id=""></p></td>
+                      </tr>
+                      <tr>
+                      	<th>Address</th>
+                      	<td><p id=""></p></td>
+                      </tr>					
                       	
-                      </table>              
+                      </table>
+                      </div>              
                     </center>
                 </div>
-                <!-- train section -->
+                <!-- Account Information -->
                 <div class="bhoechie-tab-content">
                     <center>
-                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
+
+                      <div style="padding: 50px;">
+                     <div class="form-group">
+                      <label for="stateind" class="control-label"><h2>Select Account</h2></label>
+ 					<select class="form-control" id="stateind" required>
+					<option value="">None</option>
+					<option value=""></option>
+					<option value=""></option>
+					</select>
+					</div>
+                      	
+                      </div>
                     </center>
                 </div>
     
@@ -252,8 +276,8 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
                       <div class="row">
                       <div class="col-lg-1"></div>
                       <p style="font-size: 30px;padding-top: 30px;text-align: left;padding-left: 50px;color:#55518a; "><b> Contact us :-</b></p>                     
-                      <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 611-5210006 (Toll free and accessible from all landlines and mobile phones)</p>
-                      <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 661-2698199 (Accessible from all landlines and mobile phones)</p>
+                      <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;padding-right: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 611-5210006 (Toll free and accessible from all landlines and mobile phones)</p>
+                      <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;padding-right: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 661-2698199 (Accessible from all landlines and mobile phones)</p>
                       <div class="col-lg-1"></div>
                       </div>
                     </center>
