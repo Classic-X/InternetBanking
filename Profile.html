@@ -43,8 +43,11 @@
         padding-top: 12px;
         padding-bottom: 12px;
     }
+    th
+    {
+    	font-size: 23px;
+    }
     
-    b
 /*  bhoechie tab */
 div.bhoechie-tab-container{
   z-index: 10;
@@ -61,6 +64,7 @@ div.bhoechie-tab-container{
   background-clip: padding-box;
   opacity: 0.97;
   filter: alpha(opacity=97);
+  width: 80%;
 }
 div.bhoechie-tab-menu{
   padding-right: 0;
@@ -118,11 +122,11 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 </head>
 
 <body>
-    <div class="container" id="ri" style="margin:0px">
+    <div class="container" id="ri" >
         <h1>Bootstrap Affix Example</h1>
         <h3>Fixed (sticky) navbar on scroll</h3>
     </div>
-    <nav class="navbar navbar-inverse" style="background-color:#55518a;padding:0px 10px 0px 0px;border-color: #55518a;">
+    <nav class="navbar navbar-inverse" style="background-color:#55518a;border-color: #55518a;width: 100%;">
         <div class="collapse navbar-collapse nav navbar-nav navbar-right" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#" id="a">Home</a></li>
@@ -180,13 +184,34 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
                 </a>
               </div>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab" >
                 <!-- flight section -->
                 <div class="bhoechie-tab-content active">
                     <center>
-                      <h1 class="glyphicon glyphicon-plane" style="font-size:14em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Flight Reservation</h3>
+                      <table class="table">
+                      <tr>
+                      	<th>Name</th>
+                      	<td><p id=""></p></td>
+                      </tr>
+                      <tr>
+                      	<th>E-Mail</th>
+                      	<td><p id=""></p></td>
+                      </tr>
+                      <tr>
+                      	<th>Mobile no.</th>
+                      	<td><p id=""></p></td>
+                      </tr>
+                      <tr>
+                      	<th>Father's Name</th>
+                      	<td><p id=""></p></td>
+                      </tr>
+                      <tr>
+                      	<th>Mother's Name</th>
+                      	<td><p id=""></p></td>
+                      </tr>
+					
+                      	
+                      </table>              
                     </center>
                 </div>
                 <!-- train section -->
@@ -222,9 +247,15 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
                 </div>
                 <div class="bhoechie-tab-content">
                     <center>
-                      <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
+                      <p style="font-size: 20px;padding-top: 30px;text-align:justify;padding-right: 50px;padding-left: 30px;" >At State Bank of India, we are committed to provide best internet banking services to our customers. Please feel free to share your Internet Banking experience with us over phone.</p>
+                      <p style="font-size: 20px;text-align:justify;padding-right: 50px;padding-left: 30px; ">SBI now provides your Account Balance and Transaction details over phone round the clock. Information on deposits & loan schemes and services also available.</p>
+                      <div class="row">
+                      <div class="col-lg-1"></div>
+                      <p style="font-size: 30px;padding-top: 30px;text-align: left;padding-left: 50px;color:#55518a; "><b> Contact us :-</b></p>                     
+                      <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 611-5210006 (Toll free and accessible from all landlines and mobile phones)</p>
+                      <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 661-2698199 (Accessible from all landlines and mobile phones)</p>
+                      <div class="col-lg-1"></div>
+                      </div>
                     </center>
                 </div>
             </div>
