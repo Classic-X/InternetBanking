@@ -333,7 +333,7 @@
   			<div class="row">
   			<div  align="center">  			
 			<div class="form-group">	
- 			<button class="btn btn-info prevtab"  onclick="return showNext();">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
+ 			<button class="btn btn-info prevtab"  onclick="tabv();">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
 			<button type="button" onclick="resetpg1();" class="btn btn-primary">Reset</button>
 			</div>
 			</div>
@@ -478,7 +478,7 @@
   				<div  align="center">
   					<div class="form-group">
   						<button class="btn btn-info prevtab" type="button" onclick="return showPrev()"><span class="glyphicon glyphicon-arrow-left"></span> Previous </button>
-  						<button class="btn btn-info prevtab" type="button" onclick="return showNext()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
+  						<button class="btn btn-info prevtab" type="button" onclick="tabv2()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
   						<button type="button" onclick="resetpg2()" class="btn btn-primary">Reset</button>
   					</div>
   				</div>
@@ -874,6 +874,46 @@ for (j = 1; j < 6; j++)
         document.getElementById("fr" + j).checked=false;
     }
 
+}
+//Tab1 validation
+function tabv()
+{
+	var scs=1;
+	for(i=1;i<=21;i++)
+	{
+		var vlu=document.getElementsByName("a"+i);
+		if(vlu[0].required==true)
+		{
+			if(vlu[0].value=="")
+				{scs=0;}
+		}
+	
+	}	
+	
+	if (scs==1) 
+	{
+		showNext();
+	}
+}
+//Tab2 validation
+function tabv2()
+{
+	var scs=1;
+	for(i=22;i<=34;i++)
+	{
+		var vlu=document.getElementsByName("a"+i);
+		if(vlu[0].required==true)
+		{
+			if(vlu[0].value=="")
+				{scs=0;}
+		}
+	
+	}	
+	
+	if (scs==1) 
+	{
+		showNext();
+	}
 }
 </script>
 <!--Image Final Tab-->
