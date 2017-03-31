@@ -19,7 +19,7 @@
     }
     .list-group-item
     {
-    	background-color: #2A2A2A;
+    	background-color: #1A1A1A;
     }
     div > a
     {
@@ -62,12 +62,21 @@
         margin-bottom: 0;        
     }
     div.bhoechie-tab-menu div.list-group>a.list-group-item:hover,
-    div.bhoechie-tab-menu div.list-group>a .glyphicon:hover,
-    div.bhoechie-tab-menu div.list-group>a .active:hover
+    div.bhoechie-tab-menu div.list-group>a .glyphicon:hover,    
+    div.bhoechie-tab-menu div.list-group>a .fa:hover
     {
-    	background-color: #585757;
+    	background-color: #333030;
+        border-left: 5px solid #333030;
+        margin-left: -2px; 
+        margin-right: -2px; 
+
+    }
+    div.bhoechie-tab-menu div.list-group>a.active:hover
+    {
+    	background-color: #5A55A3;
+        background-image: #5A55A3;
+        color: #ffffff;
         
-        border-left: 10px solid #585757; 
     }
     
     div.bhoechie-tab-menu div.list-group>a .glyphicon,
@@ -116,6 +125,10 @@
     div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
         display: none;
     }
+    .log2:hover
+    {
+    	background-color: #FF0000;
+    }    
     </style>
 </head>
 
@@ -134,9 +147,9 @@
         </ul>
         <div style="padding-right: 20px;">
         <ul class="nav navbar-nav navbar-right" >
-        <p class="label " style="font-size: 12px;margin: auto;">Logged In As</p>
-        	 <p class="label label-primary" style="font-size: 15px;margin: auto;background-color:#55518a; ">USER</p>
-        	<button class="btn btn-danger navbar-btn " ><span class="glyphicon glyphicon-log-out"></span> Logout</button>
+        <p class="label " style="font-size: 18px;margin: auto;">Welcome!!</p>
+        	 <p class="label label-primary" style="font-size: 15px;margin: auto;background-color:#55518a;">USER</p>
+        	<button class="btn btn-danger navbar-btn log2" ><span class="glyphicon glyphicon-log-out"></span> Logout</button>
         </ul>
         </div>
     </div>
