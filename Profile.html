@@ -5,300 +5,307 @@
     <title>Bank</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>  
-  <!--Jasny Bootstrap-->
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+    <!--Jasny Bootstrap-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-    .m {
-        width: 25%;
-        margin: 0px;
-        margin-top: 5px;
-        padding: 0px;
-        margin-right: 0px;
+    th {
+        font-size: 23px;
     }
-    
-    .n {
-        width: 74%;
-        margin: 0px;
-        margin-top: 5px;
-        margin-left: 0px;
-        padding: 0px;
-    }
-    
-    #9q {
-        padding: 0px;
-        padding-bottom: 114px;
-        margin-left: 0px;
-        border: 1px solid #337ab7;
-        border-radius: 6px 6px 0 0;
-        height="450";
-    }
-    
+    .list-group-item
     {
-        padding-top: 12px;
-        padding-bottom: 12px;
+    	background-color: #2A2A2A;
     }
-    th
+    div > a
     {
-    	font-size: 23px;
+
+    }
+    /*  bhoechie tab */
+    
+    div.bhoechie-tab-container {
+        z-index: 10;
+        background-color: #ffffff;
+        padding: 0 !important;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+        margin-left: 50px;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        background-clip: padding-box;
+        opacity: 0.97;
+        filter: alpha(opacity=97);
+        width: 93%;
     }
     
-/*  bhoechie tab */
-div.bhoechie-tab-container{
-  z-index: 10;
-  background-color: #ffffff;
-  padding: 0 !important;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  border:1px solid #ddd;
-  margin-top: 20px;
-  margin-left: 50px;
-  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  background-clip: padding-box;
-  opacity: 0.97;
-  filter: alpha(opacity=97);
-  width: 90%;
-}
-div.bhoechie-tab-menu{
-  padding-right: 0;
-  padding-left: 0;
-  padding-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group{
-  margin-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group>a{
-  margin-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group>a .glyphicon,
-div.bhoechie-tab-menu div.list-group>a .fa {
-  color: #5A55A3;
-}
-div.bhoechie-tab-menu div.list-group>a:first-child{
-  border-top-right-radius: 0;
-  -moz-border-top-right-radius: 0;
-}
-div.bhoechie-tab-menu div.list-group>a:last-child{
-  border-bottom-right-radius: 0;
-  -moz-border-bottom-right-radius: 0;
-}
-div.bhoechie-tab-menu div.list-group>a.active,
-div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
-div.bhoechie-tab-menu div.list-group>a.active .fa{
-  background-color: #5A55A3;
-  background-image: #5A55A3;
-  color: #ffffff;
-}
-div.bhoechie-tab-menu div.list-group>a.active:after{
-  content: '';
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  margin-top: -13px;
-  border-left: 0;
-  border-bottom: 13px solid transparent;
-  border-top: 13px solid transparent;
-  border-left: 10px solid #5A55A3;
-}
+    div.bhoechie-tab-menu {
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+    }
+    
+    div.bhoechie-tab-menu div.list-group {
+        margin-bottom: 0;
+        margin-right: 180px;
+        height: 613px;
 
-div.bhoechie-tab-content{
-  background-color: #ffffff;
-  /* border: 1px solid #eeeeee; */
-  padding-left: 20px;
-  padding-top: 10px;
-}
-
-div.bhoechie-tab div.bhoechie-tab-content:not(.active){
-  display: none;
-}
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a {
+        margin-bottom: 0;        
+    }
+    div.bhoechie-tab-menu div.list-group>a.list-group-item:hover,
+    div.bhoechie-tab-menu div.list-group>a .glyphicon:hover,
+    div.bhoechie-tab-menu div.list-group>a .active:hover
+    {
+    	background-color: #585757;
+        
+        border-left: 10px solid #585757; 
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a .glyphicon,
+    div.bhoechie-tab-menu div.list-group>a .fa {
+        color: #FFFFFF;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a:first-child {
+        border-top-right-radius: 0;
+        -moz-border-top-right-radius: 0;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a:last-child {
+        border-bottom-right-radius: 0;
+        -moz-border-bottom-right-radius: 0;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a.active,
+    div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+    div.bhoechie-tab-menu div.list-group>a.active .fa {
+        background-color: #5A55A3;
+        background-image: #5A55A3;
+        color: #ffffff;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a.active:after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        margin-top: -13px;
+        border-left: 0;
+        border-bottom: 13px solid transparent;
+        border-top: 13px solid transparent;
+        border-left: 10px solid #5A55A3;        
+    }
+    
+    div.bhoechie-tab-content {
+        background-color: #ffffff;
+        /* border: 1px solid #eeeeee; */
+        padding-left: 20px;
+        padding-top: 10px;
+        margin-left: -150px;
+    }
+    
+    div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
+        display: none;
+    }
     </style>
 </head>
 
 <body>
-    <div class="container" id="ri" >
-        <h1>Bootstrap Affix Example</h1>
-        <h3>Fixed (sticky) navbar on scroll</h3>
-    </div>
-    <nav class="navbar navbar-inverse" style="background-color:#55518a;border-color: #55518a;width: 100%;">
-        <div class="collapse navbar-collapse nav navbar-nav navbar-right" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#" id="a">Home</a></li>
-                <li class="hover"><a href="#" id="b">About</a></li>
-                <li><a href="#" id="c">developers</a></li>
-                <li><a href="#" id="f">FAQ</a></li>
-                <li><a href="#" id="g">Contact</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="o">MORE
-             <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Merchandise</a></li>
-                        <li><a href="#">Extras</a></li>
-                        <li><a href="#">Media</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <form class="navbar-form navbar-left">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </li>
-            </ul>
+	<!--Navabar-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid" >
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
         </div>
-    </nav>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+
+        </ul>
+        <div style="padding-right: 20px;">
+        <ul class="nav navbar-nav navbar-right" >
+        <p class="label " style="font-size: 12px;margin: auto;">Logged In As</p>
+        	 <p class="label label-primary" style="font-size: 15px;margin: auto;background-color:#55518a; ">USER</p>
+        	<button class="btn btn-danger navbar-btn " ><span class="glyphicon glyphicon-log-out"></span> Logout</button>
+        </ul>
+        </div>
+    </div>
+</nav>
+
+    
     <!--Vertical tabs-->
     <div class="container-fluid">
-	<div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
-              <div class="list-group">
-                <a href="#" class="list-group-item active text-center">
-                  <h4 class="glyphicon glyphicon-user"></h4><br/>Profile
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-list-alt"></h4><br/>Account Information
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h3 style="margin-bottom: -12px;margin-top: 10px;"><i class="fa fa-money"></i></h3><br/>Passbook
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h3 style="margin-bottom: -10px;margin-top: 10px;"><i class="fa fa-inr"></i></h3><br/>Money Transfer
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Change Password
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-exclamation-sign"></h4><br/>Help!!
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab" >
-                <!-- flight section -->
-                <div class="bhoechie-tab-content active">
-                    <center>
-                    <div style="padding: 20px;">
-                      <table class="table">
-                      <thead>
-                      <tr >
-                      	<th colspan="2">Customer ID</th>
-                      	<th colspan="2"><p id=""></p></th>
-                      </tr>
-                      </thead>
-                      <tr>
-                      	<th>Name</th>
-                      	<td><p id=""></p></td>
-                      </tr>
-                      <tr>
-                      	<th>E-Mail</th>
-                      	<td><p id=""></p></td>
-                      	<th>Mobile no.</th>
-                      	<td><p id=""></p></td>
-                      </tr>
-                      <tr>
-                      	<th>Alt Mobile no.</th>
-                      	<td><p id=""></p></td>
-                      	<th>Office no.</th>
-                      	<td><p id=""></p></td>
-                      </tr>
-                      <tr>
-                      	<th>Father's Name</th>
-                      	<td colspan="3"><p id=""></p></td>
-                      </tr>
-                      <tr>
-                      	<th>Mother's Name</th>
-                      	<td colspan="3"><p id=""></p></td>
-                      </tr>
-                      <tr>
-                      	<th>Address</th>
-                      	<td><p id=""></p></td>
-                      </tr>					
-                      	
-                      </table>
-                      </div>              
-                    </center>
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active text-center">
+                            <h2 class="glyphicon glyphicon-user"></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Profile</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 class="glyphicon glyphicon-list-alt"></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Account Information
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 style="margin-bottom: -12px;margin-top: 20px;"><i class="fa fa-money"></i></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Passbook</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 style="margin-bottom: -10px;margin-top: 20px;"><i class="fa fa-inr"></i></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Money Transfer</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 class="glyphicon glyphicon-credit-card"></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Change Password</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 class="glyphicon glyphicon-exclamation-sign" ></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Help!!</span>
+                        </a>
+                    </div>
                 </div>
-                <!-- Account Information -->
-                <div class="bhoechie-tab-content">
-                    <center>
-
-                      <div style="padding: 50px;">
-                     <div class="form-group">
-                      <label for="stateind" class="control-label"><h2>Select Account</h2></label>
- 					<select class="form-control" id="stateind" required>
-					<option value="">None</option>
-					<option value=""></option>
-					<option value=""></option>
-					</select>
-					</div>
-                      	
-                      </div>
-                    </center>
-                </div>
-    
-                <!-- hotel search -->
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
-                    </center>
-                </div>
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
-                    </center>
-                </div>
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
-                    </center>
-                </div>
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <p style="font-size: 20px;padding-top: 30px;text-align:justify;padding-right: 50px;padding-left: 30px;" >At State Bank of India, we are committed to provide best internet banking services to our customers. Please feel free to share your Internet Banking experience with us over phone.</p>
-                      <p style="font-size: 20px;text-align:justify;padding-right: 50px;padding-left: 30px; ">SBI now provides your Account Balance and Transaction details over phone round the clock. Information on deposits & loan schemes and services also available.</p>
-                      <div class="row">
-                      <div class="col-lg-1"></div>
-                      <p style="font-size: 30px;padding-top: 30px;text-align: left;padding-left: 50px;color:#55518a; "><b> Contact us :-</b></p>                     
-                      <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;padding-right: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 611-5210006 (Toll free and accessible from all landlines and mobile phones)</p>
-                      <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;padding-right: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 661-2698199 (Accessible from all landlines and mobile phones)</p>
-                      <div class="col-lg-1"></div>
-                      </div>
-                    </center>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                    <!-- Detailss section -->
+                    <div class="bhoechie-tab-content active">
+                        <center>
+                            <div style="padding: 20px;">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Customer ID</th>
+                                            <th colspan="2">
+                                                <p id=""></p>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <td>
+                                            <p id=""></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>E-Mail</th>
+                                        <td>
+                                            <p id=""></p>
+                                        </td>
+                                        <th>Mobile no.</th>
+                                        <td>
+                                            <p id=""></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Alt Mobile no.</th>
+                                        <td>
+                                            <p id=""></p>
+                                        </td>
+                                        <th>Office no.</th>
+                                        <td>
+                                            <p id=""></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Father's Name</th>
+                                        <td colspan="3">
+                                            <p id=""></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mother's Name</th>
+                                        <td colspan="3">
+                                            <p id=""></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Address</th>
+                                        <td>
+                                            <p id=""></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </center>
+                    </div>
+                    <!-- Account Information -->
+                    <div class="bhoechie-tab-content">
+                        <center>
+                            <div style="padding: 50px;margin-top: -30px;">
+                                <div class="form-group">
+                                    <label for="stateind" class="control-label" style="color: grey;">
+                                        <h2>Select Account</h2>
+                                        <select class="form-control" id="stateind" required>
+                                            <option value="">None</option>
+                                            <option value=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                    <!-- Account statement -->
+                    <div class="bhoechie-tab-content">
+                        <center>
+                            <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
+                            <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                            <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
+                        </center>
+                    </div>
+                    <div class="bhoechie-tab-content">
+                        <center>
+                            <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
+                            <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                            <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
+                        </center>
+                    </div>
+                    <div class="bhoechie-tab-content">
+                        <center>
+                            <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
+                            <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                            <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
+                        </center>
+                    </div>
+                    <div class="bhoechie-tab-content">
+                        <center>
+                            <p style="font-size: 20px;padding-top: 30px;text-align:justify;padding-right: 50px;padding-left: 30px;">At State Bank of India, we are committed to provide best internet banking services to our customers. Please feel free to share your Internet Banking experience with us over phone.</p>
+                            <p style="font-size: 20px;text-align:justify;padding-right: 50px;padding-left: 30px; ">SBI now provides your Account Balance and Transaction details over phone round the clock. Information on deposits & loan schemes and services also available.</p>
+                            <div class="row">
+                                <div class="col-lg-1"></div>
+                                <p style="font-size: 30px;padding-top: 30px;text-align: left;padding-left: 50px;color:#55518a; "><b> Contact us :-</b></p>
+                                <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;padding-right: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 611-5210006 (Toll free and accessible from all landlines and mobile phones)</p>
+                                <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;padding-right: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 661-2698199 (Accessible from all landlines and mobile phones)</p>
+                                <div class="col-lg-1"></div>
+                            </div>
+                        </center>
+                    </div>
                 </div>
             </div>
         </div>
-  </div>
-</div>
+    </div>
     <!-- /container -->
     <!--Scripts-->
     <script>
     $(document).ready(function() {
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
     });
-});
     </script>
     <!--Scripts End-->
 </body>
