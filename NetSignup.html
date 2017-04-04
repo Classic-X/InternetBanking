@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Email Verify</title>
+    <title>Create account</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+    <!--Jasny Bootstrap-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+</head>
+<style>
+div.polaroid {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.panel {
+    border: 0;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td {
+    border: 0;
+}
+
+.input-group {
+    width: 400px;
+    height: 45px;
+}
+.help-block
+{
+    width: 370px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"]
+{height: 45px;
+
+}
+.panel > .panel-heading
+    {
+        background-image: none;
+        background-color: #55518a;
+        border-color: #55518a;
+        color: white;
+        text-align: center;
+    }
+    
+    .glyphicon {
+    font-size: 20px;
+}
+.glyphicon:hover,
+span > b:hover
+{
+    font-size: 24px;
+}
+#daf:hover
+{
+    font-size: 17px;
+    background-color: green;
+}
+#daf
+{
+    background-color: #68C068;
+    border: 0;
+}
+    
+</style>
+
+<body onload="form1.reset();" >
+    
+        <div id="formpage_1" style="visibility: visible; display: block;">
+        <form data-toggle="validator" role="form" id="form1">
+            <div class="container" align="center">
+                <div class="polaroid" style="height: auto; width: 700px;margin-top: 30px;">
+                    <div align="center">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Signup</div>
+                            <div class="panel-body">
+                                <div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong> For existing customers for availing Internet Banking facility</div>
+                                <div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong> If you have already signed up kindly use the Login button</div>
+                                <br>
+                                <div id="notu"></div>
+                                <div id="c2help"></div>                                                                
+                                <br>
+                                <div class="form-group has-feedback">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434;font-size: 20px; " id="hv"><b>ID</b></span>
+                                        <input id="c1" type="text" data-uid="1" class="form-control" name="c1" onchange="checkunique(this.value);" placeholder="Customer ID" required>
+                                    </div>
+                                    <div class="help-block with-errors" id="cerror"></div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434; "><i class="glyphicon glyphicon-user"></i></span>
+                                        <input type="text" data-uiuser="1" class="form-control" id="c2" name="c2" placeholder="Username" required>
+                                    </div>  
+                                      <div class="help-block with-errors"></div>                                
+                                </div>
+
+                                <br>
+                                <div class="input-group form-group">
+                                    <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434;font-size: 20px; " id="hv"><b>@</b></span>
+                                    <input id="c3" type="text" class="form-control" name="c3" placeholder="Email" required="">
+                                </div>
+                                <br>
+                                
+                                <br>
+                                <div class=" form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434; "><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="c4" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" class="form-control" name="c4" placeholder="Password" data-error="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters!!!" required="">
+                                    </div>
+                                    <div class="help-block with-errors" id="c4error">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</div>
+                                </div>
+                                <br>
+                                <div class=" form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434; "><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="c5" type="password" data-equc="sad" class="form-control" name="c5" placeholder="Confirm Password" required="">
+                                    </div>
+                                    <div class="help-block with-errors" id="c4error"></div>
+                                </div>
+                                <br>
+                                
+                                <button class="btn btn-primary" id="daf" type="submit"">Sign-Up</button>
+                                <p id="tg"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        
+<script>
+    function insertdbase() {        
+        var xhttp;
+        var cc=["c1","c2","c3","c4"];
+        var cd=[];
+        for(i=0;i<4;i++)
+        {
+            cd[i]=document.getElementById(cc[i]).value;
+            
+        }
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                
+            }
+        };
+        xhttp.open("POST", "netsignup.jsp?c1="+cd[0]+"&c2="+cd[1]+"&c3="+cd[2]+"&c4="+cd[3], true);
+        xhttp.send();
+        
+    }
+    var glb=0;
+    //Check for Unique CUSTOMER ID
+    function checkunique(uq)
+     {        
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                var on=xhttp.responseText;
+                
+                if(on==1)
+                {
+                    global(1);
+                    document.getElementById('notu').innerHTML= "<div class=\"alert alert-danger fade in\" align=\"left\" style=\"margin-bottom: 0px;\"><strong>Info!</strong> User Already Registered</div>"; 
+                }
+                else
+                {
+                    global(0);
+                    document.getElementById('notu').innerHTML= "<div class=\"alert alert-success fade in\" align=\"left\" style=\"margin-bottom: 0px;\"><strong>Info!</strong> Not Registered</div>";
+                }
+                
+            }
+        };
+        xhttp.open("POST", "uniqueuser.jsp?c1="+uq, true);
+        xhttp.send();
+        
+    }
+    function global(sr)
+    {
+        glb=sr;
+        console.log("GLB value");
+        console.log(glb);
+        $('#c1').trigger('input');
+    }
+    
+    </script>        
+<script>
+var chkuu;
+$(document).ready(function() {
+            $("#c2").change(function() {
+                $.post("uniqueusername.jsp", {
+                        c2: $("#c2").val()
+                    },
+                    function(data) {
+                        
+                        if (data==1)
+                            {
+                        global2(1);
+                    }
+                                else
+                                {global2(0);
+                                    }
+                                    });
+                    });
+            });
+function global2(sr)
+    {
+        chkuu=sr;
+        console.log("Chkuu value");
+        console.log(chkuu);
+        $('#c2').trigger('input');
+    }
+
+</script>
+<script>
+        $('form[data-toggle="validator"]').validator({
+            custom: {
+                equc: function($as) {
+                    var matchValue = $("#c4").val();
+                    if ($("#c5").val() !== matchValue) {
+                        console.log("gatbuyuy");
+                        return "Passwords do not match!!!" ;
+                    }
+                },
+
+            equals: function($el) {
+                    var matchValue = $el.data("equals")
+                    if ($el.val() !== matchValue) {
+                        console.log("gatb");
+                      return "Hey, that's not valid! It's gotta be " + matchValue
+                    }
+                    else
+                        console.log("gatb1");
+                  },
+            uiuser : function($asa) {                    
+                    var matchVa = $asa.val(); 
+                    if (chkuu==1) {
+                        console.log("Errotica");
+                        return "Customer ID already registered!!" ;
+                    }
+                    else
+                    {
+                         console.log(chkuu);  
+                        console.log("Erro");
+                    }
+                },
+            uid : function($das)
+            {
+                if(glb==1)
+                  {  console.log("Received");
+                    return "Already Registered";
+                    }
+                else
+                {
+                    console.log(glb);
+                    console.log("Not Working");
+                    return false;
+                }
+            
+                
+            }
+            }
+        })
+        
+        </script> 
+        
+<!--
+        <script>
+        $('form[data-toggle="validator"]').validator({
+            custom: {
+                
+            }
+        })
+        </script>
+        <script>
+        $('form[data-toggle="validator"]').validator({
+            custom: {
+                  equals: function($el) {
+                    var matchValue = $el.data("equals")
+                    if ($el.val() !== matchValue) {
+                      return "Hey, that's not valid! It's gotta be " + matchValue
+                    }
+                  }
+                }
+        })
+        </script>
+    -->    
+    
+    <form data-toggle="validator" role="form">
+        <div id="formpage_2" style="visibility: hidden; display: none;">
+            <div class="container" align="center">
+                <div class="polaroid" style="height: 600px; width: 700px;margin-top: 70px;">
+                    <div align="center">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Signup</div>
+                            <div class="panel-body">
+                                <div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong> The (*) marked fields are mandatory.</div>
+                                <div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong> Enter the email with which you want your account to be associated with or the Customer ID if any.</div>
+                                <br>
+                                <div class="form-group">
+                                    <div class="radio-toolbar">
+                                        <div class="radio">
+                                            <label id="1">
+                                                <input id="r1" type="radio" name="a1" value="email" required autofocus onclick="fun('r1')">Email</label>
+                                            <label id="2">
+                                                <input id="r2" type="radio" name="a1" value="text" required onclick="fun('r2')">Customer ID</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="a" class="control-label" id="m"></label>
+                                    <input type="email" id="i" name="a2" class="form-control" required>
+                                    <div id="t"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form action="SecondServlet" method="Post" data-toggle="validator" role="form">
+        <div id="formpage_3" style="visibility: hidden; display: none;">
+            <div class="container" align="center">
+                <div class="polaroid" style="height: 600px; width: 700px;margin-top: 70px;">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">OTP Verify</div>
+                        <div class="panel-body" align="center">
+                            <div class="alert alert-info" align="left" style="margin-bottom: 0px;"><strong>Info!</strong> An OTP has been sent to your email enter it in the box.</div>
+                            <br>
+                            <div class="form-group">
+                                <label for="a2" class="control-label" id="m">OTP *</label>
+                                <input style="width:30%" type="text" id="i" name="a2" class="form-control" required>
+                            </div>
+                            <br>
+                            <button type="submit" id="button2" value="SecondServlet" class="btn btn-success">
+                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--Page Change Script-->
+    <script>
+
+    function pagechange(frompage, topage) {
+        var page = document.getElementById('formpage_' + frompage);
+        if(!page) return false;
+        page.style.visibility = 'hidden';
+        page.style.display = 'none';
+
+        page = document.getElementById('formpage_' + topage);
+        if(!page) return false;
+        page.style.display = 'block';
+        page.style.visibility = 'visible';
+
+        return true;
+    }
+    </script>
+    <script>
+    function fun(x) {
+        if (document.getElementById(x).value == 'email') {
+            document.getElementById('i').value = '';
+            document.getElementById('m').innerHTML = 'Enter Email*';
+            document.getElementById('i').type = document.getElementById('r1').value;
+            document.getElementById('t').innerHTML = '</br><button type="submit" id="button1" value="FirstServlet" class="btn btn-success" onclick="pagechange(2,3);"></span> Confirm <span class="glyphicon glyphicon-ok"></button>';
+        } else {
+            document.getElementById('i').value = '';
+            document.getElementById('m').innerHTML = 'Enter Customer ID*';
+            document.getElementById('i').type = document.getElementById('r2').value;
+            document.getElementById('t').innerHTML = '</br><button type="submit" id="button1" class="btn btn-success" onclick="pagechange(2,3);"></span> Confirm <span class="glyphicon glyphicon-ok"></button>';
+        }
+    }
+    </script>
+    
+   
+
+ 
+<!--Form submit on validation-->
+<script>
+$('#form1').validator().on('submit', function (e) {
+    if (e.isDefaultPrevented()) {
+    alert("Please Check the fields!!");
+  } else {
+    insertdbase();
+ pagechange(1,2);
+ return false;
+  }
+ 
+});
+
+</script>
+</body>
+
+</html>

@@ -9,22 +9,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
-    <!--Jasny Bootstrap-->
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+    <!--Date Checker-->    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
     <style>
     th {
         font-size: 23px;
     }
-    .list-group-item
-    {
-    	background-color: #2A2A2A;
+    
+    .list-group-item {
+        background-color: #1A1A1A;
     }
-    div > a
+    .input-group > .ac
+    {
+        height: 50px;
+        width: 50px;
+    }
+    .input-group > .ab
     {
 
+        height: 50px;
+        width: 260px;
     }
+    .modal-header
+    {
+        text-align: center;
+        font-size: 30px;
+        background-color: #805FB7;
+        color: #FFFFFF;
+    }
+    
+    div > a {}
     /*  bhoechie tab */
     
     div.bhoechie-tab-container {
@@ -55,19 +71,25 @@
         margin-bottom: 0;
         margin-right: 180px;
         height: 613px;
-
     }
     
     div.bhoechie-tab-menu div.list-group>a {
-        margin-bottom: 0;        
+        margin-bottom: 0;
     }
+    
     div.bhoechie-tab-menu div.list-group>a.list-group-item:hover,
     div.bhoechie-tab-menu div.list-group>a .glyphicon:hover,
-    div.bhoechie-tab-menu div.list-group>a .active:hover
-    {
-    	background-color: #585757;
-        
-        border-left: 10px solid #585757; 
+    div.bhoechie-tab-menu div.list-group>a .fa:hover {
+        background-color: #333030;
+        border-left: 5px solid #333030;
+        margin-left: -2px;
+        margin-right: -2px;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a.active:hover {
+        background-color: #5A55A3;
+        background-image: #5A55A3;
+        color: #ffffff;
     }
     
     div.bhoechie-tab-menu div.list-group>a .glyphicon,
@@ -102,7 +124,7 @@
         border-left: 0;
         border-bottom: 13px solid transparent;
         border-top: 13px solid transparent;
-        border-left: 10px solid #5A55A3;        
+        border-left: 10px solid #5A55A3;
     }
     
     div.bhoechie-tab-content {
@@ -116,33 +138,34 @@
     div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
         display: none;
     }
+    
+    .log2:hover {
+        background-color: #FF0000;
+    }
     </style>
 </head>
 
-<body>
-	<!--Navabar-->
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid" >
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
+<body onload="profileinfo();">
+    <!--Navabar-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <div style="padding-right: 20px;">
+                <ul class="nav navbar-nav navbar-right">
+                    <p class="label " style="font-size: 18px;margin: auto;">Welcome!!</p>
+                    <p class="label label-primary" style="font-size: 15px;margin: auto;background-color:#55518a;">USER</p>
+                    <button class="btn btn-danger navbar-btn log2"><span class="glyphicon glyphicon-log-out"></span> Logout</button>
+                </ul>
+            </div>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-
-        </ul>
-        <div style="padding-right: 20px;">
-        <ul class="nav navbar-nav navbar-right" >
-        <p class="label " style="font-size: 12px;margin: auto;">Logged In As</p>
-        	 <p class="label label-primary" style="font-size: 15px;margin: auto;background-color:#55518a; ">USER</p>
-        	<button class="btn btn-danger navbar-btn " ><span class="glyphicon glyphicon-log-out"></span> Logout</button>
-        </ul>
-        </div>
-    </div>
-</nav>
-
-    
+    </nav>
     <!--Vertical tabs-->
     <div class="container-fluid">
         <div class="row">
@@ -170,7 +193,7 @@
                             <br/><span id="menuxtxt" style="color: #E9E9E9;">Change Password</span>
                         </a>
                         <a href="#" class="list-group-item text-center">
-                            <h2 class="glyphicon glyphicon-exclamation-sign" ></h2>
+                            <h2 class="glyphicon glyphicon-exclamation-sign"></h2>
                             <br/><span id="menuxtxt" style="color: #E9E9E9;">Help!!</span>
                         </a>
                     </div>
@@ -178,97 +201,148 @@
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
                     <!-- Detailss section -->
                     <div class="bhoechie-tab-content active">
-                        <center>
-                            <div style="padding: 20px;">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2">Customer ID</th>
-                                            <th colspan="2">
-                                                <p id=""></p>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <td>
-                                            <p id=""></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>E-Mail</th>
-                                        <td>
-                                            <p id=""></p>
-                                        </td>
-                                        <th>Mobile no.</th>
-                                        <td>
-                                            <p id=""></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Alt Mobile no.</th>
-                                        <td>
-                                            <p id=""></p>
-                                        </td>
-                                        <th>Office no.</th>
-                                        <td>
-                                            <p id=""></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Father's Name</th>
-                                        <td colspan="3">
-                                            <p id=""></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Mother's Name</th>
-                                        <td colspan="3">
-                                            <p id=""></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Address</th>
-                                        <td>
-                                            <p id=""></p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </center>
+                        <div id="profileview">
+                            
+                        </div>
                     </div>
                     <!-- Account Information -->
                     <div class="bhoechie-tab-content">
                         <center>
-                            <div style="padding: 50px;margin-top: -30px;">
-                                <div class="form-group">
-                                    <label for="stateind" class="control-label" style="color: grey;">
-                                        <h2>Select Account</h2>
-                                        <select class="form-control" id="stateind" required>
-                                            <option value="">None</option>
-                                            <option value=""></option>
-                                            <option value=""></option>
-                                        </select>
-                                    </label>
-                                </div>
+                            <div style="padding: 50px;margin-top: 200px;">
+                                <div class="panel panel-default">
+                                  <div class="panel-body">
+                                    <div id="accountinfo"></div>
+                                  </div>
+                                  <div class="panel-footer">Panel Footer</div>
+                                </div>                                
                             </div>
                         </center>
                     </div>
                     <!-- Account statement -->
-                    <div class="bhoechie-tab-content">
-                        <center>
-                            <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
-                            <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                            <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
-                        </center>
+                    <div class="bhoechie-tab-content" align="center">
+                        <div class="container">
+                            <h2>View Statement By</h2>
+                            <p>Select the time period for viewing statement.</p>
+                            <form>
+                                <label class="radio-inline">
+                                    <input id="radio_1" type="radio" name="optradio">Date
+                                </label>
+                                <label class="radio-inline">
+                                    <input id="radio_2" type="radio" name="optradio">Month
+                                </label>
+                                <label class="radio-inline">
+                                    <input id="radio_3" type="radio" name="optradio">Year
+                                </label>
+                            </form>
+                            <br>
+                            <div class="form-group" style="display:none;" id="II">
+                            <form class="form-inline">
+                            <label for="#I1">From </label>
+                                <div class="input-group date" style="width: 15%;"">
+                                  <input type="text" id="I1" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                             <label for="#I2"> To </label>
+                                <div class="input-group date" style="width: 15%;"">
+                                  <input type="text" id="I2" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                             </form>   
+                            </div>
+                            <form class="row form-inline ">
+                            <div class="" style="width: 10%;display:none;" id="div2">
+                            <label for="#I3" style="">Select Month</label>
+                                <div class="input-group date">
+                                  <input type="text" id="I3" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>                           
+                            
+                            </div>
+                            </form>
+                            <form class="form-inline ">
+                            <div class="" style="width: 10%;display:none;" id="div3">                            
+                            <label for="#I4" style="">Select Year</label>
+                                <div class="input-group date">                                
+                                <input type="text" id="I4" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>                         
+                            </div>
+                            </form>
+                        </div>
                     </div>
+                    <script>
+                        $("#radio_1").click(function(){
+                            $("#div3").fadeOut(0);
+                            $("#div2").fadeOut(0);
+                            $("#II").fadeIn(50);
+                        });
+                        $("#radio_2").click(function(){
+                            $("#div3").fadeOut(0);
+                            $("#II").fadeOut(0);
+                            $("#div2").fadeIn(50);
+                        });
+                        $("#radio_3").click(function(){
+                            $("#div2").fadeOut(0);
+                            $("#II").fadeOut(0);
+                            $("#div3").fadeIn(50);
+                        });
+                        $('#div3 .input-group.date').datepicker({
+                            format: "yyyy",
+                            minViewMode: 2,
+                            maxViewMode: 3
+                        });
+                        $('#div2 .input-group.date').datepicker({
+                            format: "mm",
+                            minViewMode: 1,
+                            maxViewMode: 2
+                        });
+                    </script>
                     <div class="bhoechie-tab-content">
-                        <center>
-                            <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
-                            <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                            <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
-                        </center>
+                    <div align="center">
+                    <h1>Transfer Money</h1>
+                    <p>Check details properly before transaction.</p>
                     </div>
+                        <div class="tran" align="center" style="margin: 30px;">
+                        <h2  style="padding-bottom: 20px;" ><span style="background-color: #5A55A3;" class="label label-default">Select Your Account</span></h2>
+                        <div id="acc1"></div>
+                        <h2  style="padding-bottom: 10px;" ><span style="background-color: #5A55A3;" class="label label-default">Receiver</span></h2>
+                        <form data-toggle="validator" role="form" id="form1">
+                            <div class="form-group has-feedback">
+                                    <div class="input-group">
+                                        <span class="ac input-group-addon" style="color: #F2F1FF; background-color:#343434;font-size: 20px; " id="hv"><b>ID</b></span>
+                                        <input id="F1" type="text"  pattern="[0-9]{5}" data-error="Enter valid account number" class="form-control ab" name="c1" placeholder="Account No." required>
+                                    </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <div class="input-group">
+                                        <span class="ac input-group-addon" style="color: #F2F1FF; background-color:#343434;font-size: 20px; " id="hv"><b>₹​</b></span>
+                                        <input id="F2" type="text" pattern="[0-9]{5}" class="form-control ab" name="c1" placeholder="Amount" required>
+                                    </div>
+                                    <div class="help-block with-errors" id="cerror"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <div class="">
+                                     <input type="text" style="height: 50px;width: 265px;" class="form-control"  id="parti" placeholder="Reason">
+                                    </div>                                    
+                                </div>
+                                <!-- Trigger the modal with a button -->
+                                <button type="submit" class="btn btn-success btn-lg" id="transfer">Transfer</button>
+                            </form>
+                        </div>
+                    </div>
+                    <script>
+                        $("#transfer").click(function(){
+                            $("#TS2").html($("#F1").val());
+                            $("#TS3").html($("#F1").val());
+                            $("#TS4").html($("#F2").val());
+                        });
+                        $('#form1').validator().on('submit', function (e) {
+                          if (e.isDefaultPrevented()) {
+                          alert("Please Check the fields!!");
+                        } else {
+                          $("#myModal").modal();
+                       return false;
+                        }
+                       
+                      });
+                    </script>
                     <div class="bhoechie-tab-content">
                         <center>
                             <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
@@ -293,6 +367,54 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="border-radius: 5px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="margin-top: 250px;width: 400px;margin-left: 220px;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body" align="center" style="text-align: left;padding-left: 50px;">
+        <div class="row">
+              <div class="col-lg-5"><b style="font-size: 30px;">Reciever</b></div>
+              <div class="col-lg-4" id="TS7"></div>
+          </div>
+          <div class="row">
+              <div class="col-lg-5"><b>Account No. :</b></div>
+              <div class="col-lg-4" id="TS6"></div>
+          </div>
+        <div class="row">
+              <div class="col-lg-5"><b style="font-size: 30px;">Reciever</b></div>
+              <div class="col-lg-4" id="TS1"></div>
+          </div>
+          <div class="row">
+              <div class="col-lg-5"><b>Account No. :</b></div>
+              <div class="col-lg-4" id="TS2"></div>
+          </div>
+          <div class="row">
+              <div class="col-lg-5"><b>Name :</b></div>
+              <div class="col-lg-4" id="TS3"></div>
+          </div>
+          <div class="row">
+              <div class="col-lg-5"><b>Amount :</b></div>
+              <div class="col-lg-4" id="TS4"></div>
+          </div>
+        </div>
+        <div class="modal-footer" align="center" style="padding-right: 17%;">
+          <div class="form-group form-inline">
+          <input type="text" id="p2" style="width: 60%;" class="form-control" name="" placeholder="Enter Password">       
+          <button type="button" class="btn btn-success"> Confirm</button>              
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
     <!-- /container -->
     <!--Scripts-->
     <script>
@@ -306,6 +428,19 @@
             $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
         });
     });
+    </script>
+    <script>
+    function profileinfo() {
+        var xhttp;        
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("profileview").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("POST", "Passbook.jsp", true);
+        xhttp.send();
+    }
     </script>
     <!--Scripts End-->
 </body>
