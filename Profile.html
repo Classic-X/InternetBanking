@@ -294,29 +294,36 @@
                         });
                     </script>
                     <div class="bhoechie-tab-content">
-                        <div class="tran" align="center" style="margin: 100px;">
-                        <form data-toggle="validator" role="form">
+                    <div align="center">
+                    <h1>Transfer Money</h1>
+                    <p>Check details properly before transaction.</p>
+                    </div>
+                        <div class="tran" align="center" style="margin: 30px;">
+                        <h2  style="padding-bottom: 20px;" ><span style="background-color: #5A55A3;" class="label label-default">Select Your Account</span></h2>
+                        <div id="acc1"></div>
+                        <h2  style="padding-bottom: 10px;" ><span style="background-color: #5A55A3;" class="label label-default">Receiver</span></h2>
+                        <form data-toggle="validator" role="form" id="form1">
                             <div class="form-group has-feedback">
                                     <div class="input-group">
                                         <span class="ac input-group-addon" style="color: #F2F1FF; background-color:#343434;font-size: 20px; " id="hv"><b>ID</b></span>
-                                        <input id="F1" type="text" class="form-control ab" name="c1" placeholder="Receiver ID" required>
+                                        <input id="F1" type="text"  pattern="[0-9]{5}" data-error="Enter valid account number" class="form-control ab" name="c1" placeholder="Account No." required>
                                     </div>
-                                    <div class="help-block with-errors" id="cerror"></div>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group has-feedback">
                                     <div class="input-group">
                                         <span class="ac input-group-addon" style="color: #F2F1FF; background-color:#343434;font-size: 20px; " id="hv"><b>₹​</b></span>
-                                        <input id="F2" type="text" class="form-control ab" name="c1" placeholder="Amount" required>
+                                        <input id="F2" type="text" pattern="[0-9]{5}" class="form-control ab" name="c1" placeholder="Amount" required>
                                     </div>
                                     <div class="help-block with-errors" id="cerror"></div>
                                 </div>
                                 <div class="form-group has-feedback">
                                     <div class="">
-                                     <input type="text" pattern=".{9}" style="height: 50px;width: 265px;" class="form-control " id="parti" placeholder="Reason">
+                                     <input type="text" style="height: 50px;width: 265px;" class="form-control"  id="parti" placeholder="Reason">
                                     </div>                                    
                                 </div>
-                                  <!-- Trigger the modal with a button -->
-                                <button type="submit" class="btn btn-success btn-lg" id="transfer" data-toggle="modal" data-target="#myModal">Transfer</button>
+                                <!-- Trigger the modal with a button -->
+                                <button type="submit" class="btn btn-success btn-lg" id="transfer">Transfer</button>
                             </form>
                         </div>
                     </div>
@@ -326,6 +333,15 @@
                             $("#TS3").html($("#F1").val());
                             $("#TS4").html($("#F2").val());
                         });
+                        $('#form1').validator().on('submit', function (e) {
+                          if (e.isDefaultPrevented()) {
+                          alert("Please Check the fields!!");
+                        } else {
+                          $("#myModal").modal();
+                       return false;
+                        }
+                       
+                      });
                     </script>
                     <div class="bhoechie-tab-content">
                         <center>
