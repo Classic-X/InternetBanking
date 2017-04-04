@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bank</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+    <!--Date Checker-->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <style>
+    th ,td{
+        font-size: 23px;
+    }
+    
+    .list-group-item {
+        background-color: #1A1A1A;
+    }
+    .input-group > .ac
+    {
+        height: 50px;
+        width: 50px;
+    }
+    .input-group > .ab
+    {
+
+        height: 50px;
+        width: 260px;
+    }
+    .modal-header
+    {
+        text-align: center;
+        font-size: 30px;
+        background-color: #26A948;
+        color: #FFFFFF;
+    }
+    
+    div > a {}
+    /*  bhoechie tab */
+    
+    div.bhoechie-tab-container {
+        z-index: 10;
+        background-color: #ffffff;
+        padding: 0 !important;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+        margin-left: 50px;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        background-clip: padding-box;
+        opacity: 0.97;
+        filter: alpha(opacity=97);
+        width: 93%;
+    }
+    
+    div.bhoechie-tab-menu {
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+    }
+    
+    div.bhoechie-tab-menu div.list-group {
+        margin-bottom: 0;
+        margin-right: 180px;
+        height: 613px;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a {
+        margin-bottom: 0;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a.list-group-item:hover,
+    div.bhoechie-tab-menu div.list-group>a .glyphicon:hover,
+    div.bhoechie-tab-menu div.list-group>a .fa:hover {
+        background-color: #333030;
+        border-left: 5px solid #333030;
+        margin-left: -2px;
+        margin-right: -2px;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a.active:hover {
+        background-color: #5A55A3;
+        background-image: #5A55A3;
+        color: #ffffff;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a .glyphicon,
+    div.bhoechie-tab-menu div.list-group>a .fa {
+        color: #FFFFFF;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a:first-child {
+        border-top-right-radius: 0;
+        -moz-border-top-right-radius: 0;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a:last-child {
+        border-bottom-right-radius: 0;
+        -moz-border-bottom-right-radius: 0;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a.active,
+    div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+    div.bhoechie-tab-menu div.list-group>a.active .fa {
+        background-color: #5A55A3;
+        background-image: #5A55A3;
+        color: #ffffff;
+    }
+    
+    div.bhoechie-tab-menu div.list-group>a.active:after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        margin-top: -13px;
+        border-left: 0;
+        border-bottom: 13px solid transparent;
+        border-top: 13px solid transparent;
+        border-left: 10px solid #5A55A3;
+    }
+    
+    div.bhoechie-tab-content {
+        background-color: #ffffff;
+        /* border: 1px solid #eeeeee; */
+        padding-left: 20px;
+        padding-top: 10px;
+        margin-left: -150px;
+    }
+    
+    div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
+        display: none;
+    }
+    
+    .log2:hover {
+        background-color: #FF0000;
+    }
+    </style>
+</head>
+
+<body onload="profileinfo();">
+    <!--Navabar-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <div style="padding-right: 20px;">
+                <ul class="nav navbar-nav navbar-right">
+                    <p class="label " style="font-size: 18px;margin: auto;">Welcome!!</p>
+                    <p class="label label-primary" style="font-size: 15px;margin: auto;background-color:#55518a;">USER</p>
+                    <button class="btn btn-danger navbar-btn log2"><span class="glyphicon glyphicon-log-out"></span> Logout</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Vertical tabs-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active text-center">
+                            <h2 class="glyphicon glyphicon-user"></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Profile</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center" onclick="accountinfo();">
+                            <h2 class="glyphicon glyphicon-list-alt"></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Account Information
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 style="margin-bottom: -12px;margin-top: 20px;"><i class="fa fa-money"></i></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Passbook</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 style="margin-bottom: -10px;margin-top: 20px;"><i class="fa fa-inr"></i></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Money Transfer</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 class="glyphicon glyphicon-credit-card"></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Change Password</span>
+                        </a>
+                        <a href="#" class="list-group-item text-center">
+                            <h2 class="glyphicon glyphicon-exclamation-sign"></h2>
+                            <br/><span id="menuxtxt" style="color: #E9E9E9;">Help!!</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                    <!-- Detailss section -->
+                    <div class="bhoechie-tab-content active">
+                        <div id="profileview">
+                            
+                        </div>
+                    </div>
+                    <!-- Account Information -->
+                    <div class="bhoechie-tab-content">
+                        <center>
+                            <div style="padding: 50px;margin-top: 70px;">
+                                <div class="panel panel-default">
+                                  <div class="panel-body">
+                                    <div id="accountinfo"></div>
+                                  </div>
+                                  <div class="panel-footer" id=style="height:300px">Panel Footer</div>
+                                </div>                                
+                            </div>
+                        </center>
+                    </div>
+                    <!-- Account statement -->
+                    <div class="bhoechie-tab-content" align="center">
+                        <div class="container">
+                            <h2>View Statement By</h2>
+                            <p>Select the time period for viewing statement.</p>
+                            <form>
+                                <label class="radio-inline">
+                                    <input id="radio_1" type="radio" name="optradio">Date
+                                </label>
+                                <label class="radio-inline">
+                                    <input id="radio_2" type="radio" name="optradio">Month
+                                </label>
+                                <label class="radio-inline">
+                                    <input id="radio_3" type="radio" name="optradio">Year
+                                </label>
+                            </form>
+                            <br>
+                            <div class="form-group" style="display:none;" id="II">
+                            <form class="form-inline">
+                            <label for="#I1">From </label>
+                                <div class="input-group date" style="width: 15%;"">
+                                  <input type="text" id="I1" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                             <label for="#I2"> To </label>
+                                <div class="input-group date" style="width: 15%;"">
+                                  <input type="text" id="I2" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                             </form>   
+                            </div>
+                            <form class="row form-inline ">
+                            <div class="" style="width: 10%;display:none;" id="div2">
+                            <label for="#I3" style="">Select Month</label>
+                                <div class="input-group date">
+                                  <input type="text" id="I3" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>                           
+                            
+                            </div>
+                            </form>
+                            <form class="form-inline ">
+                            <div class="" style="width: 10%;display:none;" id="div3">                            
+                            <label for="#I4" style="">Select Year</label>
+                                <div class="input-group date">                                
+                                <input type="text" id="I4" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                </div>                         
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <script>
+                        $("#radio_1").click(function(){
+                            $("#div3").fadeOut(0);
+                            $("#div2").fadeOut(0);
+                            $("#II").fadeIn(50);
+                        });
+                        $("#radio_2").click(function(){
+                            $("#div3").fadeOut(0);
+                            $("#II").fadeOut(0);
+                            $("#div2").fadeIn(50);
+                        });
+                        $("#radio_3").click(function(){
+                            $("#div2").fadeOut(0);
+                            $("#II").fadeOut(0);
+                            $("#div3").fadeIn(50);
+                        });
+                        $('#div3 .input-group.date').datepicker({
+                            format: "yyyy",
+                            minViewMode: 2,
+                            maxViewMode: 3
+                        });
+                        $('#div2 .input-group.date').datepicker({
+                            format: "mm",
+                            minViewMode: 1,
+                            maxViewMode: 2
+                        });
+                            $('#II .input-group.date').datepicker({
+                            format: "dd/mm/yyyy",
+                            maxViewMode: 2,
+                            todayHighlight: true
+                        });
+                    </script>
+                    <div class="bhoechie-tab-content">
+                        <div class="tran" align="center" style="margin: 100px;">
+                            <div class="form-group has-feedback">
+                                    <div class="input-group">
+                                        <span class="ac input-group-addon" style="color: #F2F1FF; background-color:#343434;font-size: 20px; " id="hv"><b>ID</b></span>
+                                        <input id="c1" type="text" class="form-control ab" name="c1" placeholder="Receiver ID" required>
+                                    </div>
+                                    <div class="help-block with-errors" id="cerror"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <div class="input-group">
+                                        <span class="ac input-group-addon" style="color: #F2F1FF; background-color:#343434;font-size: 20px; " id="hv"><b>₹​</b></span>
+                                        <input id="c1" type="text" class="form-control ab" name="c1" placeholder="Amount" required>
+                                    </div>
+                                    <div class="help-block with-errors" id="cerror"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <div class="" ">
+                                     <input type="text" style="height: 50px;width: 265px;"" class="form-control " id="parti" placeholder="Reason">
+                                    </div>                                    
+                                </div>
+                                  <!-- Trigger the modal with a button -->
+                                <button type="submit" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Transfer</button>
+                        </div>
+                    </div>
+                    <div class="bhoechie-tab-content">
+                        <center>
+                            <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
+                            <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                            <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
+                        </center>
+                    </div>
+                    <div class="bhoechie-tab-content">
+                        <center>
+                            <p style="font-size: 20px;padding-top: 30px;text-align:justify;padding-right: 50px;padding-left: 30px;">At State Bank of India, we are committed to provide best internet banking services to our customers. Please feel free to share your Internet Banking experience with us over phone.</p>
+                            <p style="font-size: 20px;text-align:justify;padding-right: 50px;padding-left: 30px; ">SBI now provides your Account Balance and Transaction details over phone round the clock. Information on deposits & loan schemes and services also available.</p>
+                            <div class="row">
+                                <div class="col-lg-1"></div>
+                                <p style="font-size: 30px;padding-top: 30px;text-align: left;padding-left: 50px;color:#55518a; "><b> Contact us :-</b></p>
+                                <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;padding-right: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 611-5210006 (Toll free and accessible from all landlines and mobile phones)</p>
+                                <p style="font-size: 20px;padding-top: 20px;text-align: left;padding-left: 50px;padding-right: 50px;"><span class="glyphicon glyphicon-phone-alt"></span> 661-2698199 (Accessible from all landlines and mobile phones)</p>
+                                <div class="col-lg-1"></div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="border-radius: 5px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="margin-top: 250px;width: 400px;margin-left: 220px;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body" align="center" style="text-align: left;">
+          <div class="row">
+              <div class="col-lg-5"><b>Reciever ID :</b></div>
+              <div class="col-lg-4">Adas</div>
+          </div>
+          <div class="row">
+              <div class="col-lg-5"><b>Reciever Name :</b></div>
+              <div class="col-lg-4">Adas</div>
+          </div>
+          <div class="row">
+              <div class="col-lg-5"><b>Amount :</b></div>
+              <div class="col-lg-4">Adas</div>
+          </div>
+          <div class="row">
+              <div class="col-lg-5"><b>Reason:</b></div>
+              <div class="col-lg-4">Adas</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    <!-- /container -->
+    <!--Scripts-->
+    <script>
+    $(document).ready(function() {
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
+    });
+    </script>
+    <script>
+    function profileinfo() {
+        var xhttp;        
+        var cid="123456";
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("profileview").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("POST", "profile.jsp?cid="+cid, true);
+        xhttp.send();
+    }
+    </script>
+    <script>
+    function accountinfo() {
+        var xhttp;        
+        var cid="123456";
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("accountinfo").innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("POST", "acc_info1.jsp?cid="+cid, true);
+        xhttp.send();
+    }
+    
+    </script>
+    <script>
+    function passbook() {
+        var xhttp;        
+        var cid="123456";
+        var b[]=new var[4];
+        for(var i=1;i<=3;i++)
+        	{b[i]=document.getElementById("radio_"+i).checked;}
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("accountinfo").innerHTML = xhttp.responseText;
+            }
+        };
+        if(b[1]==true)
+        {
+        xhttp.open("POST", "acc_info1.jsp?cid="+cid, true);
+        xhttp.send();
+        }
+        if(b[2]==true)
+        {
+        xhttp.open("POST", "acc_info1.jsp?cid="+cid, true);
+        xhttp.send();
+        }
+        if(b[3]==true)
+        {
+        xhttp.open("POST", "acc_info1.jsp?cid="+cid, true);
+        xhttp.send();
+        }
+    }
+    
+    </script>
+    <!--Scripts End-->
+</body>
+
+</html>
