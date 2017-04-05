@@ -17,7 +17,7 @@
 	Statement ps=cn.createStatement();
 	ResultSet rs=ps.executeQuery(q);
 	int i=0;
-%>Select Account:<select value="">
+%>Select Account:<select class="form-control" value="">
 <option value="Select" disabled selected>Select</option>
 <% 
 	while(rs.next())

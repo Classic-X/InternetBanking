@@ -209,12 +209,8 @@
                     <div class="bhoechie-tab-content">
                         <center>
                             <div style="padding: 50px;margin-top: 200px;">
-                                <div class="panel panel-default">
-                                  <div class="panel-body">
                                     <div id="accountinfo"></div>
-                                  </div>
-                                  <div class="panel-footer">Panel Footer</div>
-                                </div>                                
+                                                             
                             </div>
                         </center>
                     </div>
@@ -339,16 +335,40 @@
                         } else {
                           $("#myModal").modal();
                        return false;
-                        }
-                       
+                        }                       
                       });
                     </script>
                     <div class="bhoechie-tab-content">
-                        <center>
-                            <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
-                            <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                            <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
-                        </center>
+                        <div align="center">
+                        <h2>Password Change</h2>
+                        <p>Please do NOT disclose you User ID and/or Passwords to any person – not even Bank staff – either Intentionally or otherwise. Periodically change your Passwords. </p>
+                            <form data-toggle="validator" role="form" id="form2">
+                            <div class=" form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434; "><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="olp" type="password" class="form-control" name="olp" placeholder="Old Password" required="">
+                                    </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                
+                                <div class=" form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434; "><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="c4" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" class="form-control" name="c4" placeholder="Password" data-error="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters!!!" required="">
+                                    </div>
+                                    <div class="help-block with-errors">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</div>
+                                </div>
+                                <br>
+                                <div class=" form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434; "><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="c5" type="password" data-equc="sad" class="form-control" name="c5" placeholder="Confirm Password" required="">
+                                    </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <button type="button" class="btn btn-warning">Change</button>
+                            </form>
+                        </div>
                     </div>
                     <div class="bhoechie-tab-content">
                         <center>
@@ -417,6 +437,31 @@
   </div>
     <!-- /container -->
     <!--Scripts-->
+    <script>
+        $('form[data-toggle="validator"]').validator({
+            custom: {
+                equc: function($as) {
+                    var matchValue = $("#c4").val();
+                    if ($("#c5").val() !== matchValue) {
+                        console.log("gatbuyuy");
+                        return "Passwords do not match!!!" ;
+                    }
+                }
+            }
+        })
+        
+        </script> 
+        <!-- Password Validation-->
+        <script>
+             $('#form2').validator().on('submit', function (e) {
+                          if (e.isDefaultPrevented()) {
+                          alert("Please Check the fields!!");
+                        } else {
+                          $("#myModal").modal();
+                       return false;
+                        }                       
+                      });
+        </script>
     <script>
     $(document).ready(function() {
         $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
