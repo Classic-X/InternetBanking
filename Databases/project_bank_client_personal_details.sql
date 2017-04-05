@@ -28,26 +28,37 @@ CREATE TABLE `client_personal_details` (
   `customer_id` varchar(10) NOT NULL,
   `salutation` varchar(5) NOT NULL,
   `fname` varchar(20) NOT NULL,
-  `mname` varchar(20) DEFAULT '-',
+  `mname` varchar(20) DEFAULT NULL,
   `lname` varchar(20) NOT NULL,
   `gender` varchar(15) NOT NULL,
   `mail` varchar(45) NOT NULL,
   `mobile` varchar(10) NOT NULL,
-  `dob` date NOT NULL,
+  `dob` varchar(20) NOT NULL,
+  `education` varchar(45) NOT NULL,
   `mother_name` varchar(45) NOT NULL,
   `father_name` varchar(45) NOT NULL,
-  `guardian_name` varchar(45) DEFAULT '-',
-  `address_1` varchar(100) NOT NULL,
-  `address_2` varchar(100) NOT NULL,
-  `landmark` varchar(25) NOT NULL,
-  `city` varchar(20) NOT NULL,
-  `district` varchar(20) NOT NULL,
-  `state` varchar(30) NOT NULL,
+  `guardian_name` varchar(45) DEFAULT NULL,
+  `address_type` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `landmark` varchar(100) DEFAULT NULL,
+  `city` varchar(50) NOT NULL,
+  `district` varchar(50) NOT NULL,
   `pincode` varchar(6) NOT NULL,
-  `alt_mobile` varchar(10) DEFAULT '-',
+  `alt_mobile` varchar(10) DEFAULT NULL,
+  `office_no` varchar(45) DEFAULT NULL,
+  `state` varchar(50) NOT NULL,
+  `propic` longblob NOT NULL,
+  `signpic` longblob NOT NULL,
+  `IP` varchar(70) NOT NULL,
+  `IPID` varchar(100) NOT NULL,
+  `AP` varchar(70) NOT NULL,
+  `APID` varchar(100) NOT NULL,
   PRIMARY KEY (`customer_id`),
   UNIQUE KEY `acc_mail_UNIQUE` (`mail`),
-  UNIQUE KEY `customer_id_UNIQUE` (`customer_id`)
+  UNIQUE KEY `customer_id_UNIQUE` (`customer_id`),
+  UNIQUE KEY `IPID_UNIQUE` (`IPID`),
+  UNIQUE KEY `APID_UNIQUE` (`APID`),
+  UNIQUE KEY `alt_mobile_UNIQUE` (`alt_mobile`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -69,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-29 15:53:00
+-- Dump completed on 2017-04-05 16:22:09

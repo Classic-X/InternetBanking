@@ -28,7 +28,13 @@ CREATE TABLE `client_account_details` (
   `accno` varchar(10) NOT NULL,
   `customer_id` varchar(10) NOT NULL,
   `acc_type` varchar(10) NOT NULL,
-  `date` datetime NOT NULL,
+  `date` varchar(20) NOT NULL,
+  `balance` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `cheque` varchar(45) DEFAULT NULL,
+  `ATM` varchar(45) DEFAULT NULL,
+  `IB` varchar(45) DEFAULT NULL,
+  `SMS` varchar(45) DEFAULT NULL,
+  `MB` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`accno`),
   UNIQUE KEY `acc_no_UNIQUE` (`accno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -52,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-29 15:52:59
+-- Dump completed on 2017-04-05 16:22:08

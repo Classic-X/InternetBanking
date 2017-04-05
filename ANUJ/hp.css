@@ -1,0 +1,168 @@
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 100;
+  }
+
+  .affix + .container  {
+      padding-top: 55px;
+  }
+      footer {
+      background-color: #282E3A;
+      color: white;
+      padding: 10px;
+      margin: 0px;
+    }
+    #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+}
+#mySidenav a {
+    position:fixed ;
+    right: -85px;
+    transition: 0.3s;
+    padding: 0px;
+    width: 115px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px 0px 0px 5px;
+	  z-index:2000;
+}
+
+#mySidenav a:hover {
+    right: 0;
+}
+
+#fb {
+    top: 430px;
+    padding: 0px;
+    background-color:#3366cc;
+}
+
+#insta {
+    top: 460px;
+    background-color:  #3366cc;
+    padding: 0px;
+}
+
+#twitter {
+    top: 490px;
+    background-color: #2e5cb8;
+    padding: 0px;
+}
+
+
+#youtube {
+    top: 520px;
+    background-color: #2952a3;
+    padding: 0px;
+}
+#ldn {
+    top: 550px;
+    background-color:  #24478f;
+}
+#gplus {
+    top: 580px;
+    background-color: #1f3d7a;
+    padding: 0px;
+}
+.d{
+    background-color:white;
+    }
+    .row.content {height:auto;
+      margin-bottom: 10px} 
+    .sidenav {
+      margin-top: 0px;
+      padding-top: 0px;
+      background-color:;
+    }
+          .sidenav {
+        height: auto;
+        padding: 0px;
+      }
+
+.c
+{
+  font-size: 24px;
+  font-weight: bold;
+}
+.col-md-3
+{
+  text-align:left;
+}
+
+.ip
+{
+  text-align:center;
+}
+.mar{
+  margin: 20px 10px 20px 10px;
+}
+.e
+{
+  text-align: center;
+}
+.b
+{
+  border-radius: 12px;
+  padding: 10px;
+  background-color: purple;
+  color: white;
+  text-align: center;
+}
+.bank
+{
+  border:2px solid purple;
+  border-radius: 8px;
+  padding: 40px 20px; 
+}
+#myNavbar >#j >li :hover
+{
+  background-color: black;
+}

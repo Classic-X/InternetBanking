@@ -18,27 +18,31 @@ USE `project_bank`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `fixed_acc_details`
+-- Table structure for table `netbanking_active`
 --
 
-DROP TABLE IF EXISTS `fixed_acc_details`;
+DROP TABLE IF EXISTS `netbanking_active`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `fixed_acc_details` (
-  `accno` varchar(10) NOT NULL,
-  `balance` decimal(12,2) DEFAULT '0.00',
-  PRIMARY KEY (`accno`),
-  UNIQUE KEY `acc_no_UNIQUE` (`accno`)
+CREATE TABLE `netbanking_active` (
+  `customer_id` int(11) NOT NULL,
+  `username` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`customer_id`),
+  UNIQUE KEY `customer_id_UNIQUE` (`customer_id`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `fixed_acc_details`
+-- Dumping data for table `netbanking_active`
 --
 
-LOCK TABLES `fixed_acc_details` WRITE;
-/*!40000 ALTER TABLE `fixed_acc_details` DISABLE KEYS */;
-/*!40000 ALTER TABLE `fixed_acc_details` ENABLE KEYS */;
+LOCK TABLES `netbanking_active` WRITE;
+/*!40000 ALTER TABLE `netbanking_active` DISABLE KEYS */;
+/*!40000 ALTER TABLE `netbanking_active` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-29 15:53:00
+-- Dump completed on 2017-04-05 16:22:09

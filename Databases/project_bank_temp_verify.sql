@@ -25,11 +25,11 @@ DROP TABLE IF EXISTS `temp_verify`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `temp_verify` (
-  `email` varchar(45) NOT NULL,
-  `code` varchar(10) NOT NULL,
-  `date` datetime NOT NULL,
-  PRIMARY KEY (`email`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
+  `mail` varchar(45) NOT NULL,
+  `code` int(6) NOT NULL,
+  `date` varchar(20) NOT NULL,
+  PRIMARY KEY (`mail`),
+  UNIQUE KEY `email_UNIQUE` (`mail`),
   UNIQUE KEY `code_UNIQUE` (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,6 +40,7 @@ CREATE TABLE `temp_verify` (
 
 LOCK TABLES `temp_verify` WRITE;
 /*!40000 ALTER TABLE `temp_verify` DISABLE KEYS */;
+INSERT INTO `temp_verify` VALUES ('anujpriyadarshi07@gmail.com',22752,'05-04-2017 12:36:51');
 /*!40000 ALTER TABLE `temp_verify` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-29 15:53:00
+-- Dump completed on 2017-04-05 16:22:09
