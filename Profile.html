@@ -32,11 +32,18 @@
         height: 50px;
         width: 260px;
     }
-    .modal-header
+    #myModal > .modal-dialog > .modal-header
     {
         text-align: center;
         font-size: 30px;
         background-color: #805FB7;
+        color: #FFFFFF;
+    }
+    #modal2 > .modal-dialog > .modal-header
+    {
+        text-align: center;
+        font-size: 30px;
+        background-color: #059955;
         color: #FFFFFF;
     }
     #form2 > .form-group > .input-group,
@@ -56,17 +63,16 @@
     padding-bottom: 50px;
     padding-top: 30px;
     border-radius: 5px;
-
     }
     div.polaroid {
   width: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
   
 }
     div.polaroid2{
   width: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: auto;
+ 
     }
     .cpass
     {
@@ -322,7 +328,7 @@
                             maxViewMode: 3
                         });
                         $('#div2 .input-group.date').datepicker({
-                            format: "mm",
+                            format: "mm-yyyy",
                             minViewMode: 1,
                             maxViewMode: 2
                         });
@@ -396,7 +402,7 @@
                         <strong>Warning! </strong> Check all the fields are filled!!
                         </div>
                         <div class="">
-                            <div class="cpass polaroid">
+                            <div class="cpass polaroid2">
                             <form data-toggle="validator" role="form" id="form2">
                             <div class=" form-group">
                                     <div class="input-group">
@@ -484,7 +490,7 @@
         </div>
         <div class="modal-footer" align="center" style="padding-right: 17%;">
           <div class="form-group form-inline">
-          <input type="text" id="p2" style="width: 60%;" class="form-control" name="" placeholder="Enter Password">       
+          <input type="password" id="p2" style="width: 60%;" class="form-control" name="" placeholder="Enter Password">       
           <button type="button" class="btn btn-success"> Confirm</button>              
           </div>
         </div>
@@ -492,6 +498,26 @@
       
     </div>
   </div>
+  <!-- Password Change Modal Success -->
+<div id="modal2" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Success</h4>
+      </div>
+      <div class="modal-body">
+        <p>Password Successfully Changed!!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
     <!-- /container -->
     <!--Scripts-->
     <script>
@@ -514,7 +540,7 @@
                           if (e.isDefaultPrevented()) {
                           $("#passf").fadeIn(1000);
                         } else {
-                          $("#myModal").modal();
+                          $("#modal2").modal();
                        return false;
                         }                       
                       });
