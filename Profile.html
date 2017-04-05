@@ -39,6 +39,16 @@
         background-color: #805FB7;
         color: #FFFFFF;
     }
+    #form2 > .form-group > .input-group,
+    #form2 > .form-group > .help-block
+    {
+        width: 30%;       
+    }    
+   
+    #form2
+    {
+        margin-top: 40px;
+    }
     
     div > a {}
     /*  bhoechie tab */
@@ -292,7 +302,10 @@
                     <div class="bhoechie-tab-content">
                     <div align="center">
                     <h1>Transfer Money</h1>
-                    <p>Check details properly before transaction.</p>
+                    <div style="width: 30%" class="alert alert-info">
+                      <strong>Info!</strong> Check details properly before transaction.
+                    </div>
+                    
                     </div>
                         <div class="tran" align="center" style="margin: 30px;">
                         <h2  style="padding-bottom: 20px;" ><span style="background-color: #5A55A3;" class="label label-default">Select Your Account</span></h2>
@@ -338,15 +351,24 @@
                         }                       
                       });
                     </script>
-                    <div class="bhoechie-tab-content">
+            <!--Change Password Tab-->
+                    <div class="bhoechie-tab-content">                  
+                        
                         <div align="center">
                         <h2>Password Change</h2>
-                        <p>Please do NOT disclose you User ID and/or Passwords to any person – not even Bank staff – either Intentionally or otherwise. Periodically change your Passwords. </p>
+                        <div class="alert alert-warning" style="width: 70%">
+                        <strong>Warning! </strong> Please do NOT disclose you User ID and/or Passwords to any person – not even Bank staff – either Intentionally or otherwise. Periodically change your Passwords.
+                        </div>
+                        <div class="alert alert-danger alert-dissmissable" id="passf" style="width: 70%; display: none;">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Warning! </strong> Check all the fields are filled!!
+                        </div>
+                        
                             <form data-toggle="validator" role="form" id="form2">
                             <div class=" form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon" style="color: #F2F1FF; background-color:#343434; "><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="olp" type="password" class="form-control" name="olp" placeholder="Old Password" required="">
+                                        <input id="olp" type="password" class="form-control" name="olp" placeholder="Old Password" data-error="Enter your old password" required="">
                                     </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -366,7 +388,7 @@
                                     </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
-                                <button type="button" class="btn btn-warning">Change</button>
+                                <button type="submit" class="btn btn-warning">Change</button>
                             </form>
                         </div>
                     </div>
@@ -455,7 +477,7 @@
         <script>
              $('#form2').validator().on('submit', function (e) {
                           if (e.isDefaultPrevented()) {
-                          alert("Please Check the fields!!");
+                          $("#passf").fadeIn(1000);
                         } else {
                           $("#myModal").modal();
                        return false;
