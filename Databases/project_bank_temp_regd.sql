@@ -18,27 +18,58 @@ USE `project_bank`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `savings_acc_details`
+-- Table structure for table `temp_regd`
 --
 
-DROP TABLE IF EXISTS `savings_acc_details`;
+DROP TABLE IF EXISTS `temp_regd`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `savings_acc_details` (
-  `accno` varchar(10) NOT NULL,
-  `balance` decimal(12,2) DEFAULT '0.00',
-  PRIMARY KEY (`accno`),
-  UNIQUE KEY `acc_no_UNIQUE` (`accno`)
+CREATE TABLE `temp_regd` (
+  `salutation` varchar(5) NOT NULL,
+  `fname` varchar(30) NOT NULL,
+  `mname` varchar(30) DEFAULT NULL,
+  `lname` varchar(30) NOT NULL,
+  `gender` varchar(20) NOT NULL,
+  `mail` varchar(100) NOT NULL,
+  `mobile` varchar(11) NOT NULL,
+  `dob` varchar(20) NOT NULL,
+  `education` varchar(25) NOT NULL,
+  `mother_name` varchar(50) NOT NULL,
+  `father_name` varchar(50) NOT NULL,
+  `guardian_name` varchar(50) DEFAULT NULL,
+  `address_type` varchar(50) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `landmark` varchar(100) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `pincode` varchar(6) NOT NULL,
+  `alt_mobile` varchar(11) DEFAULT NULL,
+  `office_no` varchar(11) DEFAULT NULL,
+  `state` varchar(30) NOT NULL,
+  `propic` longblob NOT NULL,
+  `signpic` longblob NOT NULL,
+  `acc_type` varchar(100) NOT NULL,
+  `min_bal` decimal(10,0) NOT NULL,
+  `cheque` varchar(20) DEFAULT NULL,
+  `ATM` varchar(20) DEFAULT NULL,
+  `IB` varchar(20) DEFAULT NULL,
+  `SMS` varchar(20) DEFAULT NULL,
+  `MB` varchar(20) DEFAULT NULL,
+  `IP` varchar(70) NOT NULL,
+  `IPID` varchar(100) NOT NULL,
+  `AP` varchar(70) NOT NULL,
+  `APID` varchar(100) NOT NULL,
+  PRIMARY KEY (`mail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `savings_acc_details`
+-- Dumping data for table `temp_regd`
 --
 
-LOCK TABLES `savings_acc_details` WRITE;
-/*!40000 ALTER TABLE `savings_acc_details` DISABLE KEYS */;
-/*!40000 ALTER TABLE `savings_acc_details` ENABLE KEYS */;
+LOCK TABLES `temp_regd` WRITE;
+/*!40000 ALTER TABLE `temp_regd` DISABLE KEYS */;
+/*!40000 ALTER TABLE `temp_regd` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-29 15:53:00
+-- Dump completed on 2017-04-05 16:22:09
