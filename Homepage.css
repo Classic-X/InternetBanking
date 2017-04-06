@@ -8,7 +8,7 @@
       padding-top: 55px;
   }
       footer {
-      background-color: #282E3A;
+      background-color: #5E3A8C;
       color: white;
       padding: 10px;
       margin: 0px;
@@ -69,8 +69,7 @@
     padding: 0px;
     width: 115px;
     text-decoration: none;
-    font-size: 20px;
-    color: white;
+    font-size: 25px;
     border-radius: 5px 0px 0px 5px;
 	  z-index:2000;
 }
@@ -78,39 +77,41 @@
 #mySidenav a:hover {
     right: 0;
 }
+#mySidenav > a
+{
 
+}
 #fb {
     top: 430px;
-    padding: 0px;
-    background-color:#3366cc;
+    padding-left: 2px;
+    
 }
 
 #insta {
-    top: 460px;
-    background-color:  #3366cc;
+    top: 464px;
+    
     padding: 0px;
 }
 
 #twitter {
-    top: 490px;
-    background-color: #2e5cb8;
+    top: 498px;
+   
     padding: 0px;
 }
 
 
 #youtube {
-    top: 520px;
-    background-color: #2952a3;
+    top: 533px;
+   
     padding: 0px;
 }
 #ldn {
-    top: 550px;
-    background-color:  #24478f;
+    top: 567px;
+    
 }
 #gplus {
-    top: 580px;
-    background-color: #1f3d7a;
-    padding: 0px;
+    top: 600px;    
+    padding: 2px;
 }
 .d{
     background-color:white;
@@ -147,6 +148,7 @@
 .e
 {
   text-align: center;
+  padding-top: 30px;
 }
 .b
 {
@@ -158,11 +160,15 @@
 }
 .bank
 {
-  border:2px solid purple;
+  border:2px solid #52317D;
   border-radius: 8px;
   padding: 40px 20px; 
 }
 #myNavbar >#j >li :hover
 {
   background-color: black;
+}
+#myNavbar >#j >li >a
+{
+  color: #ECECEC;
 }
