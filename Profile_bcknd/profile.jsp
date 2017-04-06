@@ -12,7 +12,7 @@
 try
 {
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_bank","root","ANUJ");
+	Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project_bank","root","petervsock");
 	String cid=request.getParameter("cid");
 	String q="select * from client_personal_details where customer_id='"+cid+"'";
 	Statement ps=cn.createStatement();
