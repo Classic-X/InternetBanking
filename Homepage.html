@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap Example</title>
+  <title>Home Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -26,12 +26,12 @@
   <style>
     div.polaroid {
   
-  box-shadow: 0 9px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
 }
   </style>
 </head>
-<body onload="myFunction()" style="" class="gradient-pattern" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body onload="myFunction()" id="bd" class="gradient-pattern" data-spy="scroll" data-target=".navbar" data-offset="50">
 <!--loader  -->
 <div id="loader"></div>
 <!--loader  -->
@@ -41,7 +41,7 @@
   <div class="container-fluid" align="center" style="background-color:#e6e6e6;color:black;height:90px;"><h1>Banking</h1></div>
   <!--NavBar-->
 
-  <nav class="navbar navbar-inverse" style="background-color:#52317D;margin-bottom:20px;border-radius: 0px;" data-spy="affix" data-offset-top="87">
+  <nav class="navbar navbar-inverse" style="background-color:#52317D;margin-bottom:5px;border-radius: 0px;" data-spy="affix" data-offset-top="87">
   <div class="container">
       <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -53,7 +53,7 @@
      </div>
        <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav" id="j">
-        <li class="active"><a href="#Home"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li class="active"><a href="#bd"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li class="scroll"><a href="#banking"> <span class="glyphicon glyphicon-piggy-bank"></span> Banking</a></li>
         <li class="scroll"><a href="#service"> <span class="glyphicon glyphicon-globe"></span> Our Services</a></li>
         <li><a href="#" data-toggle="modal" data-target="#myModal">Developers</a></li>
@@ -62,7 +62,7 @@
        </ul>
        <ul class="nav navbar-nav navbar-right">
       <li>
-      <button class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-user"></span> Admin Login</button></li>
+      <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#Admin"><span class="glyphicon glyphicon-user"></span> Admin Login</button></li>
     </ul>
 
        
@@ -72,7 +72,6 @@
 <!--NavBar-->
 <!--Columns Welcome-->
 <br>
- <div id="Home" >
  <br>
 <div class="container polaroid"  style="width:1200px;background-color: #E0E0E0 ">
 <br>
@@ -127,7 +126,6 @@
 </div>
 </div>
 
-</div>
 <div class="container" style="padding-top: 150px;" id="banking">
 
     <div class="header polaroid" style="width: 400px;padding-top: 10px;padding-bottom: 20px;margin-left: 33%;border-radius: 5px;background-color:#52317D;color: white; "><h1 style="text-align:center" align="center">Banking</h1>
@@ -398,6 +396,48 @@
   </div>
 </div>
 
+
+
+
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="Admin" role="dialog">
+    <div class="modal-dialog modal-sm">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><span class="glyphicon glyphicon-user"></span> Admin</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div>
+              <label>Admin ID</label>
+            </div>
+            <div>
+              <input type="text" class="form-control" name="adname">
+            </div>
+            <div>
+              <label>Password</label>
+            </div>
+            <div>
+              <input type="Password" class="form-control" name="adname">
+            </div>
+          </form>
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
 
 
 
