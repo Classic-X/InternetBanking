@@ -31,7 +31,7 @@
 }
   </style>
 </head>
-<body onload="myFunction()" style="background-color:#e6e6e6;">
+<body onload="myFunction()" style="" class="gradient-pattern" data-spy="scroll" data-target=".navbar" data-offset="50">
 <!--loader  -->
 <div id="loader"></div>
 <!--loader  -->
@@ -40,7 +40,8 @@
 <div style="display:none;" id="myDiv" class="animate-bottom">
   <div class="container-fluid" align="center" style="background-color:#e6e6e6;color:black;height:90px;"><h1>Banking</h1></div>
   <!--NavBar-->
-  <nav class="navbar navbar-inverse" style="background-color:#52317D;margin-bottom:5px;border-radius: 0px;" data-spy="affix" data-offset-top="67">
+
+  <nav class="navbar navbar-inverse" style="background-color:#52317D;margin-bottom:20px;border-radius: 0px;" data-spy="affix" data-offset-top="87">
   <div class="container">
       <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -52,8 +53,8 @@
      </div>
        <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav" id="j">
-        <li class="active"><a href="#"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#banking"> <span class="glyphicon glyphicon-piggy-bank"></span> Banking</a></li>
+        <li class="active"><a href="#Home"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li class="scroll"><a href="#banking"> <span class="glyphicon glyphicon-piggy-bank"></span> Banking</a></li>
         <li class="scroll"><a href="#service"> <span class="glyphicon glyphicon-globe"></span> Our Services</a></li>
         <li><a href="#" data-toggle="modal" data-target="#myModal">Developers</a></li>
         
@@ -71,7 +72,9 @@
 <!--NavBar-->
 <!--Columns Welcome-->
 <br>
-<div class="container polaroid" style="width:1200px;">
+ <div id="Home" >
+ <br>
+<div class="container polaroid"  style="width:1200px;background-color: #E0E0E0 ">
 <br>
 <div class="row content">
 
@@ -122,7 +125,7 @@
   </div>
  <!--Columns 2-->   
 </div>
-
+</div>
 
 </div>
 <div class="container" style="padding-top: 150px;" id="banking">
@@ -133,12 +136,12 @@
 <div id="bank" style="padding-top:50px;margin-left:13%">
     
   <div class="row" align=center style="">
-    <div class="col-md-5 bank polaroid" style="margin-right: 10px;">
+    <div class="col-md-5 bank polaroid" style="margin-right: 10px;background-color: #E0E0E0 ">
       <div><img src="Images/create.png" width="120" height="120"></div>
       </br>
       <span class="c" ><a class="btn btn-primary" style="font-size:22px" href="#" role="button">Create An Account</a></span>
     </div>
-    <div class="col-md-5 bank polaroid" style="margin-left: 10px;">
+    <div class="col-md-5 bank polaroid" style="margin-left: 10px;background-color: #E0E0E0 ">
       <div><img src="Images/inbank2.png" width="120" height="120"></div>
       </br>
       <span class="c"><a class="btn btn-primary" style="font-size:22px" href="netbank.html" role="button">Internet Banking</a></span>
@@ -155,28 +158,28 @@
   </div></br></br></br>
       <div class="row content" style="margin-bottom:150px">
         <div class="col-md-12">
-      <div class="col-md-3 e polaroid">
+      <div class="col-md-3 e polaroid" style="background-color: #E0E0E0 ">
         <div><img src="Images/internet.png" width="50%" height="50%"></div>
       </br>
       <span class="c">Internet Banking</span>
     </br>
       <p>Explore the power of simpler and smarter banking. Bank online with over 250 services</p>
       </div>
-      <div class="col-md-3 e polaroid">
+      <div class="col-md-3 e polaroid" style="background-color: #E0E0E0 ">
        <div><img src="Images/mb1.png" width="50%" height="50%"></div>
        </br>
        <span class="c">Mobile Banking</span>
     </br>
       <p>Bank on the go with our Mobile Banking services. Download app or use SMS</p>
       </div>
-      <div class="col-md-3 e polaroid">
+      <div class="col-md-3 e polaroid" style="background-color: #E0E0E0 ">
         <div><img src="Images/transfer.png" width="50%" height="50%"></div>
         </br>
         <span class="c">Easy Transfer</span>
     </br>
       <p>VISA powered Universal payment wallet. Download today</p><br>
       </div>
-      <div class="col-md-3 e polaroid">
+      <div class="col-md-3 e polaroid" style="background-color: #E0E0E0 ">
          <div><img src="Images/credit.png" width="50%" height="50%"></div>
          </br>
          <span class="c">ATM Anywhere</span>
@@ -409,7 +412,47 @@
         </div>
 
 </div>
+<script>
+  $(document).ready(function () {
+   $(document).on("scroll", onScroll);
+   
+   //smoothscroll
+   $('a[href^="#"]').on('click', function (e) {
+       e.preventDefault();
+       $(document).off("scroll");
+       
+       $('a').each(function () {
+           $(this).removeClass('active');
+       })
+       $(this).addClass('active');
+     
+       var target = this.hash,
+           menu = target;
+       $target = $(target);
+       $('html, body').stop().animate({
+           'scrollTop': $target.offset().top+2
+       }, 500, 'swing', function () {
+           window.location.hash = target;
+           $(document).on("scroll", onScroll);
+       });
+   });
+});
 
+function onScroll(event){
+   var scrollPos = $(document).scrollTop();
+   $('#myNavbar a').each(function () {
+       var currLink = $(this);
+       var refElement = $(currLink.attr("href"));
+       if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+           $('#myNavbar ul li a').removeClass("active");
+           currLink.addClass("active");
+       }
+       else{
+           currLink.removeClass("active");
+       }
+   });
+}
+</script>
 <!--main-->
 </body>
 </html>

@@ -214,7 +214,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu" style="">
                     <div class="list-group">
                         <a href="#" class="list-group-item active text-center">
                             <h2 class="glyphicon glyphicon-user"></h2>
@@ -514,10 +514,17 @@
         <div class="modal-footer" align="center" style="padding-right: 17%;">
           <div class="form-group form-inline">
           <input type="password" id="p2" style="width: 60%;" class="form-control" name="" placeholder="Enter Password">       
-          <button type="button" class="btn btn-success" id="cst" onclick="moneytransfer();"> Confirm</button>              
+          <button type="button" class="btn btn-success" id="cst" onclick="motr();"> Confirm</button>              
           </div>
         </div>
       </div>
+      <script>
+      	function motr()
+      	{
+      		moneytransfer();
+      		
+      	}
+      </script>
       
     </div>
   </div>
@@ -633,10 +640,12 @@ function moneytransfer() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             alert("bando");
             document.getElementById("tsmsg").innerHTML = xhttp.responseText;
+
         }
     };
     xhttp.open("POST", "Profile_bcknd/trans_confirm.jsp?a1="+a1+"&a2="+a2+"&a3="+a3+"&a4="+a4, true);
     xhttp.send();
+    transacinfo();
 }
 <!-- Reciever Name-->
 function recname() {

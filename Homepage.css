@@ -4,8 +4,8 @@
       z-index: 100;
   }
 
-  .affix + .container  {
-      padding-top: 55px;
+  .affix + .container {
+      padding-top: 200px;
   }
       footer {
       background-color: #5E3A8C;
@@ -21,9 +21,9 @@
   width: 100px;
   height: 100px;
   margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
+  border: 16px solid purple;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid grey;
   width: 80px;
   height: 80px;
   -webkit-animation: spin 2s linear infinite;
@@ -171,4 +171,15 @@
 #myNavbar >#j >li >a
 {
   color: #ECECEC;
+}
+
+body
+{
+	background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#292929;
+background-size:16px 16px;
 }
