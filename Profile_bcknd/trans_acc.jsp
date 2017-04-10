@@ -26,13 +26,13 @@
 	%>
 	<div id=<%="pgl"+Integer.toString(i)%> style="display:none;width:50%" >
 		<table class="table table-bordered">
-			<tr>
-				<th>Account Type:</th>
-				<td><%=rs2.getString(3) %></td>
+			<tr >
+				<th style="color: white;background-color: #494588;width: 60%;">Account Type:</th>
+				<td><b><%=rs2.getString(3) %></b></td>
 			</tr>
 			<tr>
-				<th>Balance:</th>
-				<td><%=rs2.getString(5) %></td>
+				<th style="color: white;background-color: #494588">Balance:</th>
+				<td><b><i class="fa fa-inr"></i> <%=rs2.getString(5) %></b></td>
 			</tr>
 			
 		</table>

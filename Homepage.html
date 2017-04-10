@@ -137,7 +137,7 @@
     <div class="col-md-5 bank polaroid" style="margin-right: 10px;background-color: #E0E0E0 ">
       <div><img src="Images/create.png" width="120" height="120"></div>
       </br>
-      <span class="c" ><a class="btn btn-primary" style="font-size:22px" href="#" role="button">Create An Account</a></span>
+      <span class="c" ><a class="btn btn-primary" style="font-size:22px" href="verify.html"  role="button">Create An Account</a></span>
     </div>
     <div class="col-md-5 bank polaroid" style="margin-left: 10px;background-color: #E0E0E0 ">
       <div><img src="Images/inbank2.png" width="120" height="120"></div>
@@ -411,29 +411,26 @@
           <h4 class="modal-title"><span class="glyphicon glyphicon-user"></span> Admin</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="CheckServlet" method="POST">
             <div>
               <label>Admin ID</label>
             </div>
             <div>
-              <input type="text" class="form-control" name="adname">
+              <input type="text" class="form-control" name="id" required="">
             </div>
             <div>
               <label>Password</label>
             </div>
             <div>
-              <input type="Password" class="form-control" name="adname">
-            </div>
-          </form>
-
-
-
+              <input type="password" class="form-control" name="pass" required="">
+            </div> <input type="text" name="val" value="dashboard" hidden>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success">LogIn</button>
         </div>
+
       </div>
-      
+       </form>
     </div>
   </div>
   

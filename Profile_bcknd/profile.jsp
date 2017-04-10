@@ -29,15 +29,13 @@ try
 	}
 	%>
 		<div style="padding: 20px;">
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
-                <tr>
-                    <th colspan="3">Customer ID</th>
-                    <td colspan="1">
-                        <p class="pro"><%= rs.getString(1) %></p>
-                    </td>
+                <tr style="color: white;background-color: #5A55A3">
+                    <th colspan="4"> <span class="glyphicon glyphicon-user"></span> Customer ID : <%= rs.getString(1) %></th>                    
                 </tr>
             </thead>
+            <tr><br></tr>
             <tr>
                 <th colspan="1">Name</th>
                 <td colspan="1">
@@ -58,32 +56,7 @@ try
                     <p class="pro"><%= rs.getString(8) %></p>
                 </td>
             </tr>
-            <tr>
-                <th colspan="1">Alt Mobile no.</th>
-                <%if(rs.getString(20)==null)
-            	{
-              	  b="-";
-              	}
-              	else
-              	{
-              		b=rs.getString(20);
-              	} %>
-                <td colspan="1">
-                    <p class="pro"><%= b %></p>
-                </td>
-                <th colspan="1">Office no.</th>
-                <%if(rs.getString(21)==null)
-            	{
-              	  c="-";
-              	}
-              	else
-              	{
-              		c=rs.getString(21);
-              	} %>
-                <td colspan="1">
-                    <p class="pro"><%= c %></p>
-                </td>
-            </tr>
+            
             <tr>
                 <th colspan="1">Father's Name</th>
                 <td colspan="1">
@@ -96,24 +69,49 @@ try
                 </td>
             </tr>
             <tr>
+                <th colspan="1">Alt Mobile no.</th>
+                <%if(rs.getString(20)==null)
+              {
+                  b="-";
+                }
+                else
+                {
+                  b=rs.getString(20);
+                } %>
+                <td colspan="1">
+                    <p class="pro"><%= b %></p>
+                </td>
+                <th colspan="1">Office no.</th>
+                <%if(rs.getString(21)==null)
+              {
+                  c="-";
+                }
+                else
+                {
+                  c=rs.getString(21);
+                } %>
+                <td colspan="1">
+                    <p class="pro"><%= c %></p>
+                </td>
+            </tr>
+            <tr>
+            <th colspan="1">Address</th>
+                <td colspan="1"><%if(rs.getString(16)==null)
+              {
+                  d="";
+                }
+                else
+                {
+                  d=rs.getString(16);
+                } %>
+                    <p class="pro"><%= rs.getString(14)%> <br> <%= rs.getString(15) +" , "+ d %> <br> <%= rs.getString(17)+", "+rs.getString(18)+", "+rs.getString(22) %> <br> <%= "Pincode-"+rs.getString(19) %></p>
+                </td>
                 <th colspan="1">Education</th>
                 <td>
                 <p><%= rs.getString(10) %></p>
                 </td>
             </tr>
-            <tr>
-                <th colspan="1">Address</th>
-                <td colspan="3"><%if(rs.getString(16)==null)
-            	{
-              	  d="";
-              	}
-              	else
-              	{
-              		d=rs.getString(16);
-              	} %>
-                    <p class="pro"><%= rs.getString(14)%> <br> <%= rs.getString(15) +" , "+ d %> <br> <%= rs.getString(17)+", "+rs.getString(18)+", "+rs.getString(22) %> <br> <%= "Pincode-"+rs.getString(19) %></p>
-                </td>
-            </tr>
+            
         </table>
     </div>
 <%	}

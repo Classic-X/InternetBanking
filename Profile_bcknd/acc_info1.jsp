@@ -12,7 +12,7 @@
 	ResultSet rs=ps.executeQuery(q);
 	int i=0,x=0;
 %> <label for="opt">Select Account</label>
-<select value="" class="form-control" id="opt" onchange="viewacinfo();" style="width: 30%">
+<select value="" class="form-control" id="opt" onchange="viewacinfo();" style="width: 20%">
 <option value="Select" disabled selected>Select</option>
 <% 
 	while(rs.next())
@@ -25,11 +25,16 @@
     while(rs2.next())
 {   i++;
 	%> 
-	<div id=<%="pg"+Integer.toString(i)%> style="display:none;width:50%;" >
-	<table class="table table-bordered">
+	<div id=<%="pg"+Integer.toString(i)%> style="display:none;width:50%;" class="polaroid" >
+	<table class="table table-bordered" style="text-align: center">
+	<thead style="background-color: #5A55A3;color: white;">
 		<tr>
-			<th>Balance:</th>
-			<td><%=rs2.getString(5) %></td>
+			<th colspan="2"><span class="glyphicon glyphicon-list"></span> Details</th>
+		</tr>
+	</thead>
+		<tr>
+			<th style="width:50%;">Balance:</th>
+			<td><i class="fa fa-inr"></i> <%=rs2.getString(5) %></td>
 		</tr>
 		<tr>
 			<th>Date of Creation:</th>
@@ -40,21 +45,23 @@
 			<td><%=rs2.getString(3) %></td>
 		</tr>
 	</table>
-	<table  class="table table-bordered">
-		<thead>
+	</div>
+	<div id=<%="pgs"+Integer.toString(i)%> style="display:none;width:50%;" class="polaroid" >
+	<table  class="table table-bordered" style="text-align: center">
+		<thead style="background-color: #5A55A3;color: white;">
 			<tr >
-				<th colspan="2">Facilities Active</th>
+				<th colspan="2"> <span class="glyphicon glyphicon-check"></span> Facilities Active</th>
 			</tr>
 		</thead>
 		<tr>
 			<th>Cheque: </th>
 			<% if(rs2.getString(6).equals("true"))
 { %>
-	<td><span class="glyphicon glyphicon-ok"></span></td>
+	<td style="width: 50%;"><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
 <% }
 else
 { %> 
-	<td><span class="glyphicon glyphicon-remove"></span></td>
+	<td style="width: 50%;"><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
 <% } %>
 
 		</tr>
@@ -62,11 +69,11 @@ else
 			<th>ATM:</th>
 			<% if(rs2.getString(7).equals("true"))
 { %>
-	<td><span class="glyphicon glyphicon-ok"></span></td>
+	<td><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
 <% }
 else
 { %> 
-	<td><span class="glyphicon glyphicon-remove"></span></td>
+	<td><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
 <% } %>
 
 		</tr>
@@ -75,11 +82,11 @@ else
 			<th>SMS:</th>
 			<% if(rs2.getString(9).equals("true"))
 { %>
-	<td><span class="glyphicon glyphicon-ok"></span></td>
+	<td><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
 <% }
 else
 { %> 
-	<td><span class="glyphicon glyphicon-remove"></span></td>
+	<td><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
 <% } %>
 
 		</tr>
@@ -87,11 +94,11 @@ else
 			<th>Mobile Banking: </th>
 			<% if(rs2.getString(10).equals("true"))
 { %>
-	<td><span class="glyphicon glyphicon-ok"></span></td>
+	<td><span class="glyphicon glyphicon-ok" style="color: green"></span></td>
 <% }
 else
 { %> 
-	<td><span class="glyphicon glyphicon-remove"></span></td>
+	<td><span class="glyphicon glyphicon-remove" style="color: red"></span></td>
 <% } %>
 
 		</tr>

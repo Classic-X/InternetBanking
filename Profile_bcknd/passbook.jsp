@@ -38,24 +38,24 @@
 	Statement ps=cn.createStatement();
 	ResultSet rs=ps.executeQuery(q);
 	int i=0;
-%><table class="table  table-striped table-bordered" id="psview">
-   <thead><tr><th>Date</th><th>Particulars</th><th>Debit</th><th>Credit</th><th>Balance</th></tr></thead><%
+%><table class="table  table-striped table-bordered" id="psview" style="width: 95%">
+   <thead style="background-color: #5A55A3 ;color: white;"><tr><th style="width:20%;"><span class="glyphicon glyphicon-calendar"></span> Date</th><th>Particulars</th><th>Debit</th><th>Credit</th><th>Balance</th></tr></thead><%
 	while(rs.next())
 	{ if(rs.getString(1).equals(accno))
 	  {
 		 with=rs.getString(3);
 		 depo="";
 		 total=rs.getInt(5);
-		 Particular="Sent to acc_no "+rs.getString(2);
+		 Particular="Sent to account no. "+rs.getString(2);
 	  }
 	else if(rs.getString(2).equals(accno))
 	{
 		depo=rs.getString(3);
 		with="";
 		total=rs.getInt(6);
-		Particular="Sent from acc_no "+rs.getString(1);
+		Particular="Received from account no. "+rs.getString(1);
 	}
-%>    <tr><td><%=rs.getString(8) %></td><td><%=Particular+" "+rs.getString(7) %></td><td><%=with%></td><td><%=depo %></td><td><%=total %></td></tr>
+%>    <tr><td align="center"><%=rs.getString(8) %></td><td><%=Particular+" "+rs.getString(7) %></td><td align="right" style="padding-right: 25px;"><%=with%></td><td align="right" style="padding-right: 25px;"><%=depo %></td><td align="right" style="padding-right: 25px;"><%=total %></td></tr>
 	<%}%>
 </table>
 <%}
